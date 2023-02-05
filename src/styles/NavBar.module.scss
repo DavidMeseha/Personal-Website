@@ -1,0 +1,176 @@
+@import './__variables';
+
+.container {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    align-items: center;
+    padding: 30px;
+    font-size: 1.3rem;
+
+    @media only screen and (max-width: 426px) {
+        padding: 15px;
+    }
+}
+
+.startIcon {
+    width: 21px;
+    height: 27px;
+    cursor: pointer;
+
+    @media only screen and (max-width: 850px) {
+        cursor: default;
+    }
+}
+
+.endIcon {
+    width: 34px;
+    height: 30;
+    cursor: pointer;
+
+    @media only screen and (max-width: 850px) {
+        cursor: default;
+    }
+}
+
+.listContainer {
+    overflow: hidden;
+    height: 30px;
+    transition: all 0.8s cubic-bezier(0.61, 0.06, 0.44, 0.95) 0s;
+
+    .navList {
+        display: flex;
+        padding: 0 40px;
+        gap: 30px;
+        width: 660px;
+    }
+
+    @media only screen and (max-width: 850px) {
+        display: none;
+    }
+}
+
+.item:hover {
+    .navItem {
+        color: $yellow;
+    }
+
+    .underline {
+        width: 100%;
+    }
+}
+
+.item {
+    cursor: pointer;
+}
+
+.navItem {
+    padding: 0 3px;
+}
+
+.underline {
+    height: 3px;
+    margin: 3px 0 0 0;
+    width: 0px;
+    background: $blue;
+    transition: all 0.5s cubic-bezier(0.46, 0, 0.45, 0.99);
+}
+
+.selectedItem {
+    .navItem {
+        color: $yellow;
+    }
+
+    .underline {
+        width: 100%;
+    }
+}
+
+.mobileSelected,
+.mobileSelectedActive {
+    display: none;
+    padding: 0 15px;
+
+    @media only screen and (max-width: 850px) {
+        display: block;
+    }
+}
+
+.mobileSelected {
+    cursor: pointer;
+
+    &:hover {
+        color: $yellow;
+    }
+}
+
+.mobileSelectedActive {
+    cursor: default;
+    color: $red;
+}
+
+.mobileMenu {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+
+    transition: all 0.8s cubic-bezier(1, 0.1, 0, 0.97);
+
+    @media only screen and (min-width: 851px) {
+        display: none;
+    }
+}
+
+.open {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+}
+
+.close {
+    width: 0vw;
+    height: 0vh;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 9999px;
+}
+
+.closedNav {
+    animation-name: hint;
+    animation-duration: 3.2s;
+    animation-iteration-count: infinite;
+
+    @media only screen and (max-width: 850px) {
+        animation: none;
+    }
+}
+
+@keyframes hint {
+    0% {
+        transform: translate(0px, 0);
+    }
+
+    8% {
+        transform: translate(5px, 0);
+    }
+
+    16% {
+        transform: translate(0px, 0);
+    }
+
+    24% {
+        transform: translate(5px, 0);
+    }
+
+    32% {
+        transform: translate(0px, 0);
+    }
+
+    100% {
+        transform: translate(0px, 0);
+    }
+}

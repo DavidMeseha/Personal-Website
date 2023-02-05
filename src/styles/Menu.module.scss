@@ -1,0 +1,55 @@
+@import './__variables';
+
+
+.closeIcon {
+    width: 25px;
+    height: 25px;
+    float: right;
+    padding: 30px;
+    cursor: pointer;
+
+    @media only screen and (max-width: 426px) {
+        padding: 15px;
+    }
+}
+
+.list {
+    color: rgb(57, 89, 253);
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    gap: 35px;
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    cursor: pointer;
+
+    &:hover {
+        color: $red;
+
+        .startIcon,
+        .endIcon {
+            display: block;
+        }
+    }
+}
+
+.startIcon {
+    display: none;
+    width: 21px;
+    height: 27px;
+}
+
+.endIcon {
+    display: none;
+    width: 34px;
+    margin-right: -13px;
+}
