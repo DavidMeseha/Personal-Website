@@ -2,9 +2,10 @@
 
 .container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
-    align-items: center;
     font-size: 3.8rem;
 
     @media only screen and (max-width: 970px) {
@@ -17,18 +18,14 @@
 }
 
 .textContainer {
-    margin: 0 0 0 10%;
-
-    @media only screen and (max-width: 769px) {
-        text-align: center;
-        margin: 0;
-    }
+    text-align: center;
 }
 
 
 
 .me {
     display: flex;
+    justify-content: center;
     gap: 10px;
 
     .value {
@@ -46,7 +43,7 @@
 }
 
 .description {
-    margin: 20px 0 0 0;
+    margin: 20px auto;
     font-weight: 400;
     font-size: 1rem;
     width: 80%;
