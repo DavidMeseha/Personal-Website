@@ -10,7 +10,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className={`${style.mobileMenu} ${menuState ? style.open : style.close}`}><Menu closeMenu={setMenuState} selected={selectedSection} /></div>
+            <div className={`${style.mobileMenu} ${menuState ? style.open : style.close}`} style={{ zIndex: 4 }}><Menu closeMenu={setMenuState} selected={selectedSection} /></div>
 
             <div className={style.container}>
                 <div onClick={() => setNavState(!navState)} className={style.startIcon}><StartEnd /></div>
