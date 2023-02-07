@@ -5,6 +5,11 @@
     bottom: 0;
     width: 100vw;
     padding: 30px 0;
+    background-color: $black;
+
+    @media screen and (max-height:545px) {
+        display: none;
+    }
 }
 
 .container {
@@ -37,6 +42,7 @@
 
     &:hover {
         transform: scaleY(3) skew(-30deg, 0deg);
+        background: $yellow;
     }
 }
 

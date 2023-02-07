@@ -10,8 +10,8 @@ const Intro = () => {
                     <h2 className={style.value}>DAVID MAGDY</h2>
                 </div>
                 <div>
-                    <p className={style.description}>I develop websites using<span style={{ color: 'yellow' }}> MERN Stack </span>, Implementing the <span style={{ color: 'yellow' }}>Front end, back end and databases </span>
-                        using the <span style={{ color: 'yellow' }}> latest Technologies</span></p>
+                    <p className={style.description}>I develop websites using<span style={{ color: '#fdfb39' }}> MERN Stack </span>, Implementing the <span style={{ color: '#fdfb39' }}>Front end, back end and databases </span>
+                        using the <span style={{ color: '#fdfb39' }}> latest Technologies</span></p>
                 </div>
             </div>
         </div>

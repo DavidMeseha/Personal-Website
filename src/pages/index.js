@@ -2,7 +2,6 @@ import Footer from '@/components/Footer'
 import Intro from '@/components/Intro'
 import NavBar from '@/components/NavBar'
 import Head from 'next/head'
-import { EndSlash, Logo } from 'public/Icons'
 
 export default function Home() {
   return (

@@ -12,6 +12,12 @@
     }
 }
 
+.logo {
+    width: 50px;
+    padding: 32px;
+    display: inline-block;
+}
+
 .list {
     color: rgb(57, 89, 253);
     display: flex;
@@ -24,11 +30,30 @@
     justify-content: center;
 }
 
-.listItem {
+.startIcon {
+    opacity: 0;
+    width: 21px;
+    height: 27px;
+    transition: all 0.3s;
+}
+
+.endIcon {
+    opacity: 0;
+    width: 34px;
+    margin-right: -13px;
+    transition: all 0.3s;
+}
+
+.listItem,
+.selectedListItem {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
+    transition: all 0.3s;
+}
+
+.listItem {
     cursor: pointer;
 
     &:hover {
@@ -36,19 +61,16 @@
 
         .startIcon,
         .endIcon {
-            display: block;
+            opacity: 1;
         }
     }
 }
 
-.startIcon {
-    display: none;
-    width: 21px;
-    height: 27px;
-}
+.selectedListItem {
+    color: $red;
 
-.endIcon {
-    display: none;
-    width: 34px;
-    margin-right: -13px;
+    .startIcon,
+    .endIcon {
+        opacity: 1;
+    }
 }
