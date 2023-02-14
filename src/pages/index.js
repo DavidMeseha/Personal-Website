@@ -42,7 +42,7 @@ export default function Home({ mySkills }) {
 }
 
 export async function getStaticProps(ctx) {
-  const res = await fetch(`http://localhost:3000/api/skills`)
+  const res = await fetch(`https://personal-website-nine-zeta-97.vercel.app/api/skills`)
   const data = await res.json()
 
   return { props: { mySkills: data.mySkills } }
