@@ -10,23 +10,33 @@ export const NavStateProvider = ({ children }) => {
     const [index, setIndex] = useState(0)
 
     useEffect(() => {
-        router.replace({
-            pathname: '/',
-            query: { section: selected }
-        })
-    }, [selected])
+        let routerSelect = router.query.section
+
+        if (!routerSelect) return
+
+        if (!navBar.includes(routerSelect)) return
+
+        setSelected(routerSelect)
+        setIndex(navBar.indexOf(routerSelect))
+    }, [router])
 
 
     const nextSection = () => {
         let newIndex = (index + 1) % navBar.length
-        setSelected(navBar[newIndex])
-        setIndex(newIndex)
+
+        router.replace({
+            pathname: '/',
+            query: { section: navBar[newIndex] }
+        })
     }
 
     const previousSection = () => {
-        let newindex = index - 1 < 0 ? navBar.length - 1 : index - 1
-        setSelected(navBar[newindex])
-        setIndex(newindex)
+        let newIndex = index - 1 < 0 ? navBar.length - 1 : index - 1
+
+        router.replace({
+            pathname: '/',
+            query: { section: navBar[newIndex] }
+        })
     }
 
     function selectSection(value) {
@@ -35,8 +45,10 @@ export const NavStateProvider = ({ children }) => {
         if (typeof value == 'number') i = value
         else i = navBar.indexOf(value)
 
-        setIndex(i)
-        setSelected(navBar[i])
+        router.replace({
+            pathname: '/',
+            query: { section: navBar[i] }
+        })
     }
 
     return (

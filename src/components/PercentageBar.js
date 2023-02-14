@@ -1,35 +1,30 @@
 import { useEffect, useState } from "react";
 
-const PercentageBar = ({ max, value, label }) => {
+const PercentageBar = ({ max, value }) => {
     const [percent, setPercent] = useState(0)
-    
-    const blue = process.env.BLUE
-    const yellow = process.env.YELLOW
 
     const valueStyle = {
         width: `${percent}%`,
         height: 15,
-        background: blue,
+        background: '#3959fd',
+        transitionDelay: '0.2',
         transition: 'all 0.6s cubic-bezier(0.52, 0.22, 0.29, 0.82) 0s'
     }
 
     const containerStyle = {
-        height: 15,
+        height: 10,
         width: '100%',
-        background: yellow,
-        overflow: 'hidden'
+        background: '#fdfb39',
+        overflow: 'hidden',
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            setPercent((value / max) * 100)
-        }, 100);
-    }, [])
+        setPercent((value / max) * 100)
+    }, [value])
 
     return (
         <div>
-            <p style={{ fontWeight: '400' }}>{label}</p>
-            <div title={`${percent}`} style={containerStyle}>
+            <div title={`${percent}%`} style={containerStyle}>
                 <div style={valueStyle}></div>
             </div>
         </div >
