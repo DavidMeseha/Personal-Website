@@ -25,8 +25,17 @@ const Skills = ({ skills }) => {
             setSecondContainer(skills[1])
         }
 
-        setMainContainer(skills[index])
-        setSecondContainer(skills[index + 1])
+        if (selected !== 'Skills' && selected === 'Intro.') {
+            setTimeout(() => {
+                setMainContainer(null)
+                setSecondContainer(null)
+            }, 300)
+        } else {
+            setTimeout(() => {
+                setMainContainer(skills[index])
+                setSecondContainer(skills[index + 1])
+            }, 300)
+        }
 
         window.addEventListener('resize', changeIndex)
         return () => window.removeEventListener('resize', changeIndex)
