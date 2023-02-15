@@ -32,7 +32,7 @@ export default function Home({ mySkills }) {
         <link rel="icon" href="/logo.svg" />
       </Head>
       <NavBar />
-      <main>
+      <main style={{ height: '100vh', position: 'relative' }}>
         <div style={{ ...commanSectionStyle, ...introSection }}><Intro /></div>
         <div style={{ ...commanSectionStyle, ...skillsSection }} ><Skills skills={mySkills} /></div>
       </main>
