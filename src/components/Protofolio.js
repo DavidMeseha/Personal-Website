@@ -5,7 +5,7 @@ const Protofolio = () => {
         <div className={style.container}>
             <div>
                 <div>
-                    <div className={style.project}>
+                    <div className={style.project} style={{ transform: 'scale(0.5)', opacity: 0.4 }}>
                         <h1 className={style.heading}>Auth System Demo</h1>
                         <div className={style.description}>
                             <div>
@@ -26,7 +26,7 @@ const Protofolio = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={style.project}>
+                    <div className={style.project} style={{ margin: '-70px 0' }}>
                         <h1 className={style.heading}>Auth System Demo</h1>
                         <div className={style.description}>
                             <div>
@@ -47,7 +47,7 @@ const Protofolio = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={style.project}>
+                    <div className={style.project} style={{ transform: 'scale(0.5)', opacity: 0.4 }}>
                         <h1 className={style.heading}>Auth System Demo</h1>
                         <div className={style.description}>
                             <div>
