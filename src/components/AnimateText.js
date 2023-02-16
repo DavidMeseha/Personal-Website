@@ -5,7 +5,7 @@ const AnimateText = ({ value }) => {
     let times = 0
     let valueLength = value?.length
 
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#@$%&'
+    const characters = 'abcdefghijklmnopqrstuvwxyz'
 
     useEffect(() => {
         let intervalId

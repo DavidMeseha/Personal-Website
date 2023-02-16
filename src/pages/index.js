@@ -41,7 +41,7 @@ export default function Home({ mySkills }) {
       <main style={{ height: '100vh', position: 'relative' }}>
         <div style={{ ...commanSectionStyle, ...introSection }}><Intro /></div>
         <div style={{ ...commanSectionStyle, ...skillsSection }} ><Skills skills={mySkills} /></div>
-        <div style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio /></div>
+        {/*<div style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio /></div>*/}
       </main>
       <Footer />
     </>
@@ -74,7 +74,7 @@ export async function getStaticProps(ctx) {
           level: 92
         },
         {
-          skill: 'Graphic Designe',
+          skill: 'Graphic Design',
           level: 72
         }
       ]

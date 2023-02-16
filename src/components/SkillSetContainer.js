@@ -30,8 +30,8 @@ const SkillSetContainer = ({ skillSet, title }) => {
             <div className={style.body}>
                 {skillSet?.map((skill, i) => {
                     return (
-                        <div key={i} className={style.skill}>
-                            <div style={{ width: '100%' }}><AnimateText value={skill.skill} /></div>
+                        <div key={i} className={style.skill} style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'rgb(57 90 253 / 15%)' }}>
+                            <div className={style.label}><AnimateText value={skill.skill} /></div>
                             <div style={{ width: '100%' }}><PercentageBar max={100} value={skill.level} /></div>
                         </div>
                     )
