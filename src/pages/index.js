@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer'
 import Intro from '@/components/Intro'
 import NavBar from '@/components/NavBar'
+import Protofolio from '@/components/Protofolio'
 import Skills from '@/components/Skills'
 import useNavState from '@/hooks/useNavState'
 import Head from 'next/head'
@@ -12,6 +13,7 @@ export default function Home({ mySkills }) {
   const commanSectionStyle = {
     position: 'absolute',
     width: '100%',
+    background: '#1b1b1b',
     transition: 'all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) 0s'
   }
 
@@ -23,6 +25,10 @@ export default function Home({ mySkills }) {
     transform: `translate(${index === 1 ? 0 : index > 1 ? -100 : 100}vw, 0)`,
   }
 
+  const protofolioSection = {
+    transform: `translate(${index === 3 ? 0 : index > 3 ? -100 : 100}vw, 0)`,
+  }
+
   return (
     <>
       <Head>
@@ -32,9 +38,10 @@ export default function Home({ mySkills }) {
         <link rel="icon" href="/logo.svg" />
       </Head>
       <NavBar />
-      <main style={{ height: '100vh', position: 'relative', background: '#1b1b1b' }}>
+      <main style={{ height: '100vh', position: 'relative' }}>
         <div style={{ ...commanSectionStyle, ...introSection }}><Intro /></div>
         <div style={{ ...commanSectionStyle, ...skillsSection }} ><Skills skills={mySkills} /></div>
+        <div style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio /></div>
       </main>
       <Footer />
     </>
