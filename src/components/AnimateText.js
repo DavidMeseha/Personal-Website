@@ -22,7 +22,7 @@ const AnimateText = ({ value }) => {
             for (var charIndex = 0; charIndex < value.length; charIndex++) {
                 animatedText += characters.charAt(Math.floor(Math.random() * characters.length))
             }
-            console.log(animatedText)
+            
             setText(animatedText)
             animatedText = ''
 

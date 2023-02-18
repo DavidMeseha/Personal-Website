@@ -6,7 +6,7 @@ import Skills from '@/components/Skills'
 import useNavState from '@/hooks/useNavState'
 import Head from 'next/head'
 
-export default function Home({ mySkills }) {
+export default function Home({ mySkills, projects }) {
   const { selected, index } = useNavState()
 
 
@@ -26,7 +26,7 @@ export default function Home({ mySkills }) {
   }
 
   const protofolioSection = {
-    transform: `translate(${index === 3 ? 0 : index > 3 ? -100 : 100}vw, 0)`,
+    transform: `translate(${index === 2 ? 0 : index > 2 ? -100 : 100}vw, 0)`,
   }
 
   return (
@@ -41,7 +41,7 @@ export default function Home({ mySkills }) {
       <main style={{ height: '100vh', position: 'relative' }}>
         <div style={{ ...commanSectionStyle, ...introSection }}><Intro /></div>
         <div style={{ ...commanSectionStyle, ...skillsSection }} ><Skills skills={mySkills} /></div>
-        <div style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio /></div>
+        <div style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio projects={projects} /></div>
       </main>
     </>
   )
@@ -154,5 +154,32 @@ export async function getStaticProps(ctx) {
     }
   ]
 
-  return { props: { mySkills: mySkills } }
+  let projects = [
+    {
+      title: 'Auth System Demo',
+      technologies: 'A Login full system using Next.js full stack framework with react.js and MongoDB as database by using NextAuth Toolkit and JWT',
+      features: 'Login/Logout to the website, Regester New User, retrive lost password by email and a password Reset page',
+      link:'https://cachetclient.vercel.app/login'
+    },
+
+    {
+      title: 'Dashbords & Charts',
+      technologies: 'A small Dashbord Looking made using GraphQL as backend system Next.js framework using the Chart.js library for charts drowing',
+      features: 'This Is a simple resposive demo for chart.js library testing and overview, with some animations',
+      link:'https://dashbord-ccrs.vercel.app/'
+    },
+    {
+      title: 'Personal Website',
+      technologies: 'A Personal CV website using React.js with Next.js, SCSS and Node.js for backend. No ready libraries used',
+      features: 'The Website is made to show some front end skills and with showing personal CV',
+      link:'https://personal-website-nine-zeta-97.vercel.app/'
+    }
+  ]
+
+  return {
+    props: {
+      mySkills: mySkills,
+      projects: projects
+    }
+  }
 }

@@ -31,15 +31,15 @@ const Menu = ({ closeMenu }) => {
                         <div className={style.endIcon}><EndSlash /></div>
                     </li>
 
-                    <li onClick={() => selectSection('What I Do')} className={selected === 'What I Do' ? style.selectedListItem : style.listItem}>
-                        <div className={style.startIcon}><StartEnd /></div>
-                        <div style={{ padding: '0 15px', height: 28 }}>What I Do</div>
-                        <div className={style.endIcon}><EndSlash /></div>
-                    </li>
-
                     <li onClick={() => selectSection('Protofolio')} className={selected === 'Protofolio' ? style.selectedListItem : style.listItem}>
                         <div className={style.startIcon}><StartEnd /></div>
                         <div style={{ padding: '0 15px', height: 28 }}>Protofolio</div>
+                        <div className={style.endIcon}><EndSlash /></div>
+                    </li>
+
+                    <li onClick={() => selectSection('What I Do')} className={selected === 'What I Do' ? style.selectedListItem : style.listItem}>
+                        <div className={style.startIcon}><StartEnd /></div>
+                        <div style={{ padding: '0 15px', height: 28 }}>What I Do</div>
                         <div className={style.endIcon}><EndSlash /></div>
                     </li>
 

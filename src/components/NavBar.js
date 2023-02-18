@@ -29,12 +29,12 @@ const NavBar = () => {
                             <div className={style.navItem}>Skills</div>
                             <div className={style.underline}></div>
                         </li>
-                        <li onClick={() => selectSection('What I Do')} className={selected === 'What I Do' ? style.selectedItem : style.item}>
-                            <div className={style.navItem}>What I Do</div>
-                            <div className={style.underline}></div>
-                        </li>
                         <li onClick={() => selectSection('Protofolio')} className={selected === 'Protofolio' ? style.selectedItem : style.item}>
                             <div className={style.navItem}>Protofolio</div>
+                            <div className={style.underline}></div>
+                        </li>
+                        <li onClick={() => selectSection('What I Do')} className={selected === 'What I Do' ? style.selectedItem : style.item}>
+                            <div className={style.navItem}>What I Do</div>
                             <div className={style.underline}></div>
                         </li>
                         <li onClick={() => selectSection('About Website')} className={selected === 'About Website' ? style.selectedItem : style.item}>
