@@ -96,3 +96,27 @@
 .supHeading {
     margin: 0 0 15px 0;
 }
+
+.topNavClickSpace,
+.bottomNavClickSpace {
+    height: 150px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.bottomNavClickSpace {
+    margin: -240px 0 0px 0;
+
+    @media screen and (max-height:660px) {
+        margin: -190px 0 0px 0;
+    }
+}
+
+.topNavClickSpace {
+    margin: 0 0 -240px 0;
+
+    @media screen and (max-height:660px) {
+        margin: 0 0 -190px 0;
+    }
+}

@@ -67,7 +67,7 @@ const Protofolio = ({ projects }) => {
 
 
             <div className={style.projectsRoller}>
-                <div onClick={prevProject} style={{ height: 150, margin: '0 0 -190px 0', position: 'relative', zIndex: 2 }}></div>
+                <div onClick={prevProject} className={style.topNavClickSpace}></div>
                 <div className={style.projects} ref={projectsRef}>
                     {display?.map((project, i) => {
                         return (
@@ -92,7 +92,7 @@ const Protofolio = ({ projects }) => {
                         )
                     })}
                 </div>
-                <div onClick={nextProject} style={{ height: 150, margin: '-190px 0 0px 0', position: 'relative', zIndex: 2 }}></div>
+                <div onClick={nextProject} className={style.bottomNavClickSpace}></div>
             </div>
         </div>
     )
