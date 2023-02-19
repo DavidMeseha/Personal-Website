@@ -91,7 +91,7 @@ const Protofolio = ({ projects }) => {
                         )
                     })}
                 </div>
-                <div onClick={nextProject} className={style.bottomNavClickSpace}><div style={{ margin: 'auto' }}>arrow</div></div>
+                <div onClick={nextProject} className={style.bottomNavClickSpace}></div>
             </div>
         </div>
     )
