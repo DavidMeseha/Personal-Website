@@ -2,8 +2,9 @@ import style from '@/styles/Protofolio.module.scss'
 import { useEffect, useRef, useState } from 'react';
 
 const Protofolio = ({ projects }) => {
-    const [display, setDisplay] = useState([])
     const projectsRef = useRef()
+
+    const [display, setDisplay] = useState([])
     const [waitAnimation, setWaitanimation] = useState()
 
     const nextProject = () => {
@@ -64,8 +65,6 @@ const Protofolio = ({ projects }) => {
 
     return (
         <div className={style.container}>
-
-
             <div className={style.projectsRoller}>
                 <div onClick={prevProject} className={style.topNavClickSpace}></div>
                 <div className={style.projects} ref={projectsRef}>
@@ -92,7 +91,7 @@ const Protofolio = ({ projects }) => {
                         )
                     })}
                 </div>
-                <div onClick={nextProject} className={style.bottomNavClickSpace}></div>
+                <div onClick={nextProject} className={style.bottomNavClickSpace}><div style={{ margin: 'auto' }}>arrow</div></div>
             </div>
         </div>
     )

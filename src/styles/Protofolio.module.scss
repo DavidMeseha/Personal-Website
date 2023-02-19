@@ -14,6 +14,7 @@
 
 .projectsRoller {
     display: block;
+    position: relative;
 
     @media screen and (max-width: 769px) {
         height: 530px;
@@ -25,6 +26,10 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @media screen and (max-width:769px) {
+        margin-top: -60px;
+    }
 }
 
 .rank1,
@@ -99,24 +104,21 @@
 
 .topNavClickSpace,
 .bottomNavClickSpace {
-    height: 150px;
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    height: 190px;
+    width: 100%;
+    z-index: 1;
     cursor: pointer;
+
+    @media screen and (max-width: 769px) {
+        height: 80px;
+    }
 }
 
 .bottomNavClickSpace {
-    margin: -240px 0 0px 0;
-
-    @media screen and (max-height:660px) {
-        margin: -190px 0 0px 0;
-    }
+    bottom: 0;
 }
 
 .topNavClickSpace {
-    margin: 0 0 -240px 0;
-
-    @media screen and (max-height:660px) {
-        margin: 0 0 -190px 0;
-    }
+    top: 0;
 }
