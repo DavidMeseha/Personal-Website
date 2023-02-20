@@ -70,7 +70,10 @@
 
     @media screen and (max-width: 769px) {
         max-height: 600px;
+    }
 
+    @media screen and (max-width:426px) {
+        max-height:330px;
     }
 }
 
