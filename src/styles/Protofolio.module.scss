@@ -48,7 +48,7 @@
     max-height: 220px;
     transform: scale(1);
     opacity: 1;
-    transition: all 1s;
+    transition: all 0.9s;
 
     @media screen and (max-width: 769px) {
         max-height: 600px;
@@ -65,7 +65,7 @@
     margin: 0;
     max-height: 200px;
     transform: scale(0.5);
-    opacity: 0.4;
+    opacity: 0.2;
     transition: all 1s;
 
     @media screen and (max-width: 769px) {
@@ -88,6 +88,10 @@
     display: flex;
     gap: 20px;
 
+    p {
+        opacity: 0.6;
+    }
+
     @media screen and (max-width: 769px) {
         flex-direction: column;
     }
@@ -105,20 +109,58 @@
 .topNavClickSpace,
 .bottomNavClickSpace {
     position: absolute;
-    height: 190px;
+    height: 50%;
     width: 100%;
     z-index: 1;
     cursor: pointer;
+}
 
-    @media screen and (max-width: 769px) {
-        height: 80px;
+.arrow {
+    display: none;
+    width: 30px;
+    fill: white;
+
+    @media (pointer: coarse) {
+        display: block;
+    }
+
+    @media screen and (max-width:426px) {
+        display: block;
     }
 }
 
 .bottomNavClickSpace {
     bottom: 0;
+
+    .arrow {
+        margin: 180px auto 0 auto;
+
+        @media screen and (max-width:769px) {
+            margin: 220px auto 0 auto;
+        }
+
+        @media screen and (max-width:426px) {
+            margin: 180px auto 0 auto;
+        }
+    }
+
+    @media screen and (max-width:426px) {
+        bottom: -60px;
+    }
 }
 
 .topNavClickSpace {
     top: 0;
+
+    .arrow {
+        margin: 120px auto 0 auto;
+
+        @media screen and (max-width:769px) {
+            margin: 20px auto 0 auto;
+        }
+    }
+
+    @media screen and (max-width:426px) {
+        display: none;
+    }
 }

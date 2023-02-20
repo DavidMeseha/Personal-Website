@@ -1,4 +1,5 @@
 import style from '@/styles/Protofolio.module.scss'
+import { Arrow } from 'public/Icons';
 import { useEffect, useRef, useState } from 'react';
 
 const Protofolio = ({ projects }) => {
@@ -22,7 +23,7 @@ const Protofolio = ({ projects }) => {
         projectsRef.current.removeChild(projectsRef.current.children[0])
         projectsRef.current.append(child)
 
-        setTimeout(() => setWaitanimation(false), 1000)
+        setTimeout(() => setWaitanimation(false), 900)
     }
 
     const prevProject = () => {
@@ -41,7 +42,7 @@ const Protofolio = ({ projects }) => {
         projectsRef.current.removeChild(projectsRef.current.children[4])
         projectsRef.current.prepend(child)
 
-        setTimeout(() => setWaitanimation(false), 1000)
+        setTimeout(() => setWaitanimation(false), 900)
     }
 
     useEffect(() => {
@@ -66,7 +67,7 @@ const Protofolio = ({ projects }) => {
     return (
         <div className={style.container}>
             <div className={style.projectsRoller}>
-                <div onClick={prevProject} className={style.topNavClickSpace}></div>
+                <div onClick={prevProject} className={style.topNavClickSpace}><div className={style.arrow} style={{ transform: 'rotate(0deg)' }}><Arrow /></div></div>
                 <div className={style.projects} ref={projectsRef}>
                     {display?.map((project, i) => {
                         return (
@@ -91,9 +92,11 @@ const Protofolio = ({ projects }) => {
                         )
                     })}
                 </div>
-                <div onClick={nextProject} className={style.bottomNavClickSpace}></div>
+                <div onClick={nextProject} className={style.bottomNavClickSpace}>
+                    <div className={style.arrow} style={{ transform: 'rotate(180deg)' }}><Arrow /></div>
+                </div>
             </div>
         </div>
     )
-};
+}
 export default Protofolio

@@ -21,22 +21,27 @@ export default function Home({ mySkills, projects }) {
 
   const introSection = {
     transform: `translate(${index === 0 ? 0 : -100}vw, 0)`,
+    zIndex: `${index === 0 ? 3 : 0}`
   }
 
   const skillsSection = {
     transform: `translate(${index === 1 ? 0 : index > 1 ? -100 : 100}vw, 0)`,
+    zIndex: `${index === 1 ? 3 : 0}`
   }
 
   const protofolioSection = {
     transform: `translate(${index === 2 ? 0 : index > 2 ? -100 : 100}vw, 0)`,
+    zIndex: `${index === 2 ? 3 : 0}`
   }
 
   const whatIDoSection = {
     transform: `translate(${index === 3 ? 0 : index > 3 ? -100 : 100}vw, 0)`,
+    zIndex: `${index === 3 ? 3 : 0}`
   }
 
   const aboutSection = {
     transform: `translate(${index === 4 ? 0 : index > 4 ? -100 : 100}vw, 0)`,
+    zIndex: `${index === 4 ? 3 : 0}`
   }
   return (
     <>
