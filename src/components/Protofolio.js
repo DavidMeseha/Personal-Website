@@ -1,12 +1,34 @@
 import style from '@/styles/Protofolio.module.scss'
 import { Arrow } from 'public/Icons';
 import { useEffect, useRef, useState } from 'react';
+import { useWindowHeight } from '@react-hook/window-size';
 
 const Protofolio = ({ projects }) => {
     const projectsRef = useRef()
+    const windowHeight = useWindowHeight()
 
     const [display, setDisplay] = useState([])
     const [waitAnimation, setWaitanimation] = useState()
+    const [touchStart, setTouchStart] = useState()
+    const [touchEnd, setTouchEnd] = useState()
+
+    useEffect(() => {
+        const displayArraySetting = () => {
+            let projectsCount = projects.length
+            let temp = []
+            let index = 0
+
+            for (var times = 0; times < 5; times++, index++) {
+                if (times % projectsCount === 0) index = 0
+
+                temp.push(projects[index])
+            }
+
+            setDisplay(temp)
+        }
+
+        displayArraySetting()
+    }, [])
 
     const nextProject = () => {
         if (waitAnimation) return
@@ -45,30 +67,25 @@ const Protofolio = ({ projects }) => {
         setTimeout(() => setWaitanimation(false), 900)
     }
 
-    useEffect(() => {
-        console.log(projects)
-        const displayArraySetting = () => {
-            let projectsCount = projects.length
-            let temp = []
-            let index = 0
+    const touchStartHandle = (event) => {
+        console.log(event.targetTouches[0].clientY)
+    }
 
-            for (var times = 0; times < 5; times++, index++) {
-                if (times % projectsCount === 0) index = 0
+    const touchMoveHandle = (event) => {
+        console.log(event.targetTouches[0].clientY)
+    }
 
-                temp.push(projects[index])
-            }
-
-            setDisplay(temp)
-        }
-
-        displayArraySetting()
-    }, [projects])
+    const touchEndHandle = (event) => {
+        console.log(event.changedTouches[0].clientY)
+    }
 
     return (
         <div className={style.container}>
             <div className={style.projectsRoller}>
-                <div onClick={prevProject} className={style.topNavClickSpace}><div className={style.arrow} style={{ transform: 'rotate(0deg)' }}><Arrow /></div></div>
-                <div className={style.projects} ref={projectsRef}>
+                <div onClick={prevProject} className={style.topNavClickSpace}>
+                    <div className={style.arrow} style={{ transform: 'rotate(0deg)' }}><Arrow /></div>
+                </div>
+                <div onTouchEnd={touchEndHandle} onTouchStart={touchStartHandle} onTouchMove={touchMoveHandle} className={style.projects} ref={projectsRef}>
                     {display?.map((project, i) => {
                         return (
                             <div key={i} className={`${i === 0 || i === 4 ? style.rank3 : i === 2 ? style.rank1 : style.rank2}`}>

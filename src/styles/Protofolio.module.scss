@@ -73,7 +73,7 @@
     }
 
     @media screen and (max-width:426px) {
-        max-height:330px;
+        max-height: 330px;
     }
 }
 
@@ -112,10 +112,9 @@
 .topNavClickSpace,
 .bottomNavClickSpace {
     position: absolute;
-    height: 50%;
+    height: 40%;
     width: 100%;
     z-index: 1;
-    cursor: pointer;
 }
 
 .arrow {
@@ -134,6 +133,7 @@
 
 .bottomNavClickSpace {
     bottom: 0;
+    cursor: url('../../public/arrow-down.svg'), auto;
 
     .arrow {
         margin: 180px auto 0 auto;
@@ -154,6 +154,7 @@
 
 .topNavClickSpace {
     top: 0;
+    cursor: url('../../public/arrow-up.svg'), auto;
 
     .arrow {
         margin: 120px auto 0 auto;
