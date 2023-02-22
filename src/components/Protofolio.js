@@ -187,13 +187,13 @@ const Protofolio = ({ projects }) => {
             projectsRef.current.children[3].style.opacity = `${0.2 + (0.8 * percent)}`
             projectsRef.current.children[3].style.maxHeight = `${r2MaxHeight + ((600 - r2MaxHeight) * percent)}px`
             projectsRef.current.children[3].style.margin = `${r1Margin * percent}px 0`
-            if (percent > 0.6) projectsRef.current.children[1].style.zIndex = 2
+            if (percent > 0.5) projectsRef.current.children[1].style.zIndex = 2
 
             projectsRef.current.children[2].style.transform = `scale(${1 - (0.5 * percent)})`
             projectsRef.current.children[2].style.opacity = `${1 - (0.8 * percent)}`
             projectsRef.current.children[2].style.maxHeight = `${600}px`
             projectsRef.current.children[2].style.margin = `${r1Margin - (r1Margin * percent)}px 0`
-            if (percent > 0.6) projectsRef.current.children[2].style.zIndex = 1
+            if (percent > 0.5) projectsRef.current.children[2].style.zIndex = 1
 
             projectsRef.current.children[1].style.transform = `scale(${0.5 - (0.5 * percent)})`
             projectsRef.current.children[1].style.opacity = `${0.2 - (0.2 * percent)}`
