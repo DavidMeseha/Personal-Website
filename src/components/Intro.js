@@ -3,7 +3,7 @@ import style from '@/styles/Intro.module.scss'
 const Intro = () => {
     return (
         <div className={style.container}>
-            <div className={style.textContainer}>
+            <div style={{ width: '80%' }}>
                 <div className={style.hello}><h1>HELLO,</h1></div>
                 <div className={style.me}>
                     <h2>I'M</h2>
