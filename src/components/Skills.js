@@ -3,16 +3,22 @@ import SkillSetContainer from "./SkillSetContainer";
 import style from '@/styles/Skills.module.scss'
 import { useWindowWidth } from "@react-hook/window-size";
 import useNavState from "@/hooks/useNavState";
+import { isTouchSreen } from "@/actions_functions/checkTouchScreen";
 
 const Skills = ({ skills }) => {
     const windowWidth = useWindowWidth()
     const { selected } = useNavState()
+    const projectNav = useRef()
 
     const [index, setIndex] = useState(0)
+
     const [mainContainer, setMainContainer] = useState()
     const [secondContainer, setSecondContainer] = useState()
+
     const [nextState, setNextState] = useState(true)
     const [previousState, setPreviousState] = useState(false)
+
+    const [touchStart, setTouchStart] = useState()
 
     useEffect(() => {
         const changeIndex = () => {
@@ -78,6 +84,36 @@ const Skills = ({ skills }) => {
         setSecondContainer(skills[i + 1])
     }
 
+    const touchStartHandle = (event) => {
+        projectNav.current.style.transition = `unset`
+
+        setTouchStart(event.targetTouches[0].clientX)
+    }
+
+    const touchMoveHandle = (event) => {
+        let position = event.targetTouches[0].clientX
+        let distance = (position - touchStart)
+        let max = (windowWidth / 2) - 90
+
+        if (distance > max) distance = max
+        if (distance < -max) distance = -max
+
+        if (!previousState && distance < 0) projectNav.current.style.transform = `translate(${distance * 0.2}px, 0px)`
+        if (previousState && distance < 0) projectNav.current.style.transform = `translate(${distance}px, 0px)`
+        if (!nextState && distance > 0) projectNav.current.style.transform = `translate(${distance * 0.2}px, 0px)`
+        if (nextState && distance > 0) projectNav.current.style.transform = `translate(${distance}px, 0px)`
+    }
+
+    const touchEndHandle = (event) => {
+        let end = event.changedTouches[0].clientX
+
+        if (end - touchStart > 35) nextSkillSet()
+        if (end - touchStart < -35) previousSkillSet()
+
+        projectNav.current.style.transition = `all 0.2s`
+        projectNav.current.style.transform = `translate(0px, 0px)`
+    }
+
     return (
         <div className={style.warper}>
             <div className={style.container}>
@@ -89,10 +125,10 @@ const Skills = ({ skills }) => {
                 </div>
             </div>
             <div style={{ width: '100%' }}>
-                <div style={{ height: 1, background: 'white' }}></div>
-                <div className={style.skillNavButton}>
-                    <div onClick={previousSkillSet} className={previousState ? style.arrowLeft : style.arrowLeftInactive}></div>
-                    <div onClick={nextSkillSet} className={nextState ? style.arrowRight : style.arrowRightInactive}></div>
+                <div className={style.track}></div>
+                <div onTouchStart={touchStartHandle} onTouchEnd={touchEndHandle} onTouchMove={touchMoveHandle} className={style.skillNavButton} style={{ transform: `translate(0px, 0px)` }} ref={projectNav}>
+                    <div onClick={() => !isTouchSreen(window) && previousSkillSet()} className={previousState ? style.arrowLeft : style.arrowLeftInactive}></div>
+                    <div onClick={() => !isTouchSreen(window) && nextSkillSet()} className={nextState ? style.arrowRight : style.arrowRightInactive}></div>
                 </div>
             </div>
         </div>

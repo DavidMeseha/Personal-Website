@@ -136,7 +136,7 @@ export async function getStaticProps(ctx) {
           level: 98
         },
         {
-          skill: 'Math.',
+          skill: 'Mathematics',
           level: 92
         },
         {
@@ -144,7 +144,7 @@ export async function getStaticProps(ctx) {
           level: 83
         },
         {
-          skill: 'Projet Manage.',
+          skill: 'Projet Management',
           level: 69
         },
       ]
@@ -154,7 +154,7 @@ export async function getStaticProps(ctx) {
       title: 'Sof Skills',
       skillSet: [
         {
-          skill: 'Time Manage.',
+          skill: 'Time Management',
           level: 71
         },
         {

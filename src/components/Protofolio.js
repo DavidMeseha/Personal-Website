@@ -235,7 +235,7 @@ const Protofolio = ({ projects }) => {
         projectsRef.current.children[2].style.transition = rank1.transition
         projectsRef.current.children[3].style.transition = rank2.transition
         projectsRef.current.children[4].style.transition = rank3.transition
-
+        
         if (touchEnd - touchStart < -20) nextProject()
         if (touchEnd - touchStart > 20) prevProject()
         if (!(touchEnd - touchStart > 20) || !(touchEnd - touchStart < -20)) resetProjectsDrag()

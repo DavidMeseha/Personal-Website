@@ -1,5 +1,8 @@
 @import './__variables';
 
+$borders:10px;
+$borders-mobile:15px;
+
 .warper {
     display: flex;
     align-items: center;
@@ -21,10 +24,10 @@
     width: 100%;
     overflow: hidden;
     justify-content: center;
-    margin: 0 0 80px 0;
+    margin: 0 0 40px 0;
 
     @media screen and (max-width:426px) {
-        margin: 0 0 30px 0;
+        margin: 0 0 40px 0;
     }
 
 }
@@ -48,6 +51,16 @@
     }
 }
 
+.track {
+    display: block;
+    height: 1px;
+    background-color: white;
+
+    @media (pointer:coarse) {
+        display: none;
+    }
+}
+
 .skillNavButton {
     position: relative;
     width: 70px;
@@ -61,47 +74,110 @@
 .arrowRightInactive {
     position: absolute;
     top: 5px;
-    left: 50px;
+    right: 0px;
     height: 0;
     width: 0;
-    border-bottom: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-right: 10px solid transparent;
+    border-bottom: $borders solid transparent;
+    border-top: $borders solid transparent;
+    border-right: $borders solid transparent;
+
+    @media (pointer:coarse) {}
 }
 
 .arrowRight {
-    border-left: 10px solid white;
+    border-left: $borders solid white;
     cursor: pointer;
 
     &:hover {
-        border-left: 10px solid $yellow;
+        border-left: $borders solid $yellow;
     }
 }
 
 .arrowRightInactive {
-    border-left: 10px solid $inactive-blue;
+    border-left: $borders solid $inactive-blue;
 }
 
 .arrowLeft,
 .arrowLeftInactive {
     position: absolute;
     top: 5px;
+    left: 0px;
     height: 0;
     width: 0;
-    border-bottom: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-left: 10px solid transparent;
+    border-bottom: $borders solid transparent;
+    border-top: $borders solid transparent;
+    border-left: $borders solid transparent;
 }
 
 .arrowLeft {
-    border-right: 10px solid white;
+    border-right: $borders solid white;
     cursor: pointer;
 
     &:hover {
-        border-right: 10px solid $yellow;
+        border-right: $borders solid $yellow;
     }
 }
 
 .arrowLeftInactive {
-    border-right: 10px solid $inactive-blue;
+    border-right: $borders solid $inactive-blue;
+}
+
+@media (pointer:coarse) {
+
+    .warper {
+        margin: 25px auto 0 auto;
+    }
+
+    .container {
+        margin: 0 0 20px 0;
+    }
+
+    .skillNavButton {
+        width: 40%;
+        max-width: 120px;
+        height: 50px;
+        margin: 0 auto;
+    }
+
+    .arrowLeft,
+    .arrowLeftInactive {
+        top: 10px;
+        left: 10px;
+        border-bottom: $borders-mobile solid transparent;
+        border-top: $borders-mobile solid transparent;
+        border-left: $borders-mobile solid transparent;
+    }
+
+    .arrowLeft {
+        border-right: $borders-mobile solid white;
+
+        &:hover {
+            border-right: $borders-mobile solid white;
+        }
+    }
+
+    .arrowLeftInactive {
+        border-right: $borders-mobile solid $inactive-blue;
+    }
+
+    .arrowRight,
+    .arrowRightInactive {
+        top: 10px;
+        right: 10px;
+        border-bottom: $borders-mobile solid transparent;
+        border-top: $borders-mobile solid transparent;
+        border-right: $borders-mobile solid transparent;
+    }
+
+    .arrowRight {
+        border-left: $borders-mobile solid white;
+
+        &:hover {
+            border-left: $borders-mobile solid white;
+        }
+    }
+
+    .arrowRightInactive {
+        border-left: $borders-mobile solid $inactive-blue;
+    }
 }
