@@ -19,7 +19,7 @@ const NavBar = () => {
 
                 <div onClick={() => setMenuState(true)} className={`${menuState ? style.mobileSelectedActive : style.mobileSelected}`}>{selected}</div>
 
-                <div className={style.listContainer} style={{ width: navState ? 440 : 4 }}>
+                <div className={style.listContainer} style={{ width: navState ? 460 : 4 }}>
                     <ul className={style.navList}>
                         <li onClick={() => selectSection('Intro.')} className={selected === 'Intro.' ? style.selectedItem : style.item}>
                             <div className={style.navItem}>Intro.</div>
@@ -33,8 +33,8 @@ const NavBar = () => {
                             <div className={style.navItem}>Protofolio</div>
                             <div className={style.underline}></div>
                         </li>
-                        <li onClick={() => selectSection('Hire Me')} className={selected === 'Hire Me' ? style.selectedItem : style.item}>
-                            <div className={style.navItem}>Hire Me</div>
+                        <li onClick={() => selectSection('interested?')} className={selected === 'interested?' ? style.selectedItem : style.item}>
+                            <div className={style.navItem}>Intersted?</div>
                             <div className={style.underline}></div>
                         </li>
                     </ul>
