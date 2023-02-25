@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import SkillSetContainer from "./SkillSetContainer";
-import style from '@/styles/Skills.module.scss'
 import { useWindowWidth } from "@react-hook/window-size";
+import style from '@/styles/Skills.module.scss'
+import SkillSetContainer from "./SkillSetContainer";
 import useNavState from "@/hooks/useNavState";
 import { isTouchSreen } from "@/actions_functions/checkTouchScreen";
 
@@ -11,6 +11,7 @@ const Skills = ({ skills }) => {
     const projectNav = useRef()
 
     const [index, setIndex] = useState(0)
+    const [draged, setDraged] = useState(false)
 
     const [mainContainer, setMainContainer] = useState()
     const [secondContainer, setSecondContainer] = useState()
@@ -95,6 +96,7 @@ const Skills = ({ skills }) => {
         let distance = (position - touchStart)
         let max = (windowWidth / 2) - 90
 
+        if (distance > 20 || distance < -20) setDraged(true)
         if (distance > max) distance = max
         if (distance < -max) distance = -max
 
@@ -130,6 +132,7 @@ const Skills = ({ skills }) => {
                     <div onClick={() => !isTouchSreen(window) && previousSkillSet()} className={previousState ? style.arrowLeft : style.arrowLeftInactive}></div>
                     <div onClick={() => !isTouchSreen(window) && nextSkillSet()} className={nextState ? style.arrowRight : style.arrowRightInactive}></div>
                 </div>
+                <div className={draged ? style.displayNone : style.dragHint}>{'Drag Me  >'}</div>
             </div>
         </div>
     )

@@ -26,7 +26,7 @@ $borders-mobile:15px;
     justify-content: center;
     margin: 0 0 40px 0;
 
-    @media screen and (max-width:426px) {
+    @media screen and (max-width:769px) {
         margin: 0 0 40px 0;
     }
 
@@ -122,14 +122,44 @@ $borders-mobile:15px;
     border-right: $borders solid $inactive-blue;
 }
 
-@media (pointer:coarse) {
+.dragHint,
+.displayNone {
+    display: none;
+    margin: 10px 0 -28px 0;
+    text-align: center;
+    opacity: 0.6;
 
-    .warper {
-        margin: 25px auto 0 auto;
+    animation: hint 2s;
+    animation-iteration-count: infinite;
+
+}
+
+.displayNone {
+    display: none;
+}
+
+@keyframes hint {
+    0% {
+        opacity: 0.6;
     }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@media (pointer:coarse) {
 
     .container {
         margin: 0 0 20px 0;
+
+        @media screen and (max-width:769px) {
+            margin: 40px 0 40px 0;
+        }
     }
 
     .skillNavButton {
@@ -179,5 +209,9 @@ $borders-mobile:15px;
 
     .arrowRightInactive {
         border-left: $borders-mobile solid $inactive-blue;
+    }
+
+    .dragHint {
+        display: block;
     }
 }

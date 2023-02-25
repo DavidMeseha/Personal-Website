@@ -45,10 +45,10 @@
         display: flex;
         padding: 0 40px;
         gap: 30px;
-        width: 660px;
+        width: 460px;
     }
 
-    @media only screen and (max-width: 850px) {
+    @media only screen and (max-width: 769px) {
         display: none;
     }
 }
@@ -95,7 +95,7 @@
     padding: 0 15px;
     font-weight: 600;
 
-    @media only screen and (max-width: 850px) {
+    @media only screen and (max-width: 769px) {
         display: block;
     }
 }
