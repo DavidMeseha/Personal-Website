@@ -2,8 +2,7 @@ import Intro from '@/components/Intro'
 import NavBar from '@/components/NavBar'
 import Protofolio from '@/components/Protofolio'
 import Skills from '@/components/Skills'
-import WhatIDo from '@/components/WhatIDo'
-import About from '@/components/About'
+import Interested from '@/components/Interested'
 import useNavState from '@/hooks/useNavState'
 import Head from 'next/head'
 
@@ -33,15 +32,11 @@ export default function Home({ mySkills, projects }) {
     zIndex: `${index === 2 ? 3 : 0}`
   }
 
-  const whatIDoSection = {
+  const interestedSection = {
     transform: `translate(${index === 3 ? 0 : index > 3 ? -100 : 100}vw, 0)`,
     zIndex: `${index === 3 ? 3 : 0}`
   }
 
-  const aboutSection = {
-    transform: `translate(${index === 4 ? 0 : index > 4 ? -100 : 100}vw, 0)`,
-    zIndex: `${index === 4 ? 3 : 0}`
-  }
   return (
     <>
       <Head>
@@ -55,8 +50,7 @@ export default function Home({ mySkills, projects }) {
         <div style={{ ...commanSectionStyle, ...introSection }}><Intro /></div>
         <div style={{ ...commanSectionStyle, ...skillsSection }} ><Skills skills={mySkills} /></div>
         <div style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio projects={projects} /></div>
-        <div style={{ ...commanSectionStyle, ...whatIDoSection }}><WhatIDo /></div>
-        <div style={{ ...commanSectionStyle, ...aboutSection }}><About /></div>
+        <div style={{ ...commanSectionStyle, ...interestedSection }}><Interested /></div>
       </main>
     </>
   )
