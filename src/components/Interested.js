@@ -1,11 +1,19 @@
 import style from '@/styles/Interested.module.scss'
+import { useState } from 'react';
 
 const Interested = () => {
+    const [headerDistance, setHeaderDistance] = useState({ x: 0, y: 0 })
+
+    const mouseMoveHandle = () => {
+        
+    }
+
     return (
         <div className={style.container}>
             <div className={style.wrapper}>
                 <div className={style.heading}>
                     <h1 className={style.shadowHeader}>Let's Work Together !</h1>
+                    <h1 className={style.shadowHeader} style={{ position: 'absolute', top: 0, left: 0, fontWeight: 'bolder' }}>Let's Work Together !</h1>
                     <h1 className={style.floatingHeader}>Let's Work Together<span> !</span></h1>
                 </div>
                 <div className={style.details}>

@@ -56,7 +56,8 @@
 }
 
 .shadowHeader {
-    color: $blue;
+    color: $black;
+    -webkit-text-stroke: 1px $blue;
 }
 
 .floatingHeader {
