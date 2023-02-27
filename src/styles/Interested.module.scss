@@ -58,6 +58,8 @@
 .shadowHeader {
     color: $black;
     -webkit-text-stroke: 1px $blue;
+    -o-text-stroke: 1px $blue;
+    -moz-text-stroke: 1px $blue;
 }
 
 .floatingHeader {
@@ -80,9 +82,61 @@
 }
 
 .button {
+    position: relative;
     display: inline-block;
+    cursor: pointer;
     padding: 15px 20px;
     margin: 5px 0 0 0;
     color: $yellow;
     background-color: $blue;
+
+    &:hover {
+        .copy {
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+.copy {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background-color: #fdfb39;
+    transition: all 0.3s;
+    overflow: hidden;
+    color: #3959fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    div {
+        width: 20px;
+        height: 20px;
+        fill: $blue;
+
+        min-width: 20px;
+        min-height: 20px;
+    }
+}
+
+.beating {
+    animation-name: beat;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+@keyframes beat {
+    0% {transform: scale(1);}
+    45% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    55% {transform: scale(1);}
+    60% {transform: scale(1.5);}
+    65% {transform: scale(1);}
+    100% {transform: scale(1);}
 }
