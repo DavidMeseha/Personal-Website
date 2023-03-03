@@ -1,6 +1,27 @@
-$black: #1b1b1b;
-$blue: #3959fd;
-$inactive-blue:#2a41b7;
-$yellow:#fdfb39;
-$red:#ff1567;
-$opacity-yellow:#fdfa39d8
+.dark {
+    --text: #fff;
+    --background: #1b1b1b;
+    --primry-color: #3959fd;
+    --inactive: #2a41b7;
+    --secondry-color: #fdfb39;
+    --red: #ff1567;
+    --opacity: #fdfa39d8
+}
+
+.light {
+    --text: #1b1b1b;
+    --background: #fff;
+    --primry-color: #3959fd;
+    --inactive: #2a41b7;
+    --secondry-color: #ff1567;
+    --red: #ff1567;
+    --opacity: #ff1567d9;
+}
+
+$text:var(--text);
+$background: var(--background);
+$primry-color: var(--primry-color);
+$inactive:var(--inactive);
+$secondry-color:var(--secondry-color);
+$red:var(--red);
+$opacity:var(--opacity);

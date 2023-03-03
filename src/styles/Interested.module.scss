@@ -56,10 +56,10 @@
 }
 
 .shadowHeader {
-    color: $black;
-    -webkit-text-stroke: 1px $blue;
-    -o-text-stroke: 1px $blue;
-    -moz-text-stroke: 1px $blue;
+    color: transparent;
+    -webkit-text-stroke: 1px $primry-color;
+    -o-text-stroke: 1px $primry-color;
+    -moz-text-stroke: 1px $primry-color;
 }
 
 .floatingHeader {
@@ -67,7 +67,7 @@
     top: -5px;
     left: 5px;
 
-    color: $yellow;
+    color: $secondry-color;
 }
 
 .list {
@@ -87,8 +87,8 @@
     cursor: pointer;
     padding: 15px 20px;
     margin: 5px 0 0 0;
-    color: $yellow;
-    background-color: $blue;
+    color: #fdfb39;
+    background-color: $primry-color;
 
     &:hover {
         .copy {
@@ -116,7 +116,7 @@
     div {
         width: 20px;
         height: 20px;
-        fill: $blue;
+        fill: $primry-color;
 
         min-width: 20px;
         min-height: 20px;

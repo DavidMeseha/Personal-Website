@@ -39,7 +39,7 @@ const Menu = ({ closeMenu }) => {
 
                     <li onClick={() => selectSection('interested?')} className={selected === 'interested?' ? style.selectedListItem : style.listItem}>
                         <div className={style.startIcon}><StartEnd /></div>
-                        <div style={{ padding: '0 15px', height: 28 }}>interested?</div>
+                        <div style={{ padding: '0 15px', height: 28 }}>interested ?</div>
                         <div className={style.endIcon}><EndSlash /></div>
                     </li>
                 </ul>

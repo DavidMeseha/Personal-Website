@@ -36,7 +36,7 @@ const Interested = () => {
                         <h1 className={style.floatingHeader} style={{ transform: `translate(${headerDistance.x}px, ${headerDistance.y}px)` }}>Let's Work Together<span className={style.beating}> !</span></h1>
                     </div>
                     <div className={style.details}>
-                        <h2>Here is how I can help...</h2>
+                        <h2>Here is how I can help.</h2>
                         <ul className={style.list}>
                             <li>Create a fullstack website with custom backend, front end and database(MongoDB & SQl).</li>
                             <li>Create custom features and pages for your react.js and next.js app.</li>

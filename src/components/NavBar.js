@@ -4,11 +4,18 @@ import { useState } from 'react';
 import Menu from './Menu';
 import useNavState from '@/hooks/useNavState';
 
-const NavBar = () => {
+const NavBar = ({ setTheme }) => {
     const { selectSection, selected } = useNavState()
 
     const [navState, setNavState] = useState(true)
     const [menuState, setMenuState] = useState(false)
+
+    const toggleTheme = () => {
+        setTheme(prevstate => {
+            if (prevstate === 'dark') return 'light'
+            else return 'dark'
+        })
+    }
 
     return (
         <>
@@ -34,12 +41,19 @@ const NavBar = () => {
                             <div className={style.underline}></div>
                         </li>
                         <li onClick={() => selectSection('interested?')} className={selected === 'interested?' ? style.selectedItem : style.item}>
-                            <div className={style.navItem}>Intersted?</div>
+                            <div className={style.navItem}>Intersted ?</div>
                             <div className={style.underline}></div>
                         </li>
                     </ul>
                 </div>
                 <div onClick={() => setNavState(!navState)} className={`${style.endIcon} ${navState ? '' : style.closedNav}`}><EndSlash /></div>
+            </div>
+
+            <div className={style.themeToggle}>
+                <label className={style.toggle}>
+                    <input onChange={toggleTheme} type='checkbox' />
+                    <span className={style.slider}></span>
+                </label>
             </div>
         </>
     )

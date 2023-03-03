@@ -24,7 +24,7 @@ $borders-mobile:15px;
     width: 100%;
     overflow: hidden;
     justify-content: center;
-    margin: 0 0 40px 0;
+    margin: 0 0 80px 0;
 
     @media screen and (max-width:769px) {
         margin: 0 0 40px 0;
@@ -54,7 +54,7 @@ $borders-mobile:15px;
 .track {
     display: block;
     height: 1px;
-    background-color: white;
+    background: $text;
 
     @media (pointer:coarse) {
         display: none;
@@ -67,7 +67,7 @@ $borders-mobile:15px;
     height: 30px;
     border-radius: 9999px;
     margin: -16px auto 0 auto;
-    background-color: #3959fd;
+    background-color: $primry-color;
 }
 
 .arrowRight,
@@ -89,12 +89,12 @@ $borders-mobile:15px;
     cursor: pointer;
 
     &:hover {
-        border-left: $borders solid $yellow;
+        border-left: $borders solid $secondry-color;
     }
 }
 
 .arrowRightInactive {
-    border-left: $borders solid $inactive-blue;
+    border-left: $borders solid $inactive;
 }
 
 .arrowLeft,
@@ -114,12 +114,12 @@ $borders-mobile:15px;
     cursor: pointer;
 
     &:hover {
-        border-right: $borders solid $yellow;
+        border-right: $borders solid $secondry-color;
     }
 }
 
 .arrowLeftInactive {
-    border-right: $borders solid $inactive-blue;
+    border-right: $borders solid $inactive;
 }
 
 .dragHint,
@@ -187,7 +187,7 @@ $borders-mobile:15px;
     }
 
     .arrowLeftInactive {
-        border-right: $borders-mobile solid $inactive-blue;
+        border-right: $borders-mobile solid $inactive;
     }
 
     .arrowRight,
@@ -208,7 +208,7 @@ $borders-mobile:15px;
     }
 
     .arrowRightInactive {
-        border-left: $borders-mobile solid $inactive-blue;
+        border-left: $borders-mobile solid $inactive;
     }
 
     .dragHint {

@@ -34,7 +34,8 @@
 
 .project {
     padding: 30px;
-    background: $black;
+    background: $background;
+    border: 1px solid $text;
 }
 
 .description {
@@ -51,7 +52,7 @@
 }
 
 .heading {
-    color: $yellow;
+    color: $secondry-color;
     margin: 0 0 30px 0;
 }
 

@@ -23,7 +23,7 @@
     gap: 10px;
 
     .value {
-        color: $blue;
+        color: $primry-color;
     }
 
     @media only screen and (max-width: 769px) {
@@ -41,4 +41,8 @@
     font-weight: 400;
     font-size: 1rem;
     width: 80%;
+
+    span{
+        color: $secondry-color;
+    }
 }

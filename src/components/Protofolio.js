@@ -1,5 +1,4 @@
 import style from '@/styles/Protofolio.module.scss'
-import { Arrow } from 'public/Icons';
 import { useEffect, useRef, useState } from 'react';
 import { useWindowHeight, useWindowWidth } from '@react-hook/window-size';
 
@@ -21,7 +20,6 @@ const Protofolio = ({ projects }) => {
         maxHeight: windowWidth < 769 ? '600px' : '220px',
         transform: 'scale(1)',
         opacity: 1,
-        border: '1px solid white',
         padding: '30px',
         transition: 'all 0.9s'
     }
@@ -31,7 +29,6 @@ const Protofolio = ({ projects }) => {
         maxHeight: windowWidth < 769 ? windowWidth < 426 ? '360px' : '600px' : '220px',
         transform: 'scale(0.5)',
         opacity: 0.2,
-        border: '1px solid white',
         padding: '30px',
         zIndex: 0,
         transition: 'all 1s'
@@ -43,9 +40,7 @@ const Protofolio = ({ projects }) => {
         transform: 'scale(0)',
         opacity: 0,
         maxHeight: 0,
-        border: '0px solid white',
         padding: 0,
-        border: '1px solid white',
         transition: 'all 0.6s'
     }
 
