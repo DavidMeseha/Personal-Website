@@ -4,12 +4,12 @@ import Protofolio from '@/components/Protofolio'
 import Skills from '@/components/Skills'
 import Interested from '@/components/Interested'
 import useNavState from '@/hooks/useNavState'
-import useTheme from '@/hooks/useTheme'
+import NavBar from '@/components/NavBar'
+import { useState } from 'react'
 
 export default function Home({ mySkills, projects }) {
   const { selected, index } = useNavState()
-  const { theme } = useTheme()
-
+  const [theme, setTheme] = useState('dark')
 
   const commanSectionStyle = {
     position: 'absolute',
@@ -45,12 +45,15 @@ export default function Home({ mySkills, projects }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <main style={{ height: '100vh', position: 'relative' }}>
-        <div className='section' style={{ ...commanSectionStyle, ...introSection }}><Intro /></div>
-        <div className='section' style={{ ...commanSectionStyle, ...skillsSection }} ><Skills skills={mySkills} /></div>
-        <div className='section' style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio projects={projects} /></div>
-        <div className='section' style={{ ...commanSectionStyle, ...interestedSection }}><Interested /></div>
-      </main>
+      <div className={theme || 'dark'}>
+        <NavBar setTheme={setTheme} />
+        <main style={{ height: '100vh', position: 'relative' }}>
+          <div className='section' style={{ ...commanSectionStyle, ...introSection }}><Intro theme={theme} /></div>
+          <div className='section' style={{ ...commanSectionStyle, ...skillsSection }} ><Skills skills={mySkills} /></div>
+          <div className='section' style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio projects={projects} /></div>
+          <div className='section' style={{ ...commanSectionStyle, ...interestedSection }}><Interested /></div>
+        </main>
+      </div>
     </>
   )
 }

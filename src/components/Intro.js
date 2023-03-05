@@ -1,8 +1,10 @@
 import style from '@/styles/Intro.module.scss'
+import Background from './BackGround';
 
-const Intro = () => {
+const Intro = ({theme}) => {
     return (
         <div className={style.container}>
+            <div style={{ position: 'absolute', height: '100vh', zIndex:-2 }}><Background theme={theme} /></div>
             <div style={{ width: '80%' }}>
                 <div className={style.hello}><h1>HELLO,</h1></div>
                 <div className={style.me}>
