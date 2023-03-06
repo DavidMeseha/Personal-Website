@@ -24,23 +24,23 @@ const Background = ({ theme }) => {
 
     }
 
-    const drawBackground = (e) => {
+    const drawBackground = (x, y) => {
         canvasCtx.clearRect(0, 0, size.width, size.height)
 
         if (awaitTransition) return
 
-        var grd = canvasCtx.createRadialGradient(e?.clientX || 150, e?.clientY || 450, 20, e?.clientX || 150, e?.clientY || 450, 150);
+        var grd = canvasCtx.createRadialGradient(x, y, 20, x, y, 150);
         grd.addColorStop(0, theme === 'dark' ? '#fdfb39' : '#ff1567');
         grd.addColorStop(0.7, theme === 'dark' ? "#4e4d315f" : '#ff9fc0');
         grd.addColorStop(1, theme === 'dark' ? '#1b1b1b' : '#fff');
 
         canvasCtx.fillStyle = grd;
-        canvasCtx.fillRect((e?.clientX || 150) - 150, (e?.clientY || 450) - 150, 300, 300);
+        canvasCtx.fillRect(x - 150, y - 150, 300, 300);
 
 
         let rowCount = 0
-        for (let y = 0; y < size.height + 42; y += 36) {
-            for (let x = rowCount % 2 === 0 ? 0 : -126 / 2; x < size.width+42; x += 126) {
+        for (let y = 0; y < size.height + 40; y += 36) {
+            for (let x = rowCount % 2 === 0 ? 0 : -126 / 2; x < size.width + 40; x += 126) {
                 drawHexagon(x, y, canvasCtx)
             }
 
@@ -59,11 +59,30 @@ const Background = ({ theme }) => {
 
         setTimeout(() => {
             awaitTransition = false
-            drawBackground()
+            drawBackground(150, 450)
         }, 300)
 
-        window.addEventListener('mousemove', drawBackground)
-        return (() => window.removeEventListener('mousemove', drawBackground))
+        const mouseMoveHandle = (e) => {
+            let x = e.clientX
+            let y = e.clientY
+
+            drawBackground(x, y)
+        }
+
+        const touchHandle = (e) => {
+            let x = e.targetTouches[0].clientX
+            let y = e.targetTouches[0].clientY
+
+            drawBackground(x, y)
+        }
+
+        window.addEventListener('mousemove', mouseMoveHandle)
+        window.addEventListener('touchstart', touchHandle)
+        window.addEventListener('touchmove', touchHandle)
+
+        return (() => {
+            window.removeEventListener('mousemove', mouseMoveHandle)
+        })
     }, [canvasRef.current, theme])
 
     return (
