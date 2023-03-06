@@ -3,29 +3,29 @@ import { useEffect, useRef, useState } from "react";
 const Background = ({ theme }) => {
     const canvasRef = useRef()
     const [size, setSize] = useState({ width: '500px', height: '500px' })
+    
+    let width, height;
     let awaitTransition = false
-
+    let x = 350, y = 250;
     let canvasCtx;
-    let gridR = 10
 
-    const drawHexagon = (x, y, canvasCtx) => {
+    const drawHexagon = (hx, hy, canvasCtx) => {
         let side = 0,
             size = 40;
 
         canvasCtx.beginPath();
-        canvasCtx.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
+        canvasCtx.moveTo(hx + size * Math.cos(0), hy + size * Math.sin(0));
 
         for (side; side <= 6; side++) {
-            canvasCtx.lineTo(x + size * Math.cos(side * 2 * Math.PI / 6), y + size * Math.sin(side * 2 * Math.PI / 6));
+            canvasCtx.lineTo(hx + size * Math.cos(side * 2 * Math.PI / 6), hy + size * Math.sin(side * 2 * Math.PI / 6));
         }
 
         canvasCtx.fillStyle = theme === 'dark' ? "#1b1b1b" : '#fff';
         canvasCtx.fill();
-
     }
 
-    const drawBackground = (x, y) => {
-        canvasCtx.clearRect(0, 0, size.width, size.height)
+    const drawBackground = () => {
+        canvasCtx.clearRect(0, 0, width, height)
 
         if (awaitTransition) return
 
@@ -39,8 +39,8 @@ const Background = ({ theme }) => {
 
 
         let rowCount = 0
-        for (let y = 0; y < size.height + 40; y += 36) {
-            for (let x = rowCount % 2 === 0 ? 0 : -126 / 2; x < size.width + 40; x += 126) {
+        for (let y = 0; y < height + 40; y += 36) {
+            for (let x = rowCount % 2 === 0 ? 0 : -126 / 2; x < width + 40; x += 126) {
                 drawHexagon(x, y, canvasCtx)
             }
 
@@ -52,37 +52,48 @@ const Background = ({ theme }) => {
         if (!canvasRef) return
         awaitTransition = true
 
+        width = window.innerWidth
+        height = window.innerHeight
         canvasCtx = canvasRef.current.getContext('2d')
-        setSize({ width: window.innerWidth, height: window.innerHeight })
+        setSize({ width: width, height: height })
 
-        canvasCtx.clearRect(0, 0, size.width, size.height)
+        canvasCtx.clearRect(0, 0, width, height)
 
         setTimeout(() => {
             awaitTransition = false
-            drawBackground(350, 250)
+            drawBackground()
         }, 300)
 
         const mouseMoveHandle = (e) => {
-            let x = e.clientX
-            let y = e.clientY
+            x = e.clientX
+            y = e.clientY
 
-            drawBackground(x, y)
+            drawBackground()
         }
 
         const touchHandle = (e) => {
-            let x = e.targetTouches[0].clientX
-            let y = e.targetTouches[0].clientY
+            x = e.targetTouches[0].clientX
+            y = e.targetTouches[0].clientY
 
-            drawBackground(x, y)
+            drawBackground()
+        }
+
+        const resize = () => {
+            width = window.innerWidth
+            height = window.innerHeight
+            setSize({ width: width, height: height })
+            drawBackground()
         }
 
         window.addEventListener('mousemove', mouseMoveHandle)
         window.addEventListener('touchstart', touchHandle)
         window.addEventListener('touchmove', touchHandle)
+        window.addEventListener('resize', resize)
 
         return (() => {
             window.removeEventListener('mousemove', mouseMoveHandle)
             window.removeEventListener('touchstart', touchHandle)
+            window.removeEventListener('resize', resize)
             window.removeEventListener('touchmove', touchHandle)
         })
     }, [canvasRef.current, theme])
