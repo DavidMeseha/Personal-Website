@@ -40,7 +40,7 @@ const Background = ({ theme }) => {
 
         let rowCount = 0
         for (let y = 0; y < size.height + 42; y += 36) {
-            for (let x = rowCount % 2 === 0 ? 0 : -126 / 2; x < size.width; x += 126) {
+            for (let x = rowCount % 2 === 0 ? 0 : -126 / 2; x < size.width+42; x += 126) {
                 drawHexagon(x, y, canvasCtx)
             }
 
