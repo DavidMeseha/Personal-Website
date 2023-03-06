@@ -59,7 +59,7 @@ const Background = ({ theme }) => {
 
         setTimeout(() => {
             awaitTransition = false
-            drawBackground(150, 450)
+            drawBackground(350, 250)
         }, 300)
 
         const mouseMoveHandle = (e) => {
@@ -82,6 +82,8 @@ const Background = ({ theme }) => {
 
         return (() => {
             window.removeEventListener('mousemove', mouseMoveHandle)
+            window.removeEventListener('touchstart', touchHandle)
+            window.removeEventListener('touchmove', touchHandle)
         })
     }, [canvasRef.current, theme])
 
