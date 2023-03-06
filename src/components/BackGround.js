@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const Background = ({ theme }) => {
+    const canvasRef = useRef()
     const [size, setSize] = useState({ width: '500px', height: '500px' })
     let awaitTransition = false
 
-    const canvasRef = useRef()
     let canvasCtx;
     let gridR = 10
 
@@ -28,15 +28,15 @@ const Background = ({ theme }) => {
         canvasCtx.clearRect(0, 0, size.width, size.height)
 
         if (awaitTransition) return
-        if (e) {
-            var grd = canvasCtx.createRadialGradient(e.clientX, e.clientY, 20, e.clientX, e.clientY, 150);
-            grd.addColorStop(0, theme === 'dark' ? '#fdfb39' : '#ff1567');
-            grd.addColorStop(0.7, theme === 'dark' ? "#4e4d315f" : '#ff9fc0');
-            grd.addColorStop(1, theme === 'dark' ? '#1b1b1b' : '#fff');
 
-            canvasCtx.fillStyle = grd;
-            canvasCtx.fillRect(e.clientX - 150, e.clientY - 150, 300, 300);
-        }
+        var grd = canvasCtx.createRadialGradient(e?.clientX || 150, e?.clientY || 450, 20, e?.clientX || 150, e?.clientY || 450, 150);
+        grd.addColorStop(0, theme === 'dark' ? '#fdfb39' : '#ff1567');
+        grd.addColorStop(0.7, theme === 'dark' ? "#4e4d315f" : '#ff9fc0');
+        grd.addColorStop(1, theme === 'dark' ? '#1b1b1b' : '#fff');
+
+        canvasCtx.fillStyle = grd;
+        canvasCtx.fillRect((e?.clientX || 150) - 150, (e?.clientY || 450) - 150, 300, 300);
+
 
         let rowCount = 0
         for (let y = 0; y < size.height + 42; y += 36) {
