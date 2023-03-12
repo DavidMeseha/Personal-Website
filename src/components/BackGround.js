@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { Spot } from "@/classes/Spot";
 
 const Background = ({ theme }) => {
     const canvasRef = useRef()
     const [size, setSize] = useState({ width: '500px', height: '500px' })
-    
+
     let width, height;
     let awaitTransition = false
     let x = 350, y = 250;
@@ -24,20 +25,7 @@ const Background = ({ theme }) => {
         canvasCtx.fill();
     }
 
-    const drawBackground = () => {
-        canvasCtx.clearRect(0, 0, width, height)
-
-        if (awaitTransition) return
-
-        var grd = canvasCtx.createRadialGradient(x, y, 20, x, y, 150);
-        grd.addColorStop(0, theme === 'dark' ? '#fdfb39' : '#ff1567');
-        grd.addColorStop(0.7, theme === 'dark' ? "#4e4d315f" : '#ff9fc0');
-        grd.addColorStop(1, theme === 'dark' ? '#1b1b1b' : '#fff');
-
-        canvasCtx.fillStyle = grd;
-        canvasCtx.fillRect(x - 150, y - 150, 300, 300);
-
-
+    const drawHexagonPattern = () => {
         let rowCount = 0
         for (let y = 0; y < height + 40; y += 36) {
             for (let x = rowCount % 2 === 0 ? 0 : -126 / 2; x < width + 40; x += 126) {
@@ -48,6 +36,22 @@ const Background = ({ theme }) => {
         }
     }
 
+    const drawBackground = () => {
+        canvasCtx.clearRect(0, 0, width, height)
+
+        if (awaitTransition) return
+
+        var grd = canvasCtx.createRadialGradient(x, y, 20, x, y, 150);
+        grd.addColorStop(0, theme === 'dark' ? '#fdfb39' : '#ff1567');
+        grd.addColorStop(0.7, theme === 'dark' ? "#4e4d315f" : '#ff9fc0');
+        grd.addColorStop(1, theme === 'dark' ? '#4e4d3100' : '#ff156700');
+
+        canvasCtx.fillStyle = grd;
+        canvasCtx.fillRect(x - 150, y - 150, 300, 300);
+
+        drawHexagonPattern()
+    }
+
     useEffect(() => {
         if (!canvasRef) return
         awaitTransition = true
@@ -55,6 +59,7 @@ const Background = ({ theme }) => {
         width = window.innerWidth
         height = window.innerHeight
         canvasCtx = canvasRef.current.getContext('2d')
+
         setSize({ width: width, height: height })
 
         canvasCtx.clearRect(0, 0, width, height)
