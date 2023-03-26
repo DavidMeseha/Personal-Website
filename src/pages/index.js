@@ -140,14 +140,14 @@ export async function getStaticProps(ctx) {
           level: 83
         },
         {
-          skill: 'Projet Management',
+          skill: 'Project Management',
           level: 69
         },
       ]
     },
 
     {
-      title: 'Sof Skills',
+      title: 'Soft Skills',
       skillSet: [
         {
           skill: 'Time Management',
