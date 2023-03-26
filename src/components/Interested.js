@@ -46,7 +46,7 @@ const Interested = () => {
                         </ul>
                     </div>
                     <div>
-                        <p style={{ fontSize: '0.8rem' }}>Ready to descuss your project</p>
+                        <p style={{ fontSize: '0.8rem' }}>Ready to discuss your project</p>
                         <div onClick={copyHandle} onMouseLeave={() => setTimeout(() => { setCopyState(false) }, 350)} className={style.button}>
                             <div>davidmmyh@gmail.com</div>
                             <div className={style.copy}>{copyState ? 'copied' : 'copy'}<div><Copy /></div></div>

@@ -5,7 +5,7 @@ import Menu from './Menu';
 import useNavState from '@/hooks/useNavState';
 
 const NavBar = ({ setTheme }) => {
-    const { selectSection, selected } = useNavState()
+    const { selectSection, selected, nextSection, previousSection } = useNavState()
 
     const [navState, setNavState] = useState(true)
     const [menuState, setMenuState] = useState(false)
@@ -22,7 +22,7 @@ const NavBar = ({ setTheme }) => {
             <div className={`${style.mobileMenu} ${menuState ? style.open : style.close}`} style={{ zIndex: 10 }}><Menu closeMenu={setMenuState} /></div>
 
             <div className={style.container}>
-                <div onClick={() => setNavState(!navState)} className={style.startIcon}><StartEnd /></div>
+                <div onClick={() => previousSection()} className={style.startIcon}><StartEnd /></div>
 
                 <div onClick={() => setMenuState(true)} className={`${menuState ? style.mobileSelectedActive : style.mobileSelected}`}>{selected}</div>
 
@@ -46,7 +46,7 @@ const NavBar = ({ setTheme }) => {
                         </li>
                     </ul>
                 </div>
-                <div onClick={() => setNavState(!navState)} className={`${style.endIcon} ${navState ? '' : style.closedNav}`}><EndSlash /></div>
+                <div onClick={() => nextSection()} className={`${style.endIcon} ${navState ? '' : style.closedNav}`}><EndSlash /></div>
             </div>
 
             <div className={style.themeToggle}>

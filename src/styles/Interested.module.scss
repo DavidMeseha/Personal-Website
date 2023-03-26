@@ -19,8 +19,6 @@
     @media screen and (max-width:426px) {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
     }
 }
 
@@ -40,18 +38,22 @@
 
 .details {
     margin: 40px 0px 40px 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     h2 {
         margin: 0px 0px 20px -20px;
     }
 
     @media screen and (max-width:1024px) {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     @media screen and (max-width:426px) {
-        margin: 20px 0px 20px 00px;
+        margin: 20px 0px 20px 10px;
+
+        h2 {
+            margin: 0px 0px 20px -10px;
+        }
     }
 }
 
@@ -74,10 +76,6 @@
     li {
         margin: 10px 0;
         list-style-type: square;
-
-        @media screen and (max-width:426px) {
-            list-style: none;
-        }
     }
 }
 

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Spot } from "@/classes/Spot";
 
 const Background = ({ theme }) => {
     const canvasRef = useRef()
@@ -109,4 +108,5 @@ const Background = ({ theme }) => {
         </>
     )
 };
+
 export default Background;

@@ -129,8 +129,8 @@ const Skills = ({ skills }) => {
             <div style={{ width: '100%' }}>
                 <div className={style.track}></div>
                 <div onTouchStart={touchStartHandle} onTouchEnd={touchEndHandle} onTouchMove={touchMoveHandle} className={style.skillNavButton} style={{ transform: `translate(0px, 0px)` }} ref={projectNav}>
-                    <div onClick={() => !isTouchSreen(window) && previousSkillSet()} className={previousState ? style.arrowLeft : style.arrowLeftInactive}></div>
-                    <div onClick={() => !isTouchSreen(window) && nextSkillSet()} className={nextState ? style.arrowRight : style.arrowRightInactive}></div>
+                    <div onClick={() => previousSkillSet()} className={previousState ? style.arrowLeft : style.arrowLeftInactive}></div>
+                    <div onClick={() => nextSkillSet()} className={nextState ? style.arrowRight : style.arrowRightInactive}></div>
                 </div>
                 <div className={draged ? style.displayNone : style.dragHint}>{'Drag Me  >'}</div>
             </div>

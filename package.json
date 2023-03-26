@@ -11,11 +11,14 @@
   "dependencies": {
     "@next/font": "13.1.6",
     "@react-hook/window-size": "^3.1.1",
+    "@react-three/drei": "^9.57.2",
+    "@react-three/fiber": "^8.12.0",
     "@vercel/analytics": "^0.1.8",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.58.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "three": "^0.150.1"
   }
 }
