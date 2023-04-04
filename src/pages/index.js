@@ -187,7 +187,7 @@ export async function getStaticProps(ctx) {
     },
     {
       title: 'Laptops Shop',
-      technologies: 'A Laptops shop created with Next.js, React.js and mongodb, displaying products, getting data via SSR and implemnting the Auth to the website',
+      technologies: 'A Laptops shop created with Next.js, React.js and mongodb, getting data via SSR and implemnting the Auth to the website',
       features: 'Showing some eCommerce functions like sorting, filtering, login, favorites and cart',
       link: 'https://shop-jade-rho.vercel.app'
     }
