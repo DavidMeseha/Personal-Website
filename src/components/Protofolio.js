@@ -259,7 +259,7 @@ const Protofolio = ({ projects }) => {
                                         </p>
                                     </div>
                                 </div>
-                                <div style={{ margin: '20px 0 0 0' }}><span><a href={`${project.link}`} target='_blank'>Visit this project ?</a></span></div>
+                                <div style={{ margin: '20px 0 0 0' }}><span><a href={`${project?.link}`} target='_blank'>Visit this project ?</a></span></div>
                             </div>
                         )
                     })}
