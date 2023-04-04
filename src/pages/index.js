@@ -174,7 +174,7 @@ export async function getStaticProps(ctx) {
     },
 
     {
-      title: 'Dashbords & Charts',
+      title: 'Charts',
       technologies: 'A small Dashbord Looking made using GraphQL as backend system Next.js framework using the Chart.js for charts drowing',
       features: 'This Is a simple resposive demo for chart.js library testing and overview, with some animations',
       link: 'https://dashbord-ccrs.vercel.app/'
