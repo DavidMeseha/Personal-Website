@@ -168,14 +168,14 @@ export async function getStaticProps(ctx) {
   let projects = [
     {
       title: 'Auth System Demo',
-      technologies: 'A Login full system using Next.js full stack framework with react.js and MongoDB as database by using NextAuth Toolkit and JWT',
+      technologies: 'A Login full system using Next.js full stack framework with react.js and MongoDB as database by using NextAuth and JWT',
       features: 'Login/Logout to the website, Regester New User, retrive lost password by email and a password Reset page',
       link: 'https://cachetclient.vercel.app/login'
     },
 
     {
       title: 'Dashbords & Charts',
-      technologies: 'A small Dashbord Looking made using GraphQL as backend system Next.js framework using the Chart.js library for charts drowing',
+      technologies: 'A small Dashbord Looking made using GraphQL as backend system Next.js framework using the Chart.js for charts drowing',
       features: 'This Is a simple resposive demo for chart.js library testing and overview, with some animations',
       link: 'https://dashbord-ccrs.vercel.app/'
     },
@@ -184,6 +184,12 @@ export async function getStaticProps(ctx) {
       technologies: 'A Personal CV website using React.js with Next.js, SCSS and Node.js for backend. No ready libraries used',
       features: 'The Website is made to show some front end skills with showing personal CV',
       link: 'https://personal-website-nine-zeta-97.vercel.app/'
+    },
+    {
+      title: 'Laptops Shop',
+      technologies: 'A Laptops shop created with Next.js, React.js and mongodb displaying products and getting data via SSR implemnting the Auth to the website',
+      features: 'Showing some eCommerce functions like sorting, filtering, login, favorites and cart',
+      link: 'https://shop-jade-rho.vercel.app'
     }
   ]
 
