@@ -186,9 +186,9 @@ export async function getStaticProps(ctx) {
       features: 'The Website is made to show some front end skills with showing personal CV',
       link: 'https://personal-website-nine-zeta-97.vercel.app/'
     },
-    
+
     {
-      title: 'Laptops Shop',
+      title: 'Laptop Shop',
       technologies: 'A Laptops shop created with Next.js, React.js and mongodb, getting data via SSR and implemnting the Auth to the website',
       features: 'Showing some eCommerce functions like sorting, filtering, login, favorites and cart',
       link: 'https://shop-jade-rho.vercel.app/'
