@@ -51,8 +51,11 @@ const Protofolio = ({ projects }) => {
             let index = 0
 
             for (var times = 0; times < 5; times++, index++) {
-                if (times % projectsCount === 0) index = projectsCount - 1
+                if (times % projectsCount === 0 && times !== 0) index = projectsCount - 2
 
+                console.log(projects[index])
+                console.log(index)
+                console.log(projects)
                 temp.push(projects[index])
             }
 
@@ -244,22 +247,22 @@ const Protofolio = ({ projects }) => {
                     {display?.map((project, i) => {
                         return (
                             <div key={i} className={style.project} style={i === 0 || i === 4 ? rank3 : i === 2 ? rank1 : rank2}>
-                                <h1 className={style.heading}>{project?.title}</h1>
+                                <h1 className={style.heading}>{project.title}</h1>
                                 <div className={style.description}>
                                     <div>
                                         <h2 className={style.supHeading}>Technologies</h2>
                                         <p>
-                                            {project?.technologies}
+                                            {project.technologies}
                                         </p>
                                     </div>
                                     <div>
                                         <h2 className={style.supHeading}>Features</h2>
                                         <p>
-                                            {project?.features}
+                                            {project.features}
                                         </p>
                                     </div>
                                 </div>
-                                <div style={{ margin: '20px 0 0 0' }}><span><a href={`${project?.link}`} target='_blank'>Visit this project ?</a></span></div>
+                                <div style={{ margin: '20px 0 0 0' }}><span><a href={`${project.link}`} target='_blank'>Visit this project ?</a></span></div>
                             </div>
                         )
                     })}

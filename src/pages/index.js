@@ -179,24 +179,26 @@ export async function getStaticProps(ctx) {
       features: 'This Is a simple resposive demo for chart.js library testing and overview, with some animations',
       link: 'https://dashbord-ccrs.vercel.app/'
     },
+
     {
       title: 'Personal Website',
       technologies: 'A Personal CV website using React.js with Next.js, SCSS and Node.js for backend. No ready libraries used',
       features: 'The Website is made to show some front end skills with showing personal CV',
       link: 'https://personal-website-nine-zeta-97.vercel.app/'
     },
+    
     {
       title: 'Laptops Shop',
       technologies: 'A Laptops shop created with Next.js, React.js and mongodb, getting data via SSR and implemnting the Auth to the website',
       features: 'Showing some eCommerce functions like sorting, filtering, login, favorites and cart',
-      link: 'https://shop-jade-rho.vercel.app'
+      link: 'https://shop-jade-rho.vercel.app/'
     }
   ]
 
   return {
     props: {
-      mySkills,
-      projects
+      mySkills: mySkills,
+      projects: projects
     }
   }
 }
