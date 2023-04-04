@@ -51,7 +51,7 @@ const Protofolio = ({ projects }) => {
             let index = 0
 
             for (var times = 0; times < 5; times++, index++) {
-                if (times % projectsCount === 0) index = 0
+                if (times % projectsCount === 0) index = projectsCount - 1
 
                 temp.push(projects[index])
             }
@@ -230,7 +230,7 @@ const Protofolio = ({ projects }) => {
         projectsRef.current.children[2].style.transition = rank1.transition
         projectsRef.current.children[3].style.transition = rank2.transition
         projectsRef.current.children[4].style.transition = rank3.transition
-        
+
         if (touchEnd - touchStart < -20) nextProject()
         if (touchEnd - touchStart > 20) prevProject()
         if (!(touchEnd - touchStart > 20) || !(touchEnd - touchStart < -20)) resetProjectsDrag()
@@ -244,18 +244,18 @@ const Protofolio = ({ projects }) => {
                     {display?.map((project, i) => {
                         return (
                             <div key={i} className={style.project} style={i === 0 || i === 4 ? rank3 : i === 2 ? rank1 : rank2}>
-                                <h1 className={style.heading}>{project.title}</h1>
+                                <h1 className={style.heading}>{project?.title}</h1>
                                 <div className={style.description}>
                                     <div>
                                         <h2 className={style.supHeading}>Technologies</h2>
                                         <p>
-                                            {project.technologies}
+                                            {project?.technologies}
                                         </p>
                                     </div>
                                     <div>
                                         <h2 className={style.supHeading}>Features</h2>
                                         <p>
-                                            {project.features}
+                                            {project?.features}
                                         </p>
                                     </div>
                                 </div>

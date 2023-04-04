@@ -195,8 +195,8 @@ export async function getStaticProps(ctx) {
 
   return {
     props: {
-      mySkills: mySkills,
-      projects: projects
+      mySkills,
+      projects
     }
   }
 }
