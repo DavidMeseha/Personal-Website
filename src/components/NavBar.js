@@ -36,8 +36,8 @@ const NavBar = ({ setTheme }) => {
                             <div className={style.navItem}>Skills</div>
                             <div className={style.underline}></div>
                         </li>
-                        <li onClick={() => selectSection('Protofolio')} className={selected === 'Protofolio' ? style.selectedItem : style.item}>
-                            <div className={style.navItem}>Protofolio</div>
+                        <li onClick={() => selectSection('Portfolio')} className={selected === 'Protofolio' ? style.selectedItem : style.item}>
+                            <div className={style.navItem}>Portfolio</div>
                             <div className={style.underline}></div>
                         </li>
                         <li onClick={() => selectSection('interested?')} className={selected === 'interested?' ? style.selectedItem : style.item}>

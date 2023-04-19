@@ -31,9 +31,9 @@ const Menu = ({ closeMenu }) => {
                         <div className={style.endIcon}><EndSlash /></div>
                     </li>
 
-                    <li onClick={() => selectSection('Protofolio')} className={selected === 'Protofolio' ? style.selectedListItem : style.listItem}>
+                    <li onClick={() => selectSection('Portfolio')} className={selected === 'Protofolio' ? style.selectedListItem : style.listItem}>
                         <div className={style.startIcon}><StartEnd /></div>
-                        <div style={{ padding: '0 15px', height: 28 }}>Protofolio</div>
+                        <div style={{ padding: '0 15px', height: 28 }}>Portfolio</div>
                         <div className={style.endIcon}><EndSlash /></div>
                     </li>
 

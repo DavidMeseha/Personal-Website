@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 const NavContext = createContext({})
 
 export const NavStateProvider = ({ children }) => {
-    const navBar = ['Intro.', 'Skills', 'Protofolio', 'interested?']
+    const navBar = ['Intro.', 'Skills', 'Portfolio', 'interested?']
     const router = useRouter()
     const [selected, setSelected] = useState('Intro.')
     const [index, setIndex] = useState(0)

@@ -167,7 +167,7 @@ export async function getStaticProps(ctx) {
 
   let projects = [
     {
-      title: 'Auth System Demo',
+      title: 'Auth & Login System Demo',
       technologies: 'A Login full system using Next.js full stack framework with react.js and MongoDB as database by using NextAuth and JWT',
       features: 'Login/Logout to the website, Regester New User, retrive lost password by email and a password Reset page',
       link: 'https://cachetclient.vercel.app/login'
