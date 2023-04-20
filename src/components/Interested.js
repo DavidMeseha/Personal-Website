@@ -42,7 +42,6 @@ const Interested = () => {
                             <li>Create custom features and pages for your react.js and next.js app.</li>
                             <li>Create custome features for Node.js(express.js) backend RESTful API and GraphQL</li>
                             <li>Implementing UI/UX dsigns with high quality and performance.</li>
-                            <li>Create Web components.</li>
                         </ul>
                     </div>
                     <div>
