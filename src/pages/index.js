@@ -128,8 +128,8 @@ export async function getStaticProps(ctx) {
           level: 92
         },
         {
-          skill: 'coding',
-          level: 98
+          skill: 'Clean Coding',
+          level: 82
         },
         {
           skill: 'Mathematics',
@@ -137,7 +137,7 @@ export async function getStaticProps(ctx) {
         },
         {
           skill: 'Algorithms',
-          level: 83
+          level: 75
         },
         {
           skill: 'Project Management',
