@@ -128,7 +128,7 @@ export async function getStaticProps(ctx) {
           level: 92
         },
         {
-          skill: 'Type Script',
+          skill: 'TypeScript',
           level: 79
         },
         {
