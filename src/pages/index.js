@@ -65,11 +65,11 @@ export async function getStaticProps(ctx) {
       skillSet: [
         {
           skill: 'HTML/CSS/JS',
-          level: 86
+          level: 90
         },
         {
           skill: 'Sass/Scss',
-          level: 85
+          level: 89
         },
         {
           skill: 'React.js',
@@ -81,11 +81,11 @@ export async function getStaticProps(ctx) {
         },
         {
           skill: 'SEO',
-          level: 92
+          level: 94
         },
         {
           skill: 'Graphic Design',
-          level: 72
+          level: 80
         }
       ]
     },
@@ -99,19 +99,19 @@ export async function getStaticProps(ctx) {
         },
         {
           skill: 'Next.js',
-          level: 89
+          level: 94
         },
         {
           skill: 'GraphQL',
-          level: 85
+          level: 80
         },
         {
           skill: 'Auth/JWT',
-          level: 89
+          level: 80
         },
         {
           skill: 'MongoDB',
-          level: 82
+          level: 86
         },
         {
           skill: 'SQL Queries',
@@ -125,7 +125,7 @@ export async function getStaticProps(ctx) {
       skillSet: [
         {
           skill: 'Problem Solving',
-          level: 92
+          level: 95
         },
         {
           skill: 'TypeScript',
@@ -137,15 +137,15 @@ export async function getStaticProps(ctx) {
         },
         {
           skill: 'Mathematics',
-          level: 92
+          level: 90
         },
         {
           skill: 'Algorithms',
-          level: 75
+          level: 70
         },
         {
           skill: 'Project Management',
-          level: 69
+          level: 62
         },
       ]
     },
@@ -170,6 +170,13 @@ export async function getStaticProps(ctx) {
   ]
 
   let projects = [
+    {
+      title: 'Interactive Service Calender',
+      technologies: 'A Calendar to make and modify appointments and work time for employees with react.js and next.j routing.',
+      features: 'The calendar have the ability to modify appointments with dragging in add to CURD form options.',
+      link: 'https://timeline-calander-system.vercel.app/'
+    },
+    
     {
       title: 'Auth & Login System Demo',
       technologies: 'A Login full system using Next.js full stack framework with react.js and MongoDB as database by using NextAuth and JWT',
@@ -196,7 +203,7 @@ export async function getStaticProps(ctx) {
       technologies: 'A Laptops shop created with Next.js, React.js and mongodb, getting data via SSR and implemnting the Auth to the website',
       features: 'Showing some eCommerce functions like sorting, filtering, login, favorites and cart',
       link: 'https://shop-jade-rho.vercel.app/'
-    }
+    },
   ]
 
   return {

@@ -1,10 +1,10 @@
 import style from '@/styles/Intro.module.scss'
 import Background from './BackGround';
 
-const Intro = ({theme}) => {
+const Intro = ({ theme }) => {
     return (
         <div className={style.container}>
-            <div style={{ position: 'absolute', height: '100vh', zIndex:-2 }}><Background theme={theme} /></div>
+            <div style={{ position: 'absolute', height: '100vh', zIndex: -2 }}><Background theme={theme} /></div>
             <div style={{ width: '80%' }}>
                 <div className={style.hello}><h1>HELLO,</h1></div>
                 <div className={style.me}>
@@ -16,6 +16,7 @@ const Intro = ({theme}) => {
                         using the <span> latest Technologies</span></p>
                 </div>
             </div>
+            {/*<div style={{ position: 'absolute', width: '100vw', height: 200, backgroundColor:'#ffffff'}}></div>*/}
         </div>
     )
 };
