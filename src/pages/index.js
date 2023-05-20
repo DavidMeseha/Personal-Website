@@ -169,14 +169,7 @@ export async function getStaticProps(ctx) {
     }
   ]
 
-  let projects = [
-    {
-      title: 'Interactive Service Calender',
-      technologies: 'A Calendar to make and modify appointments and work time for employees with react.js and next.j routing.',
-      features: 'The calendar have the ability to modify appointments with dragging in add to CURD form options.',
-      link: 'https://timeline-calander-system.vercel.app/'
-    },
-    
+  let projects = [  
     {
       title: 'Auth & Login System Demo',
       technologies: 'A Login full system using Next.js full stack framework with react.js and MongoDB as database by using NextAuth and JWT',
@@ -192,6 +185,13 @@ export async function getStaticProps(ctx) {
     },
 
     {
+      title: 'Interactive Service Calender',
+      technologies: 'A Calendar to make and modify appointments and work time for employees with react.js and next.j routing.',
+      features: 'The calendar have the ability to modify appointments with dragging in add to CURD form options.',
+      link: 'https://timeline-calander-system.vercel.app/'
+    },
+
+    {
       title: 'Personal Website',
       technologies: 'A Personal CV website using React.js with Next.js, SCSS and Node.js for backend. No ready libraries used',
       features: 'The Website is made to show some front end skills with showing personal CV',
@@ -201,7 +201,7 @@ export async function getStaticProps(ctx) {
     {
       title: 'Laptop Shop',
       technologies: 'A Laptops shop created with Next.js, React.js and mongodb, getting data via SSR and implemnting the Auth to the website',
-      features: 'Showing some eCommerce functions like sorting, filtering, login, favorites and cart',
+      features: 'Showing some eCommerce functions like sorting and filtering, also, show some UI/UX ',
       link: 'https://shop-jade-rho.vercel.app/'
     },
   ]
