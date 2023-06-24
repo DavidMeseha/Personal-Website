@@ -3,7 +3,7 @@ import { useWindowWidth } from "@react-hook/window-size";
 import style from '@/styles/Skills.module.scss'
 import SkillSetContainer from "./SkillSetContainer";
 import useNavState from "@/hooks/useNavState";
-import { isTouchSreen } from "@/actions_functions/checkTouchScreen";
+
 
 const Skills = ({ skills }) => {
     const windowWidth = useWindowWidth()
@@ -55,7 +55,7 @@ const Skills = ({ skills }) => {
         if (windowWidth >= 860) {
             i += 2
 
-            if (i === skills.length - 2) setNextState(false)
+            if (i >= skills.length - 2) setNextState(false)
         }
         else {
             i += 1
@@ -122,9 +122,9 @@ const Skills = ({ skills }) => {
                 <div className={style.skillSet}>
                     <SkillSetContainer skillSet={mainContainer?.skillSet} title={mainContainer?.title} />
                 </div>
-                <div className={`${style.skillSet} ${style.secondrySkillSet}`}>
+                {secondContainer?.skillSet?.length > 0 && <div className={`${style.skillSet} ${style.secondrySkillSet}`}>
                     <SkillSetContainer skillSet={secondContainer?.skillSet} title={secondContainer?.title} />
-                </div>
+                </div>}
             </div>
             <div style={{ width: '100%' }}>
                 <div className={style.track}></div>

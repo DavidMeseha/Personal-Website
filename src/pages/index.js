@@ -76,8 +76,8 @@ export async function getStaticProps(ctx) {
           level: 84
         },
         {
-          skill: 'Next.js',
-          level: 95
+          skill: 'Next.js 13',
+          level: 92
         },
         {
           skill: 'SEO',
@@ -91,6 +91,30 @@ export async function getStaticProps(ctx) {
     },
 
     {
+      title: 'Extra',
+      skillSet: [
+        {
+          skill: 'TypeScript',
+          level: 79
+        },
+        {
+          skill: 'Tailwind CSS',
+          level: 90
+        },
+
+        {
+          skill: 'Firebase',
+          level: 82
+        },
+
+        {
+          skill: 'Framer Motion',
+          level: 85
+        },
+      ]
+    },
+
+    {
       title: 'Back End',
       skillSet: [
         {
@@ -98,15 +122,7 @@ export async function getStaticProps(ctx) {
           level: 80
         },
         {
-          skill: 'Next.js',
-          level: 94
-        },
-        {
-          skill: 'GraphQL',
-          level: 80
-        },
-        {
-          skill: 'Auth/JWT',
+          skill: 'Auth',
           level: 80
         },
         {
@@ -127,10 +143,7 @@ export async function getStaticProps(ctx) {
           skill: 'Problem Solving',
           level: 95
         },
-        {
-          skill: 'TypeScript',
-          level: 79
-        },
+
         {
           skill: 'Clean Coding',
           level: 82
@@ -169,7 +182,7 @@ export async function getStaticProps(ctx) {
     }
   ]
 
-  let projects = [  
+  let projects = [
     {
       title: 'Auth & Login System Demo',
       technologies: 'A Login full system using Next.js full stack framework with react.js and MongoDB as database by using NextAuth and JWT',
