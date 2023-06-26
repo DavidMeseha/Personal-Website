@@ -185,14 +185,14 @@ export async function getStaticProps(ctx) {
   let projects = [
     {
       title: 'Auth & Login System Demo',
-      technologies: 'A Login full system using Next.js full stack framework with react.js and MongoDB as database by using NextAuth and JWT',
+      technologies: 'A Login full system using Next.js with react.js and MongoDB as database by using NextAuth and JWT',
       features: 'Login/Logout to the website, Regester New User, retrive lost password by email and a password Reset page',
       link: 'https://cachetclient.vercel.app/login'
     },
 
     {
       title: 'Charts',
-      technologies: 'A small Dashbord Looking made using GraphQL as backend system Next.js framework using the Chart.js for charts drowing',
+      technologies: 'A small Dashbord Looking made using Next.js and Chart.js for charts drowing',
       features: 'This Is a simple resposive demo for chart.js library testing and overview, with some animations',
       link: 'https://dashbord-ccrs.vercel.app/'
     },
