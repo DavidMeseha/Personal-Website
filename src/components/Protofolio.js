@@ -264,7 +264,7 @@ const Protofolio = ({ projects }) => {
                                 </div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                     <div style={{ margin: '20px 0 0 0' }}><span><a href={`${project.link}`} target='_blank'>Visit website ?</a></span></div>
-                                    <div style={{ margin: '20px 0 0 0' }}><span><a href={`${project.link}`} target='_blank'>View Source ?</a></span></div>
+                                    <div style={{ margin: '20px 0 0 0' }}><span><a href={`${project.code}`} target='_blank'>View Source ?</a></span></div>
                                 </div>
                             </div>
                         )
