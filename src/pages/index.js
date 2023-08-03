@@ -187,35 +187,48 @@ export async function getStaticProps(ctx) {
       title: 'Auth & Login System Demo',
       technologies: 'A Login full system using Next.js with react.js and MongoDB as database by using NextAuth and JWT',
       features: 'Login/Logout to the website, Regester New User, retrive lost password by email and a password Reset page',
-      link: 'https://cachetclient.vercel.app/login'
+      link: 'https://cachetclient.vercel.app/login',
+      code: 'https://github.com/DavidMeseha/cachet_client'
     },
 
     {
       title: 'Charts',
       technologies: 'A small Dashbord Looking made using Next.js and Chart.js for charts drowing',
       features: 'This Is a simple resposive demo for chart.js library testing and overview, with some animations',
-      link: 'https://dashbord-ccrs.vercel.app/'
+      link: 'https://dashbord-ccrs.vercel.app/',
+      code: 'https://github.com/DavidMeseha/dashbord'
     },
 
     {
       title: 'Interactive Service Calender',
       technologies: 'A Calendar to make and modify appointments and work time for employees with react.js and next.j routing.',
       features: 'The calendar have the ability to modify appointments with dragging in add to CURD form options.',
-      link: 'https://timeline-calander-system.vercel.app/'
-    },
-
-    {
-      title: 'Personal Website',
-      technologies: 'A Personal CV website using React.js with Next.js, SCSS and Node.js for backend. No ready libraries used',
-      features: 'The Website is made to show some front end skills with showing personal CV',
-      link: 'https://personal-website-nine-zeta-97.vercel.app/'
+      link: 'https://timeline-calander-system.vercel.app/',
+      code: 'https://github.com/DavidMeseha/employee_timeline_system'
     },
 
     {
       title: 'Laptop Shop',
       technologies: 'A Laptops shop created with Next.js, React.js and mongodb, getting data via SSR.',
       features: 'Showing some eCommerce functions like sorting and filtering, also, show some UI/UX.',
-      link: 'https://shop-jade-rho.vercel.app/'
+      link: 'https://shop-jade-rho.vercel.app/',
+      code: 'https://github.com/DavidMeseha/shop'
+    },
+
+    {
+      title: 'Survey Creating System',
+      technologies: 'React.js project, with tailwind styling and few css',
+      features: 'A Ceate Surrvey system with various questions types "Multi Choice, Checkboxs, text, rate, order/rank',
+      link: 'https://campagin-and-survey.vercel.app/create-campaign/survey',
+      code: 'https://github.com/DavidMeseha/Campagin-and-survey'
+    },
+
+    {
+      title: 'Personal Website',
+      technologies: 'A Personal CV website using React.js with Next.js, SCSS and Node.js for backend. No ready libraries used',
+      features: 'The Website is made to show some front end skills with showing personal CV',
+      link: 'https://personal-website-nine-zeta-97.vercel.app/',
+      code: 'https://github.com/DavidMeseha/Personal-Website'
     },
   ]
 
