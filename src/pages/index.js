@@ -83,7 +83,7 @@ export async function getStaticProps(ctx) {
         },
         {
           skill: 'SEO',
-          level: 94
+          level: 90
         },
         {
           skill: 'Graphic Design',
@@ -106,7 +106,7 @@ export async function getStaticProps(ctx) {
 
         {
           skill: 'Firebase',
-          level: 82
+          level: 72
         },
 
         {
@@ -130,10 +130,6 @@ export async function getStaticProps(ctx) {
         {
           skill: 'MongoDB',
           level: 86
-        },
-        {
-          skill: 'SQL Queries',
-          level: 72
         },
       ]
     },

@@ -40,8 +40,7 @@ const Interested = () => {
                         <ul className={style.list}>
                             <li>Create a fullstack website with custom backend, front end and database(MongoDB & SQl).</li>
                             <li>Create custom features and pages for your react.js and next.js app.</li>
-                            <li>Create custome features for Node.js(express.js) backend RESTful API and GraphQL</li>
-                            <li>Implementing UI/UX dsigns with high quality and performance.</li>
+                            <li>Implementing UI/UX dsigns with high quality screen-resposive.</li>
                         </ul>
                     </div>
                     <div>
