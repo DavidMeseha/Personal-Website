@@ -1,4 +1,4 @@
-import { Close, EndSlash, Logo, StartEnd } from "public/Icons";
+import { Close, EndSlash, Logo, StartEnd } from "@/components/Icons";
 import style from "@/styles/Menu.module.scss"
 import useNavState from "@/hooks/useNavState";
 import { useEffect, useState } from "react";

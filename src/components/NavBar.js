@@ -1,10 +1,10 @@
 import style from '@/styles/NavBar.module.scss'
-import { StartEnd, EndSlash } from 'public/Icons'
+import { StartEnd, EndSlash } from '@/components/Icons'
 import { useState } from 'react';
 import Menu from './Menu';
 import useNavState from '@/hooks/useNavState';
 
-const NavBar = ({ setTheme }) => {
+const NavBar = ({ setTheme, theme }) => {
     const { selectSection, selected, nextSection, previousSection } = useNavState()
 
     const [navState, setNavState] = useState(true)
@@ -50,10 +50,13 @@ const NavBar = ({ setTheme }) => {
             </div>
 
             <div className={style.themeToggle}>
-                <label className={style.toggle}>
-                    <input onChange={toggleTheme} type='checkbox' />
-                    <span className={style.slider}></span>
-                </label>
+                <div className={style.themeContainer}>
+                    {theme === 'dark' ? 'Dark Mood' : 'Light Mood'}
+                    <label className={style.toggle}>
+                        <input onChange={toggleTheme} type='checkbox' />
+                        <span className={style.slider}></span>
+                    </label>
+                </div>
             </div>
         </>
     )

@@ -1,0 +1,17 @@
+@import './__variables';
+
+.container {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    z-index: 20;
+}
+
+.icons {
+    width: 25px;
+    fill: var(--secondry-color)
+}

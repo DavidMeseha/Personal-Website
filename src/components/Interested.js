@@ -1,6 +1,6 @@
 import style from '@/styles/Interested.module.scss'
 import { useEffect, useState } from 'react';
-import { Copy } from 'public/Icons';
+import { Copy } from '@/components/Icons';
 
 const Interested = () => {
     const [headerDistance, setHeaderDistance] = useState({ x: 0, y: 0 })

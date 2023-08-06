@@ -6,6 +6,7 @@ import Interested from '@/components/Interested'
 import useNavState from '@/hooks/useNavState'
 import NavBar from '@/components/NavBar'
 import { useState } from 'react'
+import Footer from '@/components/Footer'
 
 export default function Home({ mySkills, projects }) {
   const { selected, index } = useNavState()
@@ -46,13 +47,14 @@ export default function Home({ mySkills, projects }) {
         <link rel="icon" href="/logo.svg" />
       </Head>
       <div className={theme || 'dark'}>
-        <NavBar setTheme={setTheme} />
+        <NavBar setTheme={setTheme} theme={theme} />
         <main style={{ height: '100vh', position: 'relative' }}>
           <div className='section' style={{ ...commanSectionStyle, ...introSection }}><Intro theme={theme} /></div>
           <div className='section' style={{ ...commanSectionStyle, ...skillsSection }} ><Skills skills={mySkills} /></div>
           <div className='section' style={{ ...commanSectionStyle, ...protofolioSection }}><Protofolio projects={projects} /></div>
           <div className='section' style={{ ...commanSectionStyle, ...interestedSection }}><Interested /></div>
         </main>
+        <Footer />
       </div>
     </>
   )

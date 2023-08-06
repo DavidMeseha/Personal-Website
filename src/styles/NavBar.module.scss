@@ -152,11 +152,20 @@
     }
 }
 
+.themeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondry-color);
+}
+
 .themeToggle {
     position: relative;
     z-index: 5;
     padding: 35px;
     float: right;
+    font-size: x-small;
 
     @media screen and (max-width:426px) {
         padding: 20px;
