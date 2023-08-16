@@ -198,7 +198,7 @@ export async function getStaticProps(ctx) {
     },
 
     {
-      title: 'Interactive Service Calender',
+      title: 'Interactive Service Calender (Client)',
       technologies: 'A Calendar to make and modify appointments and work time for employees with react.js and next.j routing.',
       features: 'The calendar have the ability to modify appointments with dragging in add to CURD form options.',
       link: 'https://timeline-calander-system.vercel.app/',
@@ -214,7 +214,7 @@ export async function getStaticProps(ctx) {
     },
 
     {
-      title: 'Survey Creating System',
+      title: 'Survey Creating System (Client)',
       technologies: 'React.js project, with tailwind styling and few css',
       features: 'A Ceate Surrvey system with various questions types "Multi Choice, Checkboxs, text, rate, order/rank',
       link: 'https://campagin-and-survey.vercel.app/create-campaign/survey',
