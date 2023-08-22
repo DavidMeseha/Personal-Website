@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PercentageBar from "./PercentageBar";
 import style from '@/styles/SkillSetContainer.module.scss';
-import AnimateText from "./AnimateText";
+import DecodeText from "./AnimateText";
 
 const SkillSetContainer = ({ skillSet, title }) => {
     const [skillSetAvg, setSkillSetAvg] = useState()
@@ -24,14 +24,14 @@ const SkillSetContainer = ({ skillSet, title }) => {
     return (
         <div className={style.container}>
             <div className={style.heading}>
-                <div className={style.title}><AnimateText value={title} /></div>
+                <div className={style.title}><DecodeText originalText={title} interval={40} itrations={5} /></div>
                 <div style={{ width: '100%' }}><PercentageBar max={100} value={skillSetAvg} /></div>
             </div>
             <div className={style.body}>
                 {skillSet?.map((skill, i) => {
                     return (
                         <div key={i} className={style.skill} style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'rgb(57 90 253 / 15%)' }}>
-                            <div className={style.label}><AnimateText value={skill.skill} /></div>
+                            <div className={style.label}><DecodeText originalText={skill.skill} /></div>
                             <div style={{ width: '100%' }}><PercentageBar max={100} value={skill.level} /></div>
                         </div>
                     )

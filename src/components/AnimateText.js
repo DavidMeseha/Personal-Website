@@ -1,53 +1,46 @@
 import { useEffect, useState } from "react";
 
-const AnimateText = ({ value }) => {
+const AnimateText = ({ originalText, interval = 30, iterations = 2 }) => {
     const [text, setText] = useState()
-    let times = 0
-    let valueLength = value?.length
-
-    const characters = 'abcdefghijklmnopqrstuvwxyz'
 
     useEffect(() => {
         let intervalId
 
         const animate = () => {
-            if (!value) return
+            if (!originalText) return
             let animatedText = ''
-            let stack = ''
-            let stackIndex = 0
-            times = 0
-            valueLength = value?.length
+            let decodedCharacters = ''
+            let decodedIndex = 0
+            let times = 0
 
-            //set initial Value...........
-            for (var charIndex = 0; charIndex < value.length; charIndex++) {
-                animatedText += characters.charAt(Math.floor(Math.random() * characters.length))
-            }
-            
-            setText(animatedText)
-            animatedText = ''
-
-            //start animation
+            let notDecodedCount = originalText.length
+            const characters = 'abcdefghijklmnopqrstuvwxyz'
             intervalId = setInterval(() => {
-                times++
-                
-                for (var charIndex = 0; charIndex < valueLength; charIndex++) {
-                    animatedText += characters.charAt(Math.floor(Math.random() * characters.length))
+                for (
+                    var charIndex = 0;
+                    charIndex < notDecodedCount;
+                    charIndex++
+                ) {
+                    animatedText +=
+                        characters.charAt(
+                            Math.floor(Math.random() * characters.length)
+                        )
                 }
 
-                if (times % 2 === 0) {
-                    stack += value[stackIndex]
-                    stackIndex++
-                    valueLength--
+                if (times % iterations === 0) {
+                    decodedCharacters += originalText[decodedIndex]
+                    decodedIndex++
+                    notDecodedCount--
                 }
 
                 setText(animatedText)
-                animatedText = stack
+                animatedText = decodedCharacters
+                times++
 
-                if (times === value.length * 2) {
-                    setText(animatedText)
+                if (times === originalText.length * iterations)
                     clearInterval(intervalId)
-                }
-            }, 30)
+
+            }, interval)
         }
 
         animate()
@@ -56,7 +49,7 @@ const AnimateText = ({ value }) => {
             clearInterval(intervalId)
         })
 
-    }, [value])
+    }, [originalText])
 
     return (
         <span>{text}</span>
