@@ -86,7 +86,7 @@ export async function getStaticProps(ctx) {
           level: 90
         },
         {
-          skill: 'Graphic Design',
+          skill: 'UI/UX',
           level: 80
         }
       ]
@@ -97,20 +97,20 @@ export async function getStaticProps(ctx) {
       skillSet: [
         {
           skill: 'TypeScript',
-          level: 79
+          level: 70
         },
         {
           skill: 'Tailwind CSS',
-          level: 90
-        },
-
-        {
-          skill: 'Firebase',
-          level: 72
+          level: 98
         },
 
         {
           skill: 'Framer Motion',
+          level: 80
+        },
+
+        {
+          skill: 'Cypress(e2e)',
           level: 85
         },
       ]
@@ -154,16 +154,16 @@ export async function getStaticProps(ctx) {
           skill: 'Algorithms',
           level: 70
         },
+        {
+          skill: 'Data structure',
+          level: 70
+        },
       ]
     },
 
     {
       title: 'Soft Skills',
       skillSet: [
-        {
-          skill: 'Time Management',
-          level: 71
-        },
         {
           skill: 'depandability',
           level: 86
