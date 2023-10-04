@@ -3,6 +3,7 @@ import { StartEnd, EndSlash } from '@/components/Icons'
 import { useState } from 'react';
 import Menu from './Menu';
 import useNavState from '@/hooks/useNavState';
+import Link from 'next/link';
 
 const NavBar = ({ setTheme, theme }) => {
     const { selectSection, selected, nextSection, previousSection } = useNavState()
@@ -49,7 +50,10 @@ const NavBar = ({ setTheme, theme }) => {
                 <div onClick={() => nextSection()} className={`${style.endIcon} ${navState ? '' : style.closedNav}`}><EndSlash /></div>
             </div>
 
-            <div className={style.themeToggle}>
+            <div className={style.options}>
+                <div className={style.source}>
+                    <Link href='https://github.com/DavidMeseha/Personal-Website' target='_blank'>source</Link>
+                </div>
                 <div className={style.themeContainer}>
                     {theme === 'dark' ? 'Dark Mood' : 'Light Mood'}
                     <label className={style.toggle}>

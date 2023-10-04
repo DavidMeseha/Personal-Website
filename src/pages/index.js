@@ -154,10 +154,6 @@ export async function getStaticProps(ctx) {
           skill: 'Algorithms',
           level: 70
         },
-        {
-          skill: 'Project Management',
-          level: 62
-        },
       ]
     },
 
@@ -169,7 +165,7 @@ export async function getStaticProps(ctx) {
           level: 71
         },
         {
-          skill: 'Team Work',
+          skill: 'depandability',
           level: 86
         },
         {
@@ -181,20 +177,20 @@ export async function getStaticProps(ctx) {
   ]
 
   let projects = [
-    /*{
-      title: 'Auth & Login System Demo',
-      technologies: 'A Login full system using Next.js with react.js and MongoDB as database by using NextAuth and JWT',
-      features: 'Login/Logout to the website, Regester New User, retrive lost password by email and a password Reset page',
-      link: 'https://cachetclient.vercel.app/login',
-      code: 'https://github.com/DavidMeseha/cachet_client'
-    },*/
+    {
+      title: 'Auth and User Management',
+      technologies: 'A Login full-stack Next.js with react.js and MongoDB as database using JWT',
+      features: 'Login/Logout user auth, Regester New User, profile page access, and secure routing',
+      link: 'https://med-app-steel.vercel.app/',
+      code: 'https://github.com/DavidMeseha/med-app'
+    },
 
     {
-      title: 'Charts',
-      technologies: 'A small Dashbord Looking made using Next.js and Chart.js for charts drowing',
-      features: 'This Is a simple resposive demo for chart.js library testing and overview, with some animations',
-      link: 'https://dashbord-ccrs.vercel.app/',
-      code: 'https://github.com/DavidMeseha/dashbord'
+      title: 'next.js ssg/ssr/isrg',
+      technologies: 'A simple next.js ecommerce looking using next13 framework features',
+      features: 'This sample is all about Navigation using ssr, ssg, isrg and improving app performance',
+      link: 'https://recent-next-project.vercel.app/',
+      code: 'https://github.com/DavidMeseha/recent-next-project'
     },
 
     {
@@ -207,26 +203,18 @@ export async function getStaticProps(ctx) {
 
     {
       title: 'Laptop Shop',
-      technologies: 'A Laptops shop created with Next.js, React.js and mongodb, getting data via SSR.',
-      features: 'Showing some eCommerce functions like sorting and filtering, also, show some UI/UX.',
+      technologies: 'A Next.js, React.js and mongodb project, getting',
+      features: 'Showing eCommerce sorting, filtering and searching features',
       link: 'https://shop-jade-rho.vercel.app/',
       code: 'https://github.com/DavidMeseha/shop'
     },
 
     {
       title: 'Survey Creating System (Client)',
-      technologies: 'React.js project, with tailwind styling and few css',
+      technologies: 'React.js project, with tailwind styling',
       features: 'A Ceate Surrvey system with various questions types "Multi Choice, Checkboxs, text, rate, order/rank',
       link: 'https://campagin-and-survey.vercel.app/create-campaign/survey',
       code: 'https://github.com/DavidMeseha/Campagin-and-survey'
-    },
-
-    {
-      title: 'Personal Website',
-      technologies: 'A Personal CV website using React.js with Next.js, SCSS and Node.js for backend. No ready libraries used',
-      features: 'The Website is made to show some front end skills with showing personal CV',
-      link: 'https://personal-website-nine-zeta-97.vercel.app/',
-      code: 'https://github.com/DavidMeseha/Personal-Website'
     },
   ]
 
