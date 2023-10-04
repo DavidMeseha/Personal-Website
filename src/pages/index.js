@@ -179,7 +179,7 @@ export async function getStaticProps(ctx) {
   let projects = [
     {
       title: 'Auth and User Management',
-      technologies: 'A Login full-stack Next.js with react.js and MongoDB as database using JWT',
+      technologies: 'A Login full-stack Next.js with react.js, typescript and MongoDB as database using JWT',
       features: 'Login/Logout user auth, Regester New User, profile page access, and secure routing',
       link: 'https://med-app-steel.vercel.app/',
       code: 'https://github.com/DavidMeseha/med-app'
@@ -187,7 +187,7 @@ export async function getStaticProps(ctx) {
 
     {
       title: 'next.js ssg/ssr/isrg',
-      technologies: 'A simple next.js ecommerce looking using next13 framework features',
+      technologies: 'A simple next.js and typescript ecommerce looking using next 13 features',
       features: 'This sample is all about Navigation using ssr, ssg, isrg and improving app performance',
       link: 'https://recent-next-project.vercel.app/',
       code: 'https://github.com/DavidMeseha/recent-next-project'
