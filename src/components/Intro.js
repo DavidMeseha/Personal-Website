@@ -12,8 +12,7 @@ const Intro = ({ theme }) => {
                     <h2 className={style.value}>DAVID MAGDY</h2>
                 </div>
                 <div>
-                    <p className={style.description}>I develop websites using<span> MERN Stack </span>, Implementing the <span>Front end, back end and databases </span>
-                        using the <span> latest Technologies</span></p>
+                    <p className={style.description}>Implementing the <span>Front end</span> using the <span> latest and meta Technologies</span></p>
                 </div>
             </div>
             {/*<div style={{ position: 'absolute', width: '100vw', height: 200, backgroundColor:'#ffffff'}}></div>*/}
