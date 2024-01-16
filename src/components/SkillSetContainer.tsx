@@ -15,7 +15,7 @@ const SkillSetContainer: React.FC<{ skillSet?: SkillSet[]; title: string }> = ({
 
     const getAvg = () => {
       let total = 0;
-      for (var it = 0; it < skillSet.length; it++) {
+      for (let it = 0; it < skillSet.length; it++) {
         total += skillSet[it].level;
       }
 

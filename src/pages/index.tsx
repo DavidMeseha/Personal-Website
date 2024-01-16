@@ -19,13 +19,13 @@ export default function Home(props: {
   const router = useRouter();
   const [theme, setTheme] = useState("dark");
 
-  let section =
+  const section =
     typeof router.query["section"] == "string" &&
     navBarOptions.includes(router.query["section"])
       ? router.query["section"]
       : "Intro";
 
-  let sectionIndex = navBarOptions.indexOf(section);
+  const sectionIndex = navBarOptions.indexOf(section);
 
   useEffect(() => {
     if (

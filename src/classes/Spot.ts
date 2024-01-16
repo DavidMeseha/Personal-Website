@@ -9,7 +9,7 @@ export class Spot {
   }
 
   draw(wide: number, color1: string, color2: string, color3: string) {
-    var grd = this.ctx.createRadialGradient(
+    const grd = this.ctx.createRadialGradient(
       this.x,
       this.y,
       wide / 3,

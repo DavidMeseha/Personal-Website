@@ -1,5 +1,4 @@
 export const Logo = () => {
-  const cls1 = { fill: "#fdfb39" };
   const cls2 = { fill: "#3959fd" };
 
   return (
@@ -24,7 +23,6 @@ export const Logo = () => {
 };
 
 export const EndSlash = () => {
-  const cls1 = { fill: "#fdfb39" };
   const cls2 = { fill: "#3959fd" };
 
   return (
@@ -83,8 +81,6 @@ export const Close = () => {
 };
 
 export const Arrow = () => {
-  const cls1 = { fill: "#3959fd" };
-
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.002 330.002">
       <path

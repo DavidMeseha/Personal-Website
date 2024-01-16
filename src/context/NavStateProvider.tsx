@@ -9,7 +9,7 @@ const NavContext = createContext<{
 }>({
   nextSection: () => {},
   previousSection: () => {},
-  selectSection: (value: string) => {},
+  selectSection: () => {},
 });
 
 export const NavStateProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -19,7 +19,8 @@ export const NavStateProvider: React.FC<{ children: React.ReactNode }> = ({
   const selected = router.query.section as string;
 
   const nextSection = () => {
-    let newIndex = (navBarOptions.indexOf(selected) + 1) % navBarOptions.length;
+    const newIndex =
+      (navBarOptions.indexOf(selected) + 1) % navBarOptions.length;
 
     router.replace({
       query: { section: navBarOptions[newIndex] },
@@ -27,7 +28,7 @@ export const NavStateProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const previousSection = () => {
-    let newIndex =
+    const newIndex =
       navBarOptions.indexOf(selected) - 1 < 0
         ? navBarOptions.length - 1
         : navBarOptions.indexOf(selected) - 1;
@@ -38,10 +39,10 @@ export const NavStateProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   function selectSection(value: string) {
-    let index = navBarOptions.indexOf(value);
+    const newIndex = navBarOptions.indexOf(value);
 
     router.replace({
-      query: { section: navBarOptions[index] },
+      query: { section: navBarOptions[newIndex] },
     });
   }
 

@@ -53,11 +53,11 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
   useEffect(() => {
     const displayArraySetting = () => {
-      let projectsCount = projects.length;
-      let temp = [];
+      const projectsCount = projects.length;
+      const temp = [];
       let index = 0;
 
-      for (var times = 0; times < 5; times++, index++) {
+      for (let times = 0; times < 5; times++, index++) {
         if (times % projectsCount === 0 && times !== 0)
           index = projectsCount - 2;
 
@@ -78,30 +78,30 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     if (waitAnimation) return;
     setWaitanimation(true);
 
-    let child = projectsRef.current.children[0];
+    const child = projectsRef.current.children[0];
 
     for (const key in rank3) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[0].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
     for (const key in rank3) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error : Key style type error
       projectsRef.current.children[1].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
     for (const key in rank2) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[2].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank1) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[3].style[`${key}`] = `${rank1[`${key}`]}`;
     }
 
     for (const key in rank3) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[4].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
@@ -116,30 +116,30 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     if (!projectsRef.current) return;
     setWaitanimation(true);
 
-    let child = projectsRef.current.children[4];
+    const child = projectsRef.current.children[4];
 
     for (const key in rank2) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[0].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank1) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[1].style[`${key}`] = `${rank1[`${key}`]}`;
     }
 
     for (const key in rank2) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[2].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank3) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[3].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
     for (const key in rank3) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[4].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
@@ -163,27 +163,27 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     child.style.transition = rank3.transition;
 
     for (const key in rank3) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[0].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
     for (const key in rank2) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[1].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank1) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[2].style[`${key}`] = `${rank1[`${key}`]}`;
     }
 
     for (const key in rank2) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[3].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank3) {
-      //@ts-ignore
+      //@ts-expect-error : Key style type error
       projectsRef.current.children[4].style[`${key}`] = `${rank3[`${key}`]}`;
     }
   };
@@ -206,9 +206,9 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   const touchMoveHandle = (event: React.TouchEvent) => {
     if (!projectsRef.current) return;
     let child: HTMLElement;
-    let position = event.targetTouches[0].clientY;
-    let distance = position - touchStart;
-    let max = windowHeight / 2;
+    const position = event.targetTouches[0].clientY;
+    const distance = position - touchStart;
+    const max = windowHeight / 2;
     let percent;
 
     if (distance < 0) {
@@ -302,7 +302,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
   const touchEndHandle = (event: React.TouchEvent) => {
     if (!projectsRef.current) return;
-    let touchEnd = event.changedTouches[0].clientY;
+    const touchEnd = event.changedTouches[0].clientY;
 
     let child: HTMLElement;
     child = projectsRef.current.children[0] as HTMLElement;

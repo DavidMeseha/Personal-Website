@@ -26,7 +26,7 @@ const AnimateText: FC<AnimateTextProps> = ({
       let notDecodedCount = originalText.length;
       const characters = "abcdefghijklmnopqrstuvwxyz";
       intervalId = setInterval(() => {
-        for (var charIndex = 0; charIndex < notDecodedCount; charIndex++) {
+        for (let charIndex = 0; charIndex < notDecodedCount; charIndex++) {
           animatedText += characters.charAt(
             Math.floor(Math.random() * characters.length)
           );

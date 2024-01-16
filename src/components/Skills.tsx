@@ -97,9 +97,9 @@ const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
   const touchMoveHandle = (event: React.TouchEvent) => {
     if (!projectNav.current) return;
 
-    let position = event.targetTouches[0].clientX;
+    const position = event.targetTouches[0].clientX;
     let distance = position - touchStart;
-    let max = windowWidth / 2 - 90;
+    const max = windowWidth / 2 - 90;
 
     if (distance > 20 || distance < -20) setDraged(true);
     if (distance > max) distance = max;
@@ -118,7 +118,7 @@ const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
   const touchEndHandle = (event: React.TouchEvent) => {
     if (!projectNav.current) return;
 
-    let end = event.changedTouches[0].clientX;
+    const end = event.changedTouches[0].clientX;
     if (end - touchStart > 35) nextSkillSet();
     if (end - touchStart < -35) previousSkillSet();
     projectNav.current.style.transition = `all 0.2s`;

@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Background: React.FC<{ theme: string }> = ({ theme }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -15,8 +15,8 @@ const Background: React.FC<{ theme: string }> = ({ theme }) => {
     hy: number,
     canvasCtx: CanvasRenderingContext2D
   ) => {
-    let side = 0,
-      size = 40;
+    let side = 0;
+    const size = 40;
 
     canvasCtx.beginPath();
     canvasCtx.moveTo(hx + size * Math.cos(0), hy + size * Math.sin(0));
@@ -54,7 +54,7 @@ const Background: React.FC<{ theme: string }> = ({ theme }) => {
     canvasCtx.clearRect(0, 0, width, height);
     if (awaitTransition) return;
 
-    var grd = canvasCtx.createRadialGradient(x, y, 20, x, y, 150);
+    const grd = canvasCtx.createRadialGradient(x, y, 20, x, y, 150);
     grd.addColorStop(0, theme === "dark" ? "#fdfb39" : "#ff1567");
     grd.addColorStop(0.7, theme === "dark" ? "#4e4d315f" : "#ff9fc0");
     grd.addColorStop(1, theme === "dark" ? "#4e4d3100" : "#ff156700");
