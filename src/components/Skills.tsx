@@ -2,23 +2,25 @@ import { useEffect, useRef, useState } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
 import style from "@/styles/Skills.module.scss";
 import SkillSetContainer from "./SkillSetContainer";
-import useNavState from "@/hooks/useNavState";
+import { Skill } from "@/constants/skills";
+import { useRouter } from "next/router";
 
-const Skills = ({ skills }) => {
+const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
+  const router = useRouter();
   const windowWidth = useWindowWidth();
-  const { selected } = useNavState();
-  const projectNav = useRef();
+  const projectNav = useRef<HTMLDivElement>(null);
+  const selected = router.query["section"] as string;
 
   const [index, setIndex] = useState(0);
   const [draged, setDraged] = useState(false);
 
-  const [mainContainer, setMainContainer] = useState();
-  const [secondContainer, setSecondContainer] = useState();
+  const [mainContainer, setMainContainer] = useState<Skill | null>(null);
+  const [secondContainer, setSecondContainer] = useState<Skill | null>(null);
 
   const [nextState, setNextState] = useState(true);
   const [previousState, setPreviousState] = useState(false);
 
-  const [touchStart, setTouchStart] = useState();
+  const [touchStart, setTouchStart] = useState(0);
 
   useEffect(() => {
     const changeIndex = () => {
@@ -86,12 +88,15 @@ const Skills = ({ skills }) => {
     setSecondContainer(skills[i + 1]);
   };
 
-  const touchStartHandle = (event) => {
+  const touchStartHandle = (event: React.TouchEvent) => {
+    if (!projectNav.current) return;
     projectNav.current.style.transition = `unset`;
     setTouchStart(event.targetTouches[0].clientX);
   };
 
-  const touchMoveHandle = (event) => {
+  const touchMoveHandle = (event: React.TouchEvent) => {
+    if (!projectNav.current) return;
+
     let position = event.targetTouches[0].clientX;
     let distance = position - touchStart;
     let max = windowWidth / 2 - 90;
@@ -110,7 +115,9 @@ const Skills = ({ skills }) => {
       projectNav.current.style.transform = `translate(${distance}px, 0px)`;
   };
 
-  const touchEndHandle = (event) => {
+  const touchEndHandle = (event: React.TouchEvent) => {
+    if (!projectNav.current) return;
+
     let end = event.changedTouches[0].clientX;
     if (end - touchStart > 35) nextSkillSet();
     if (end - touchStart < -35) previousSkillSet();
@@ -124,14 +131,14 @@ const Skills = ({ skills }) => {
         <div className={style.skillSet}>
           <SkillSetContainer
             skillSet={mainContainer?.skillSet}
-            title={mainContainer?.title}
+            title={mainContainer?.title ?? ""}
           />
         </div>
-        {secondContainer?.skillSet?.length > 0 && (
+        {secondContainer && secondContainer?.skillSet?.length > 0 && (
           <div className={`${style.skillSet} ${style.secondrySkillSet}`}>
             <SkillSetContainer
               skillSet={secondContainer?.skillSet}
-              title={secondContainer?.title}
+              title={secondContainer?.title ?? ""}
             />
           </div>
         )}

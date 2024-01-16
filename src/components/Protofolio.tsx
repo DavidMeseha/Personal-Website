@@ -1,15 +1,16 @@
 import style from "@/styles/Protofolio.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { useWindowHeight, useWindowWidth } from "@react-hook/window-size";
+import { Project } from "@/constants/portfolio";
 
-const Protofolio = ({ projects }) => {
-  const projectsRef = useRef();
+const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
+  const projectsRef = useRef<HTMLDivElement>(null);
   const windowHeight = useWindowHeight();
   const windowWidth = useWindowWidth();
 
-  const [display, setDisplay] = useState([]);
-  const [waitAnimation, setWaitanimation] = useState();
-  const [touchStart, setTouchStart] = useState();
+  const [display, setDisplay] = useState<Project[]>();
+  const [waitAnimation, setWaitanimation] = useState(false);
+  const [touchStart, setTouchStart] = useState<number>(0);
 
   const r1Margin = windowWidth < 769 ? (windowWidth < 426 ? -220 : -150) : -90;
   const r2MaxHeight = windowWidth < 769 ? (windowWidth < 426 ? 360 : 600) : 220;
@@ -73,28 +74,34 @@ const Protofolio = ({ projects }) => {
   }, []);
 
   const nextProject = () => {
+    if (!projectsRef.current) return;
     if (waitAnimation) return;
     setWaitanimation(true);
 
     let child = projectsRef.current.children[0];
 
     for (const key in rank3) {
+      //@ts-ignore
       projectsRef.current.children[0].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
     for (const key in rank3) {
+      //@ts-ignore
       projectsRef.current.children[1].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
     for (const key in rank2) {
+      //@ts-ignore
       projectsRef.current.children[2].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank1) {
+      //@ts-ignore
       projectsRef.current.children[3].style[`${key}`] = `${rank1[`${key}`]}`;
     }
 
     for (const key in rank3) {
+      //@ts-ignore
       projectsRef.current.children[4].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
@@ -106,27 +113,33 @@ const Protofolio = ({ projects }) => {
 
   const prevProject = () => {
     if (waitAnimation) return;
+    if (!projectsRef.current) return;
     setWaitanimation(true);
 
     let child = projectsRef.current.children[4];
 
     for (const key in rank2) {
+      //@ts-ignore
       projectsRef.current.children[0].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank1) {
+      //@ts-ignore
       projectsRef.current.children[1].style[`${key}`] = `${rank1[`${key}`]}`;
     }
 
     for (const key in rank2) {
+      //@ts-ignore
       projectsRef.current.children[2].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank3) {
+      //@ts-ignore
       projectsRef.current.children[3].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
     for (const key in rank3) {
+      //@ts-ignore
       projectsRef.current.children[4].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
@@ -137,43 +150,62 @@ const Protofolio = ({ projects }) => {
   };
 
   const resetProjectsDrag = () => {
-    projectsRef.current.children[0].style.transition = rank3.transition;
-    projectsRef.current.children[1].style.transition = rank2.transition;
-    projectsRef.current.children[2].style.transition = rank1.transition;
-    projectsRef.current.children[3].style.transition = rank2.transition;
-    projectsRef.current.children[4].style.transition = rank3.transition;
+    if (!projectsRef.current) return;
+    let child = projectsRef.current.children[0] as HTMLElement;
+    child.style.transition = rank3.transition;
+    child = projectsRef.current.children[1] as HTMLElement;
+    child.style.transition = rank2.transition;
+    child = projectsRef.current.children[2] as HTMLElement;
+    child.style.transition = rank1.transition;
+    child = projectsRef.current.children[3] as HTMLElement;
+    child.style.transition = rank2.transition;
+    child = projectsRef.current.children[4] as HTMLElement;
+    child.style.transition = rank3.transition;
 
     for (const key in rank3) {
+      //@ts-ignore
       projectsRef.current.children[0].style[`${key}`] = `${rank3[`${key}`]}`;
     }
 
     for (const key in rank2) {
+      //@ts-ignore
       projectsRef.current.children[1].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank1) {
+      //@ts-ignore
       projectsRef.current.children[2].style[`${key}`] = `${rank1[`${key}`]}`;
     }
 
     for (const key in rank2) {
+      //@ts-ignore
       projectsRef.current.children[3].style[`${key}`] = `${rank2[`${key}`]}`;
     }
 
     for (const key in rank3) {
+      //@ts-ignore
       projectsRef.current.children[4].style[`${key}`] = `${rank3[`${key}`]}`;
     }
   };
 
-  const touchStartHandle = (event) => {
+  const touchStartHandle = (event: React.TouchEvent) => {
+    if (!projectsRef.current) return;
     setTouchStart(event.targetTouches[0].clientY);
-    projectsRef.current.children[0].style.transition = "unset";
-    projectsRef.current.children[1].style.transition = "unset";
-    projectsRef.current.children[2].style.transition = "unset";
-    projectsRef.current.children[3].style.transition = "unset";
-    projectsRef.current.children[4].style.transition = "unset";
+    let child = projectsRef.current.children[0] as HTMLElement;
+    child.style.transition = "unset";
+    child = projectsRef.current.children[1] as HTMLElement;
+    child.style.transition = "unset";
+    child = projectsRef.current.children[2] as HTMLElement;
+    child.style.transition = "unset";
+    child = projectsRef.current.children[3] as HTMLElement;
+    child.style.transition = "unset";
+    child = projectsRef.current.children[4] as HTMLElement;
+    child.style.transition = "unset";
   };
 
-  const touchMoveHandle = (event) => {
+  const touchMoveHandle = (event: React.TouchEvent) => {
+    if (!projectsRef.current) return;
+    let child: HTMLElement;
     let position = event.targetTouches[0].clientY;
     let distance = position - touchStart;
     let max = windowHeight / 2;
@@ -183,63 +215,106 @@ const Protofolio = ({ projects }) => {
       percent = (distance * -1) / max;
       if (percent > 1) percent = 1;
 
-      projectsRef.current.children[4].style.transform = `scale(${0.5 * percent})`;
-      projectsRef.current.children[4].style.maxHeight = `${r2MaxHeight * percent}px`;
-      projectsRef.current.children[4].style.opacity = `${0.2 * percent}`;
-      projectsRef.current.children[4].style.padding = `${30 * percent}px`;
+      child = projectsRef.current.children[4] as HTMLElement;
+      child.style.transform = `scale(${0.5 * percent})`;
+      child = projectsRef.current.children[4] as HTMLElement;
+      child.style.maxHeight = `${r2MaxHeight * percent}px`;
+      child = projectsRef.current.children[4] as HTMLElement;
+      child.style.opacity = `${0.2 * percent}`;
+      child = projectsRef.current.children[4] as HTMLElement;
+      child.style.padding = `${30 * percent}px`;
 
-      projectsRef.current.children[3].style.transform = `scale(${0.5 + 0.5 * percent})`;
-      projectsRef.current.children[3].style.opacity = `${0.2 + 0.8 * percent}`;
-      projectsRef.current.children[3].style.maxHeight = `${r2MaxHeight + (600 - r2MaxHeight) * percent}px`;
-      projectsRef.current.children[3].style.margin = `${r1Margin * percent}px 0`;
-      if (percent > 0.5) projectsRef.current.children[1].style.zIndex = 2;
+      child = projectsRef.current.children[4] as HTMLElement;
+      child.style.transform = `scale(${0.5 + 0.5 * percent})`;
+      child = projectsRef.current.children[4] as HTMLElement;
+      child.style.opacity = `${0.2 + 0.8 * percent}`;
+      child = projectsRef.current.children[4] as HTMLElement;
+      child.style.maxHeight = `${r2MaxHeight + (600 - r2MaxHeight) * percent}px`;
+      child = projectsRef.current.children[4] as HTMLElement;
+      child.style.margin = `${r1Margin * percent}px 0`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      if (percent > 0.5) child.style.zIndex = "2";
 
-      projectsRef.current.children[2].style.transform = `scale(${1 - 0.5 * percent})`;
-      projectsRef.current.children[2].style.opacity = `${1 - 0.8 * percent}`;
-      projectsRef.current.children[2].style.maxHeight = `${600}px`;
-      projectsRef.current.children[2].style.margin = `${r1Margin - r1Margin * percent}px 0`;
-      if (percent > 0.5) projectsRef.current.children[2].style.zIndex = 1;
+      child = projectsRef.current.children[2] as HTMLElement;
+      child.style.transform = `scale(${1 - 0.5 * percent})`;
+      child = projectsRef.current.children[2] as HTMLElement;
+      child.style.opacity = `${1 - 0.8 * percent}`;
+      child = projectsRef.current.children[2] as HTMLElement;
+      child.style.maxHeight = `${600}px`;
+      child = projectsRef.current.children[2] as HTMLElement;
+      child.style.margin = `${r1Margin - r1Margin * percent}px 0`;
+      child = projectsRef.current.children[2] as HTMLElement;
+      if (percent > 0.5) child.style.zIndex = "1";
 
-      projectsRef.current.children[1].style.transform = `scale(${0.5 - 0.5 * percent})`;
-      projectsRef.current.children[1].style.opacity = `${0.2 - 0.2 * percent}`;
-      projectsRef.current.children[1].style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
-      projectsRef.current.children[1].style.padding = `${30 - 30 * percent}px`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      child.style.transform = `scale(${0.5 - 0.5 * percent})`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      child.style.opacity = `${0.2 - 0.2 * percent}`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      child.style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      child.style.padding = `${30 - 30 * percent}px`;
     } else {
       percent = distance / max;
       if (percent > 1) percent = 1;
 
-      projectsRef.current.children[0].style.transform = `scale(${0.5 * percent})`;
-      projectsRef.current.children[0].style.maxHeight = `${r2MaxHeight * percent}px`;
-      projectsRef.current.children[0].style.opacity = `${0.2 * percent}`;
-      projectsRef.current.children[0].style.padding = `${30 * percent}px`;
+      child = projectsRef.current.children[0] as HTMLElement;
+      child.style.transform = `scale(${0.5 * percent})`;
+      child = projectsRef.current.children[0] as HTMLElement;
+      child.style.maxHeight = `${r2MaxHeight * percent}px`;
+      child = projectsRef.current.children[0] as HTMLElement;
+      child.style.opacity = `${0.2 * percent}`;
+      child = projectsRef.current.children[0] as HTMLElement;
+      child.style.padding = `${30 * percent}px`;
 
-      projectsRef.current.children[1].style.transform = `scale(${0.5 + 0.5 * percent})`;
-      projectsRef.current.children[1].style.opacity = `${0.2 + 0.8 * percent}`;
-      projectsRef.current.children[1].style.maxHeight = `${r2MaxHeight + (600 - r2MaxHeight) * percent}px`;
-      projectsRef.current.children[1].style.margin = `${r1Margin * percent}px 0`;
-      if (percent > 0.6) projectsRef.current.children[1].style.zIndex = 2;
+      child = projectsRef.current.children[1] as HTMLElement;
+      child.style.transform = `scale(${0.5 + 0.5 * percent})`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      child.style.opacity = `${0.2 + 0.8 * percent}`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      child.style.maxHeight = `${r2MaxHeight + (600 - r2MaxHeight) * percent}px`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      child.style.margin = `${r1Margin * percent}px 0`;
+      child = projectsRef.current.children[1] as HTMLElement;
+      if (percent > 0.6) child.style.zIndex = "2";
 
-      projectsRef.current.children[2].style.transform = `scale(${1 - 0.5 * percent})`;
-      projectsRef.current.children[2].style.opacity = `${1 - 0.8 * percent}`;
-      projectsRef.current.children[2].style.maxHeight = `${600}px`;
-      projectsRef.current.children[2].style.margin = `${r1Margin - r1Margin * percent}px 0`;
-      if (percent > 0.6) projectsRef.current.children[2].style.zIndex = 1;
+      child = projectsRef.current.children[2] as HTMLElement;
+      child.style.transform = `scale(${1 - 0.5 * percent})`;
+      child = projectsRef.current.children[2] as HTMLElement;
+      child.style.opacity = `${1 - 0.8 * percent}`;
+      child = projectsRef.current.children[2] as HTMLElement;
+      child.style.maxHeight = `${600}px`;
+      child = projectsRef.current.children[2] as HTMLElement;
+      child.style.margin = `${r1Margin - r1Margin * percent}px 0`;
+      child = projectsRef.current.children[2] as HTMLElement;
+      if (percent > 0.6) child.style.zIndex = "1";
 
-      projectsRef.current.children[3].style.transform = `scale(${0.5 - 0.5 * percent})`;
-      projectsRef.current.children[3].style.opacity = `${0.2 - 0.2 * percent}`;
-      projectsRef.current.children[3].style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
-      projectsRef.current.children[3].style.padding = `${30 - 30 * percent}px`;
+      child = projectsRef.current.children[3] as HTMLElement;
+      child.style.transform = `scale(${0.5 - 0.5 * percent})`;
+      child = projectsRef.current.children[3] as HTMLElement;
+      child.style.opacity = `${0.2 - 0.2 * percent}`;
+      child = projectsRef.current.children[3] as HTMLElement;
+      child.style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
+      child = projectsRef.current.children[3] as HTMLElement;
+      child.style.padding = `${30 - 30 * percent}px`;
     }
   };
 
-  const touchEndHandle = (event) => {
+  const touchEndHandle = (event: React.TouchEvent) => {
+    if (!projectsRef.current) return;
     let touchEnd = event.changedTouches[0].clientY;
 
-    projectsRef.current.children[0].style.transition = rank3.transition;
-    projectsRef.current.children[1].style.transition = rank2.transition;
-    projectsRef.current.children[2].style.transition = rank1.transition;
-    projectsRef.current.children[3].style.transition = rank2.transition;
-    projectsRef.current.children[4].style.transition = rank3.transition;
+    let child: HTMLElement;
+    child = projectsRef.current.children[0] as HTMLElement;
+    child.style.transition = rank3.transition;
+    child = projectsRef.current.children[1] as HTMLElement;
+    child.style.transition = rank2.transition;
+    child = projectsRef.current.children[2] as HTMLElement;
+    child.style.transition = rank1.transition;
+    child = projectsRef.current.children[3] as HTMLElement;
+    child.style.transition = rank2.transition;
+    child = projectsRef.current.children[4] as HTMLElement;
+    child.style.transition = rank3.transition;
 
     if (touchEnd - touchStart < -20) nextProject();
     if (touchEnd - touchStart > 20) prevProject();

@@ -4,7 +4,7 @@ import style from "../styles/SkillSetContainer.module.scss";
 import DecodeText from "./AnimateText";
 import { SkillSet } from "@/constants/skills";
 
-const SkillSetContainer: React.FC<{ skillSet: SkillSet[]; title: string }> = ({
+const SkillSetContainer: React.FC<{ skillSet?: SkillSet[]; title: string }> = ({
   skillSet,
   title,
 }) => {
