@@ -1,55 +1,55 @@
-@import './__variables';
+@import "./__variables";
 
 .container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    min-height: 550px;
-    font-size: 3.8rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 550px;
+  font-size: 3.8rem;
 
-    @media only screen and (max-width: 970px) {
-        font-size: 3rem;
-    }
+  @media only screen and (max-width: 970px) {
+    font-size: 3rem;
+  }
 
-    @media only screen and (max-width: 769px) {
-        font-size: 2rem;
-    }
+  @media only screen and (max-width: 769px) {
+    font-size: 2rem;
+  }
 }
 
 .hello {
-    @media screen and (max-width: 426px) {
-        margin: 0px 0px 15vh 0;
-    }
+  @media screen and (max-width: 426px) {
+    margin: 0px 0px 15vh 0;
+  }
 }
 
 .me {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 
-    .value {
-        color: $primry-color;
-    }
+  .value {
+    color: $primry-color;
+  }
 
-    @media only screen and (max-width: 769px) {
-        flex-direction: column;
-        gap: 3px;
-    }
+  @media only screen and (max-width: 769px) {
+    flex-direction: column;
+    gap: 3px;
+  }
 
-    @media only screen and (max-width: 426px) {
-        font-size: 1.5rem;
-    }
+  @media only screen and (max-width: 426px) {
+    font-size: 1.5rem;
+  }
 }
 
 .description {
-    margin: 20px 0;
-    font-weight: 400;
-    font-size: 1rem;
-    width: 80%;
+  margin: 20px 0;
+  font-weight: 400;
+  font-size: 1rem;
+  width: 80%;
 
-    span {
-        color: $secondry-color;
-    }
+  span {
+    color: $secondry-color;
+  }
 }

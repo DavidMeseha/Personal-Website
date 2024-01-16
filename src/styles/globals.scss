@@ -1,29 +1,29 @@
-@import './__variables';
+@import "./__variables";
 
 html,
 body {
-   margin: 0;
-   padding: 0;
-   font-family: Arial, Helvetica, sans-serif;
-   max-width: 100vw;
-   max-height: 100vh;
-   overflow: hidden;
-   transition: unset;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  transition: unset;
 }
 
 a {
-   text-decoration: none;
-   color: $primry-color;
+  text-decoration: none;
+  color: $primry-color;
 
-   &:hover {
-      text-decoration: underline;
-   }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .dark,
 .light {
-   background-color: $background;
-   color: $text;
+  background-color: $background;
+  color: $text;
 }
 
 h1,
@@ -32,70 +32,70 @@ h3,
 h4,
 h5,
 h6 {
-   margin: 0;
-   padding: 0;
-   font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
 }
 
 p {
-   margin: 0;
-   padding: 0;
-   font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
 }
 
 ul,
 li {
-   list-style: none;
-   margin: 0;
-   padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .contacts {
-   position: fixed;
-   top: 35px;
-   right: 30px;
-   text-align: center;
-   font-size: 0.8rem;
-   font-weight: 600;
+  position: fixed;
+  top: 35px;
+  right: 30px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .section {
-   background: $background;
+  background: $background;
 }
 
 .yellow-path {
-   fill: $secondry-color;
+  fill: $secondry-color;
 }
 
-.icons{
-   width: 30px;
+.icons {
+  width: 30px;
 }
 
 ::-moz-selection {
-   color: $background;
-   background-color: $opacity;
+  color: $background;
+  background-color: $opacity;
 }
 
 ::selection {
-   color: $background;
-   background-color: $opacity;
+  color: $background;
+  background-color: $opacity;
 }
 
 ::-webkit-scrollbar {
-   width: 5px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-   background-color: $secondry-color;
+  background-color: $secondry-color;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-   background: $primry-color;
+  background: $primry-color;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-   background: $secondry-color;
+  background: $secondry-color;
 }

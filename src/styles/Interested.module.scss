@@ -1,140 +1,154 @@
-@import './__variables';
+@import "./__variables";
 
 .container {
-    width: 70%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 
-    @media screen and (max-width:870px) {
-        width: 90%;
-    }
+  @media screen and (max-width: 870px) {
+    width: 90%;
+  }
 }
 
 .wrapper {
-    width: 100%;
+  width: 100%;
 
-    @media screen and (max-width:426px) {
-        display: flex;
-        flex-direction: column;
-    }
+  @media screen and (max-width: 426px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .heading {
-    position: relative;
-    font-size: 2rem;
-    margin: 20px 0;
+  position: relative;
+  font-size: 2rem;
+  margin: 20px 0;
 
-    @media screen and (max-width:1024px) {
-        font-size: 1.5rem;
-    }
+  @media screen and (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
 
-    @media screen and (max-width:426px) {
-        margin: 20px 0 0 0;
-    }
+  @media screen and (max-width: 426px) {
+    margin: 20px 0 0 0;
+  }
 }
 
 .details {
-    margin: 40px 0px 40px 20px;
-    font-size: 1rem;
+  margin: 40px 0px 40px 20px;
+  font-size: 1rem;
+
+  h2 {
+    margin: 0px 0px 20px -20px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
+  }
+
+  @media screen and (max-width: 426px) {
+    margin: 20px 0px 20px 10px;
 
     h2 {
-        margin: 0px 0px 20px -20px;
+      margin: 0px 0px 20px -10px;
     }
-
-    @media screen and (max-width:1024px) {
-        font-size: 0.9rem;
-    }
-
-    @media screen and (max-width:426px) {
-        margin: 20px 0px 20px 10px;
-
-        h2 {
-            margin: 0px 0px 20px -10px;
-        }
-    }
+  }
 }
 
 .shadowHeader {
-    color: transparent;
-    -webkit-text-stroke: 1px $primry-color;
-    -o-text-stroke: 1px $primry-color;
-    -moz-text-stroke: 1px $primry-color;
+  color: transparent;
+  -webkit-text-stroke: 1px $primry-color;
+  -o-text-stroke: 1px $primry-color;
+  -moz-text-stroke: 1px $primry-color;
 }
 
 .floatingHeader {
-    position: absolute;
-    top: -5px;
-    left: 5px;
+  position: absolute;
+  top: -5px;
+  left: 5px;
 
-    color: $secondry-color;
+  color: $secondry-color;
 }
 
 .list {
-    li {
-        margin: 10px 0;
-        list-style-type: square;
-    }
+  li {
+    margin: 10px 0;
+    list-style-type: square;
+  }
 }
 
 .button {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    padding: 15px 20px;
-    margin: 5px 0 0 0;
-    color: #fdfb39;
-    background-color: $primry-color;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding: 15px 20px;
+  margin: 5px 0 0 0;
+  color: #fdfb39;
+  background-color: $primry-color;
 
-    &:hover {
-        .copy {
-            left: 0;
-            width: 100%;
-        }
+  &:hover {
+    .copy {
+      left: 0;
+      width: 100%;
     }
+  }
 }
 
 .copy {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 0;
-    height: 100%;
-    background-color: #fdfb39;
-    transition: all 0.3s;
-    overflow: hidden;
-    color: #3959fd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background-color: #fdfb39;
+  transition: all 0.3s;
+  overflow: hidden;
+  color: #3959fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 
-    div {
-        width: 20px;
-        height: 20px;
-        fill: $primry-color;
+  div {
+    width: 20px;
+    height: 20px;
+    fill: $primry-color;
 
-        min-width: 20px;
-        min-height: 20px;
-    }
+    min-width: 20px;
+    min-height: 20px;
+  }
 }
 
 .beating {
-    animation-name: beat;
-    animation-duration: 3.5s;
-    animation-iteration-count: infinite;
-    display: inline-block;
-    margin-left: 15px;
+  animation-name: beat;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  display: inline-block;
+  margin-left: 15px;
 }
 
 @keyframes beat {
-    0% {transform: scale(1);}
-    45% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-    55% {transform: scale(1);}
-    60% {transform: scale(1.5);}
-    65% {transform: scale(1);}
-    100% {transform: scale(1);}
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  55% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.5);
+  }
+  65% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

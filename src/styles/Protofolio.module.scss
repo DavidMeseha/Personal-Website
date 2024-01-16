@@ -1,108 +1,108 @@
-@import './__variables';
+@import "./__variables";
 
 .container {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    width: 80%;
-    margin: auto;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 80%;
+  margin: auto;
 
-    @media screen and (max-width: 426px) {
-        width: 90%;
-    }
+  @media screen and (max-width: 426px) {
+    width: 90%;
+  }
 }
 
 .projectsRoller {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
 
-    @media screen and (max-width: 769px) {
-        height: 530px;
-    }
+  @media screen and (max-width: 769px) {
+    height: 530px;
+  }
 }
 
 .projects {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
-    @media screen and (max-width:769px) {
-        margin-top: -60px;
-    }
+  @media screen and (max-width: 769px) {
+    margin-top: -60px;
+  }
 }
 
 .project {
-    padding: 30px;
-    background: $background;
-    border: 1px solid $text;
+  padding: 30px;
+  background: $background;
+  border: 1px solid $text;
 }
 
 .description {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 
-    p {
-        opacity: 0.6;
-    }
+  p {
+    opacity: 0.6;
+  }
 
-    @media screen and (max-width: 769px) {
-        flex-direction: column;
-    }
+  @media screen and (max-width: 769px) {
+    flex-direction: column;
+  }
 }
 
 .heading {
-    color: $secondry-color;
-    margin: 0 0 30px 0;
+  color: $secondry-color;
+  margin: 0 0 30px 0;
 }
 
 .supHeading {
-    margin: 0 0 15px 0;
+  margin: 0 0 15px 0;
 }
 
 .topNavClickSpace,
 .bottomNavClickSpace {
-    //display: none;
-    position: absolute;
-    height: 40%;
-    width: 100%;
-    z-index: 1;
+  //display: none;
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  z-index: 1;
 }
 
 .bottomNavClickSpace {
-    bottom: 0;
-    cursor: url('../../public/arrow-down.svg'), auto;
+  bottom: 0;
+  cursor: url("../../public/arrow-down.svg"), auto;
 
-    .arrow {
-        margin: 180px auto 0 auto;
+  .arrow {
+    margin: 180px auto 0 auto;
 
-        @media screen and (max-width:769px) {
-            margin: 220px auto 0 auto;
-        }
-
-        @media screen and (max-width:426px) {
-            margin: 180px auto 0 auto;
-        }
+    @media screen and (max-width: 769px) {
+      margin: 220px auto 0 auto;
     }
 
-    @media screen and (max-width:426px) {
-        bottom: -60px;
+    @media screen and (max-width: 426px) {
+      margin: 180px auto 0 auto;
     }
+  }
+
+  @media screen and (max-width: 426px) {
+    bottom: -60px;
+  }
 }
 
 .topNavClickSpace {
-    top: 0;
-    cursor: url('../../public/arrow-up.svg'), auto;
+  top: 0;
+  cursor: url("../../public/arrow-up.svg"), auto;
 
-    .arrow {
-        margin: 120px auto 0 auto;
+  .arrow {
+    margin: 120px auto 0 auto;
 
-        @media screen and (max-width:769px) {
-            margin: 20px auto 0 auto;
-        }
+    @media screen and (max-width: 769px) {
+      margin: 20px auto 0 auto;
     }
+  }
 
-    @media screen and (max-width:426px) {
-        display: none;
-    }
+  @media screen and (max-width: 426px) {
+    display: none;
+  }
 }

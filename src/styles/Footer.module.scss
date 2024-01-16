@@ -1,23 +1,23 @@
-@import './__variables';
+@import "./__variables";
 
 .container {
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 20;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 20;
 }
 
 .icons {
-    width: 25px;
-    fill: var(--secondry-color)
+  width: 25px;
+  fill: var(--secondry-color);
 }
 
-@media screen and (max-width:426px) {
-    .container {
-        display: none;
-    }
+@media screen and (max-width: 426px) {
+  .container {
+    display: none;
+  }
 }

@@ -1,216 +1,214 @@
-@import './__variables';
+@import "./__variables";
 
-$borders:10px;
-$borders-mobile:15px;
+$borders: 10px;
+$borders-mobile: 15px;
 
 .warper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 80%;
-    min-height: 600px;
-    margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 80%;
+  min-height: 600px;
+  margin: auto;
 
-    @media screen and (max-width:965px) {
-        width: 90%;
-    }
+  @media screen and (max-width: 965px) {
+    width: 90%;
+  }
 }
 
 .container {
-    display: flex;
-    gap: 5%;
-    width: 100%;
-    overflow: hidden;
-    justify-content: center;
-    margin: 0 0 80px 0;
+  display: flex;
+  gap: 5%;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  margin: 0 0 80px 0;
 
-    @media screen and (max-width:769px) {
-        margin: 0 0 40px 0;
-    }
-
+  @media screen and (max-width: 769px) {
+    margin: 0 0 40px 0;
+  }
 }
 
 .container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-
 .skillSet {
-    width: 46%;
+  width: 46%;
 
-    @media screen and (max-width:860px) {
-        width: 96%;
-    }
+  @media screen and (max-width: 860px) {
+    width: 96%;
+  }
 }
 
 .secondrySkillSet {
-    @media screen and (max-width:861px) {
-        display: none;
-    }
+  @media screen and (max-width: 861px) {
+    display: none;
+  }
 }
 
 .track {
-    display: block;
-    height: 1px;
-    background: $text;
+  display: block;
+  height: 1px;
+  background: $text;
 
-    @media (pointer:coarse) {
-        display: none;
-    }
+  @media (pointer: coarse) {
+    display: none;
+  }
 }
 
 .skillNavButton {
-    position: relative;
-    width: 70px;
-    height: 30px;
-    border-radius: 9999px;
-    margin: -16px auto 0 auto;
-    background-color: $primry-color;
+  position: relative;
+  width: 70px;
+  height: 30px;
+  border-radius: 9999px;
+  margin: -16px auto 0 auto;
+  background-color: $primry-color;
 }
 
 .arrowRight,
 .arrowRightInactive {
-    position: absolute;
-    top: 5px;
-    right: 0px;
-    height: 0;
-    width: 0;
-    border-bottom: $borders solid transparent;
-    border-top: $borders solid transparent;
-    border-right: $borders solid transparent;
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  height: 0;
+  width: 0;
+  border-bottom: $borders solid transparent;
+  border-top: $borders solid transparent;
+  border-right: $borders solid transparent;
 
-    @media (pointer:coarse) {}
+  @media (pointer: coarse) {
+  }
 }
 
 .arrowRight {
-    border-left: $borders solid white;
-    cursor: pointer;
+  border-left: $borders solid white;
+  cursor: pointer;
 
-    &:hover {
-        border-left: $borders solid $secondry-color;
-    }
+  &:hover {
+    border-left: $borders solid $secondry-color;
+  }
 }
 
 .arrowRightInactive {
-    border-left: $borders solid $inactive;
+  border-left: $borders solid $inactive;
 }
 
 .arrowLeft,
 .arrowLeftInactive {
-    position: absolute;
-    top: 5px;
-    left: 0px;
-    height: 0;
-    width: 0;
-    border-bottom: $borders solid transparent;
-    border-top: $borders solid transparent;
-    border-left: $borders solid transparent;
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  height: 0;
+  width: 0;
+  border-bottom: $borders solid transparent;
+  border-top: $borders solid transparent;
+  border-left: $borders solid transparent;
 }
 
 .arrowLeft {
-    border-right: $borders solid white;
-    cursor: pointer;
+  border-right: $borders solid white;
+  cursor: pointer;
 
-    &:hover {
-        border-right: $borders solid $secondry-color;
-    }
+  &:hover {
+    border-right: $borders solid $secondry-color;
+  }
 }
 
 .arrowLeftInactive {
-    border-right: $borders solid $inactive;
+  border-right: $borders solid $inactive;
 }
 
 .dragHint,
 .displayNone {
-    display: none;
-    margin: 10px 0 -28px 0;
-    text-align: center;
-    opacity: 0.6;
+  display: none;
+  margin: 10px 0 -28px 0;
+  text-align: center;
+  opacity: 0.6;
 
-    animation: hint 2s;
-    animation-iteration-count: infinite;
-
+  animation: hint 2s;
+  animation-iteration-count: infinite;
 }
 
 .displayNone {
-    display: none;
+  display: none;
 }
 
 @keyframes hint {
-    0% {
-        opacity: 0.6;
-    }
+  0% {
+    opacity: 0.6;
+  }
 
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 0.6;
-    }
+  100% {
+    opacity: 0.6;
+  }
 }
 
-@media (pointer:coarse) {
-    .container {
-        margin: 0 0 20px 0;
+@media (pointer: coarse) {
+  .container {
+    margin: 0 0 20px 0;
 
-        @media screen and (max-width:769px) {
-            margin: 20px 0 40px 0;
-        }
+    @media screen and (max-width: 769px) {
+      margin: 20px 0 40px 0;
     }
+  }
 
-    .skillNavButton {
-        width: 40%;
-        max-width: 120px;
-        height: 50px;
-        margin: 0 auto;
+  .skillNavButton {
+    width: 40%;
+    max-width: 120px;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+  .arrowLeft,
+  .arrowLeftInactive {
+    top: 10px;
+    left: 10px;
+    border-bottom: $borders-mobile solid transparent;
+    border-top: $borders-mobile solid transparent;
+    border-left: $borders-mobile solid transparent;
+  }
+
+  .arrowLeft {
+    border-right: $borders-mobile solid white;
+
+    &:hover {
+      border-right: $borders-mobile solid white;
     }
+  }
 
-    .arrowLeft,
-    .arrowLeftInactive {
-        top: 10px;
-        left: 10px;
-        border-bottom: $borders-mobile solid transparent;
-        border-top: $borders-mobile solid transparent;
-        border-left: $borders-mobile solid transparent;
+  .arrowLeftInactive {
+    border-right: $borders-mobile solid $inactive;
+  }
+
+  .arrowRight,
+  .arrowRightInactive {
+    top: 10px;
+    right: 10px;
+    border-bottom: $borders-mobile solid transparent;
+    border-top: $borders-mobile solid transparent;
+    border-right: $borders-mobile solid transparent;
+  }
+
+  .arrowRight {
+    border-left: $borders-mobile solid white;
+
+    &:hover {
+      border-left: $borders-mobile solid white;
     }
+  }
 
-    .arrowLeft {
-        border-right: $borders-mobile solid white;
+  .arrowRightInactive {
+    border-left: $borders-mobile solid $inactive;
+  }
 
-        &:hover {
-            border-right: $borders-mobile solid white;
-        }
-    }
-
-    .arrowLeftInactive {
-        border-right: $borders-mobile solid $inactive;
-    }
-
-    .arrowRight,
-    .arrowRightInactive {
-        top: 10px;
-        right: 10px;
-        border-bottom: $borders-mobile solid transparent;
-        border-top: $borders-mobile solid transparent;
-        border-right: $borders-mobile solid transparent;
-    }
-
-    .arrowRight {
-        border-left: $borders-mobile solid white;
-
-        &:hover {
-            border-left: $borders-mobile solid white;
-        }
-    }
-
-    .arrowRightInactive {
-        border-left: $borders-mobile solid $inactive;
-    }
-
-    .dragHint {
-        display: block;
-    }
+  .dragHint {
+    display: block;
+  }
 }
