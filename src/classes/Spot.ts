@@ -1,11 +1,14 @@
 export class Spot {
-  constructor(x, y, ctx) {
+  x: number;
+  y: number;
+  ctx: CanvasRenderingContext2D;
+  constructor(x: number, y: number, ctx: CanvasRenderingContext2D) {
     this.x = x;
     this.y = y;
     this.ctx = ctx;
   }
 
-  draw(wide, color1, color2, color3) {
+  draw(wide: number, color1: string, color2: string, color3: string) {
     var grd = this.ctx.createRadialGradient(
       this.x,
       this.y,
