@@ -55,16 +55,13 @@ const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
 
     if (windowWidth >= 860) {
       i += 2;
-
       if (i >= skills.length - 2) setNextState(false);
     } else {
       i += 1;
-
       if (i === skills.length - 1) setNextState(false);
     }
 
     setPreviousState(true);
-
     setIndex(i);
     setMainContainer(skills[i]);
     setSecondContainer(i + 1 >= skills.length ? null : skills[i + 1]);
