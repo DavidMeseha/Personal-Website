@@ -28,16 +28,20 @@ export default function Home(props: {
   const sectionIndex = navBarOptions.indexOf(section);
 
   useEffect(() => {
+    console.log(
+      typeof router.query["section"] == "string" &&
+        !navBarOptions.includes(router.query["section"])
+    );
+    console.log(router.query["section"]);
     if (
-      !router.query["section"] ||
-      (typeof router.query["section"] == "string" &&
-        !navBarOptions.includes(router.query["section"]))
+      typeof router.query["section"] == "string" &&
+      !navBarOptions.includes(router.query["section"])
     ) {
       router.replace({ query: { section: "Intro" } });
     }
-  }, [router.pathname]);
+  }, [router.query]);
 
-  const commanSectionStyle: CSSProperties = {
+  const commonSectionStyle: CSSProperties = {
     position: "absolute",
     width: "100%",
     transition: "all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) 0s",
@@ -79,25 +83,25 @@ export default function Home(props: {
         <main style={{ height: "100vh", position: "relative" }}>
           <div
             className="section"
-            style={{ ...commanSectionStyle, ...introSection }}
+            style={{ ...commonSectionStyle, ...introSection }}
           >
             <Intro theme={theme} />
           </div>
           <div
             className="section"
-            style={{ ...commanSectionStyle, ...skillsSection }}
+            style={{ ...commonSectionStyle, ...skillsSection }}
           >
             <Skills skills={props.mySkills} />
           </div>
           <div
             className="section"
-            style={{ ...commanSectionStyle, ...protofolioSection }}
+            style={{ ...commonSectionStyle, ...protofolioSection }}
           >
             <Protofolio projects={props.projects} />
           </div>
           <div
             className="section"
-            style={{ ...commanSectionStyle, ...interestedSection }}
+            style={{ ...commonSectionStyle, ...interestedSection }}
           >
             <Interested />
           </div>
