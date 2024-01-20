@@ -28,11 +28,6 @@ export default function Home(props: {
   const sectionIndex = navBarOptions.indexOf(section);
 
   useEffect(() => {
-    console.log(
-      typeof router.query["section"] == "string" &&
-        !navBarOptions.includes(router.query["section"])
-    );
-    console.log(router.query["section"]);
     if (
       typeof router.query["section"] == "string" &&
       !navBarOptions.includes(router.query["section"])
