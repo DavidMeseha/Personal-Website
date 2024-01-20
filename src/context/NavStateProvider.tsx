@@ -2,11 +2,13 @@ import { useRouter } from "next/router";
 import { createContext } from "react";
 import navBarOptions from "../constants/navBarOptions.json";
 
-const NavContext = createContext<{
+interface NavProps {
   nextSection: () => void;
   previousSection: () => void;
   selectSection: (value: string) => void;
-}>({
+}
+
+const NavContext = createContext<NavProps>({
   nextSection: () => {},
   previousSection: () => {},
   selectSection: () => {},

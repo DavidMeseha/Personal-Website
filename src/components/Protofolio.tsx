@@ -60,10 +60,6 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
       for (let times = 0; times < 5; times++, index++) {
         if (times % projectsCount === 0 && times !== 0)
           index = projectsCount - 2;
-
-        console.log(projects[index]);
-        console.log(index);
-        console.log(projects);
         temp.push(projects[index]);
       }
 
