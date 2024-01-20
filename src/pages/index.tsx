@@ -8,22 +8,23 @@ import { CSSProperties, useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import skills, { Skill } from "../constants/skills";
-import navBarOptions from "../constants/navBarOptions.json";
+import navBarOptions, { NavOptions } from "../constants/navBarOptions";
 import { GetStaticProps } from "next";
 import projects, { Project } from "@/constants/portfolio";
+import { Theme } from "@/constants/themes";
 
 export default function Home(props: {
   mySkills: Skill[];
   projects: Project[];
 }) {
   const router = useRouter();
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState<Theme>("dark");
 
-  const section =
+  const section: NavOptions =
     typeof router.query["section"] == "string" &&
     navBarOptions.includes(router.query["section"])
       ? router.query["section"]
-      : "Intro";
+      : "intro";
 
   const sectionIndex = navBarOptions.indexOf(section);
 
@@ -32,7 +33,7 @@ export default function Home(props: {
       typeof router.query["section"] == "string" &&
       !navBarOptions.includes(router.query["section"])
     ) {
-      router.replace({ query: { section: "Intro" } });
+      router.replace({ query: { section: "intro" } });
     }
   }, [router.query]);
 

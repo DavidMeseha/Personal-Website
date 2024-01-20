@@ -5,23 +5,23 @@ import Menu from "./Menu";
 import useNavState from "../hooks/useNavState";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import navBarOptions, { NavOptions } from "@/constants/navBarOptions";
+import { Theme } from "@/constants/themes";
 
 const NavBar: React.FC<{
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
-  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+  theme: Theme;
 }> = ({ setTheme, theme }) => {
   const router = useRouter();
-  const selected = router.query["section"];
+  const selected: NavOptions =
+    typeof router.query["section"] == "string" ? router.query["section"] : "";
 
   const { selectSection, nextSection, previousSection } = useNavState();
   const [menuState, setMenuState] = useState(false);
 
-  const toggleTheme = () => {
-    setTheme((prevstate) => {
-      if (prevstate === "dark") return "light";
-      else return "dark";
-    });
-  };
+  function toggleTheme() {
+    setTheme((prevstate) => (prevstate === "dark" ? "light" : "dark"));
+  }
 
   return (
     <>
@@ -46,40 +46,19 @@ const NavBar: React.FC<{
 
         <div className={style.listContainer}>
           <ul className={style.navList}>
-            <li
-              onClick={() => selectSection("Intro")}
-              className={selected === "Intro" ? style.selectedItem : style.item}
-            >
-              <div className={style.navItem}>Intro.</div>
-              <div className={style.underline}></div>
-            </li>
-            <li
-              onClick={() => selectSection("Skills")}
-              className={
-                selected === "Skills" ? style.selectedItem : style.item
-              }
-            >
-              <div className={style.navItem}>Skills</div>
-              <div className={style.underline}></div>
-            </li>
-            <li
-              onClick={() => selectSection("Portfolio")}
-              className={
-                selected === "Portfolio" ? style.selectedItem : style.item
-              }
-            >
-              <div className={style.navItem}>Portfolio</div>
-              <div className={style.underline}></div>
-            </li>
-            <li
-              onClick={() => selectSection("interested")}
-              className={
-                selected === "interested" ? style.selectedItem : style.item
-              }
-            >
-              <div className={style.navItem}>Intersted ?</div>
-              <div className={style.underline}></div>
-            </li>
+            {navBarOptions.map((option) => {
+              return (
+                <li
+                  onClick={() => selectSection(option)}
+                  className={
+                    selected === option ? style.selectedItem : style.item
+                  }
+                >
+                  <div className={style.navItem}>{option}</div>
+                  <div className={style.underline}></div>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div onClick={() => nextSection()} className={style.endIcon}>

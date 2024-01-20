@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { createContext } from "react";
-import navBarOptions from "../constants/navBarOptions.json";
+import navBarOptions, { NavOptions } from "../constants/navBarOptions";
 
 interface NavProps {
   nextSection: () => void;
   previousSection: () => void;
-  selectSection: (value: string) => void;
+  selectSection: (value: NavOptions) => void;
 }
 
 const NavContext = createContext<NavProps>({
@@ -40,7 +40,7 @@ export const NavStateProvider: React.FC<{ children: React.ReactNode }> = ({
     });
   };
 
-  function selectSection(value: string) {
+  function selectSection(value: NavOptions) {
     const newIndex = navBarOptions.indexOf(value);
 
     router.replace({
