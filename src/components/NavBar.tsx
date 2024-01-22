@@ -46,9 +46,10 @@ const NavBar: React.FC<{
 
         <div className={style.listContainer}>
           <ul className={style.navList}>
-            {navBarOptions.map((option) => {
+            {navBarOptions.map((option, index) => {
               return (
                 <li
+                  key={option + index}
                   onClick={() => selectSection(option)}
                   className={
                     selected === option ? style.selectedItem : style.item
