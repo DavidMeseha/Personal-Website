@@ -28,15 +28,6 @@ export default function Home(props: {
 
   const sectionIndex = navBarOptions.indexOf(section);
 
-  useEffect(() => {
-    if (
-      typeof router.query["section"] == "string" &&
-      !navBarOptions.includes(router.query["section"])
-    ) {
-      router.replace({ query: { section: "intro" } });
-    }
-  }, [router.query]);
-
   const commonSectionStyle: CSSProperties = {
     position: "absolute",
     width: "100%",

@@ -3,12 +3,16 @@ import { useRouter } from "next/router";
 import UseNavState from "../hooks/useNavState";
 import { Close, EndSlash, Logo, StartEnd } from "./Icons";
 import style from "../styles/Menu.module.scss";
+import { NavOptions } from "@/constants/navBarOptions";
 
 const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
   const router = useRouter();
   const { selectSection } = UseNavState();
 
-  const selected = router.query["section"];
+  const selected: NavOptions =
+    typeof router.query["section"] == "string"
+      ? router.query["section"]
+      : "intro";
 
   useEffect(() => closeMenu(), [selected]);
 
