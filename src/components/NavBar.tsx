@@ -14,7 +14,9 @@ const NavBar: React.FC<{
 }> = ({ setTheme, theme }) => {
   const router = useRouter();
   const selected: NavOptions =
-    typeof router.query["section"] == "string" ? router.query["section"] : "intro";
+    typeof router.query["section"] == "string"
+      ? router.query["section"]
+      : "intro";
 
   const { selectSection, nextSection, previousSection } = useNavState();
   const [menuState, setMenuState] = useState(false);
