@@ -4,7 +4,7 @@ import Protofolio from "../components/Protofolio";
 import Skills from "../components/Skills";
 import Interested from "../components/Interested";
 import NavBar from "../components/NavBar";
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties, useState } from "react";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import skills, { Skill } from "../constants/skills";
