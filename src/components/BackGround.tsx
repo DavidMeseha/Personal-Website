@@ -119,7 +119,11 @@ const Background: React.FC<{ theme: string }> = ({ theme }) => {
 
   return (
     <>
-      <canvas ref={canvasRef} width={size.width} height={size.height}></canvas>
+      <canvas
+        ref={canvasRef}
+        width={size.width}
+        height={size.height}
+      ></canvas>
     </>
   );
 };

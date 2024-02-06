@@ -321,7 +321,10 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   return (
     <div className={style.container}>
       <div className={style.projectsRoller}>
-        <div onClick={prevProject} className={style.topNavClickSpace}></div>
+        <div
+          onClick={prevProject}
+          className={style.topNavClickSpace}
+        ></div>
         <div
           onTouchEnd={touchEndHandle}
           onTouchStart={touchStartHandle}
@@ -352,14 +355,20 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
                 >
                   <div style={{ margin: "20px 0 0 0" }}>
                     <span>
-                      <a href={`${project.link}`} target="_blank">
+                      <a
+                        href={`${project.link}`}
+                        target="_blank"
+                      >
                         Visit website ?
                       </a>
                     </span>
                   </div>
                   <div style={{ margin: "20px 0 0 0" }}>
                     <span>
-                      <a href={`${project.code}`} target="_blank">
+                      <a
+                        href={`${project.code}`}
+                        target="_blank"
+                      >
                         View Source ?
                       </a>
                     </span>
@@ -369,7 +378,10 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
             );
           })}
         </div>
-        <div onClick={nextProject} className={style.bottomNavClickSpace}></div>
+        <div
+          onClick={nextProject}
+          className={style.bottomNavClickSpace}
+        ></div>
       </div>
     </div>
   );

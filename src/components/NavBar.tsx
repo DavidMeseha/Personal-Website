@@ -35,7 +35,10 @@ const NavBar: React.FC<{
       </div>
 
       <div className={style.container}>
-        <div onClick={() => previousSection()} className={style.startIcon}>
+        <div
+          onClick={() => previousSection()}
+          className={style.startIcon}
+        >
           <StartEnd />
         </div>
 
@@ -64,7 +67,10 @@ const NavBar: React.FC<{
             })}
           </ul>
         </div>
-        <div onClick={() => nextSection()} className={style.endIcon}>
+        <div
+          onClick={() => nextSection()}
+          className={style.endIcon}
+        >
           <EndSlash />
         </div>
       </div>
@@ -81,7 +87,10 @@ const NavBar: React.FC<{
         <div className={style.themeContainer}>
           {theme === "dark" ? "Dark Mood" : "Light Mood"}
           <label className={style.toggle}>
-            <input onChange={toggleTheme} type="checkbox" />
+            <input
+              onChange={toggleTheme}
+              type="checkbox"
+            />
             <span className={style.slider}></span>
           </label>
         </div>

@@ -33,7 +33,10 @@ const PercentageBar: React.FC<ProgressParProps> = ({ max, value }) => {
         title={`${percent}%`}
         style={containerStyle}
       >
-        <div className={style.value} style={valueStyle}></div>
+        <div
+          className={style.value}
+          style={valueStyle}
+        ></div>
       </div>
     </div>
   );

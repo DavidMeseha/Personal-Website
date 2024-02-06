@@ -29,16 +29,19 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
         <div className={style.logo}>
           <Logo />
         </div>
-        <div onClick={() => closeMenu()} className={style.closeIcon}>
+        <div
+          onClick={() => closeMenu()}
+          className={style.closeIcon}
+        >
           <Close />
         </div>
       </div>
       <div>
         <ul className={style.list}>
           <li
-            onClick={() => selectSection("Intro")}
+            onClick={() => selectSection("intro")}
             className={
-              selected === "Intro." ? style.selectedListItem : style.listItem
+              selected === "intro." ? style.selectedListItem : style.listItem
             }
           >
             <div className={style.startIcon}>
@@ -51,9 +54,9 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
           </li>
 
           <li
-            onClick={() => selectSection("Skills")}
+            onClick={() => selectSection("skills")}
             className={
-              selected === "Skills" ? style.selectedListItem : style.listItem
+              selected === "skills" ? style.selectedListItem : style.listItem
             }
           >
             <div className={style.startIcon}>
@@ -66,9 +69,9 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
           </li>
 
           <li
-            onClick={() => selectSection("Portfolio")}
+            onClick={() => selectSection("portfolio")}
             className={
-              selected === "Portfolio" ? style.selectedListItem : style.listItem
+              selected === "portfolio" ? style.selectedListItem : style.listItem
             }
           >
             <div className={style.startIcon}>

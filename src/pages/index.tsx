@@ -62,11 +62,20 @@ export default function Home(props: {
           name="description"
           content="The Front-End developer David Magdy personal profile and protofolio"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.svg" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        <link
+          rel="icon"
+          href="/logo.svg"
+        />
       </Head>
       <div className={theme}>
-        <NavBar setTheme={setTheme} theme={theme} />
+        <NavBar
+          setTheme={setTheme}
+          theme={theme}
+        />
         <main style={{ height: "100vh", position: "relative" }}>
           <div
             className="section"

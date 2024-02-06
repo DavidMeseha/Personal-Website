@@ -29,10 +29,17 @@ const SkillSetContainer: React.FC<{ skillSet?: SkillSet[]; title: string }> = ({
     <div className={style.container}>
       <div className={style.heading}>
         <div className={style.title}>
-          <DecodeText originalText={title} interval={40} itrations={5} />
+          <DecodeText
+            originalText={title}
+            interval={40}
+            itrations={5}
+          />
         </div>
         <div style={{ width: "100%" }}>
-          <PercentageBar max={100} value={skillSetAvg} />
+          <PercentageBar
+            max={100}
+            value={skillSetAvg}
+          />
         </div>
       </div>
       <div className={style.body}>
@@ -50,7 +57,10 @@ const SkillSetContainer: React.FC<{ skillSet?: SkillSet[]; title: string }> = ({
                 <DecodeText originalText={skill.skill} />
               </div>
               <div style={{ width: "100%" }}>
-                <PercentageBar max={100} value={skill.level} />
+                <PercentageBar
+                  max={100}
+                  value={skill.level}
+                />
               </div>
             </div>
           );
