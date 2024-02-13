@@ -18,7 +18,10 @@ export const NavStateProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const router = useRouter();
-  const selected = router.query.section as string;
+  const selected: NavOptions =
+    typeof router.query["section"] == "string"
+      ? router.query["section"]
+      : "intro";
 
   const nextSection = () => {
     const newIndex =

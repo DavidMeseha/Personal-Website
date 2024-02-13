@@ -86,7 +86,7 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
           <li
             onClick={() => selectSection("interested")}
             className={
-              selected === "interested?"
+              selected === "interested"
                 ? style.selectedListItem
                 : style.listItem
             }

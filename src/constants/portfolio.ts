@@ -18,13 +18,13 @@ export default [
   },
 
   {
-    title: "next.js ssg/ssr/isrg",
+    title: "Fruitkha Landing Page",
     technologies:
-      "A simple next.js and typescript ecommerce looking using next 13 features",
+      "A simple HTML Css Js and Bootstrap showing best practice css with bootstrap",
     features:
-      "This sample is all about Navigation using ssr, ssg, isrg and improving app performance",
-    link: "https://recent-next-project.vercel.app/",
-    code: "https://github.com/DavidMeseha/recent-next-project",
+      "A Landing page with multible sections, cards, navs and resposive designe",
+    link: "https://fruitkha-landing-page.vercel.app/",
+    code: "https://github.com/DavidMeseha/fruitkha-landing-page",
   },
 
   {
