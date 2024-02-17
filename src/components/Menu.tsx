@@ -41,13 +41,13 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
           <li
             onClick={() => selectSection("intro")}
             className={
-              selected === "intro." ? style.selectedListItem : style.listItem
+              selected === "intro" ? style.selectedListItem : style.listItem
             }
           >
             <div className={style.startIcon}>
               <StartEnd />
             </div>
-            <div style={{ padding: "0 15px", height: 28 }}>intro.</div>
+            <div style={{ padding: "0 15px", height: 28 }}>Intro.</div>
             <div className={style.endIcon}>
               <EndSlash />
             </div>
@@ -94,7 +94,7 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
             <div className={style.startIcon}>
               <StartEnd />
             </div>
-            <div style={{ padding: "0 15px", height: 28 }}>interested ?</div>
+            <div style={{ padding: "0 15px", height: 28 }}>Interested ?</div>
             <div className={style.endIcon}>
               <EndSlash />
             </div>

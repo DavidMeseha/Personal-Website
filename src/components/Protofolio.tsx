@@ -140,6 +140,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     const children = projectsRef.current
       .children as HTMLCollectionOf<HTMLElement>;
 
+    // removed transition effect for instant grag reaction
     children[0].style.transition = "unset";
     children[1].style.transition = "unset";
     children[2].style.transition = "unset";
