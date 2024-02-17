@@ -15,7 +15,17 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   const r1Margin = windowWidth < 769 ? (windowWidth < 426 ? -220 : -150) : -90;
   const r2MaxHeight = windowWidth < 769 ? (windowWidth < 426 ? 360 : 600) : 220;
 
-  const rank1 = {
+  interface Rank {
+    zIndex: number;
+    margin: string;
+    maxHeight: string;
+    transform: string;
+    opacity: number;
+    padding: string;
+    transition: string;
+  }
+
+  const rank1: Rank = {
     zIndex: 2,
     margin:
       windowWidth < 769
@@ -30,8 +40,8 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     transition: "all 0.9s",
   };
 
-  const rank2 = {
-    margin: 0,
+  const rank2: Rank = {
+    margin: "0",
     maxHeight:
       windowWidth < 769 ? (windowWidth < 426 ? "360px" : "600px") : "220px",
     transform: "scale(0.5)",
@@ -41,13 +51,13 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     transition: "all 1s",
   };
 
-  const rank3 = {
-    margin: 0,
+  const rank3: Rank = {
+    margin: "0",
     zIndex: 0,
     transform: "scale(0)",
     opacity: 0,
-    maxHeight: 0,
-    padding: 0,
+    maxHeight: "0",
+    padding: "0",
     transition: "all 0.6s",
   };
 
@@ -74,32 +84,15 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     if (waitAnimation) return;
     setWaitanimation(true);
 
-    const child = projectsRef.current.children[0];
+    const children = projectsRef.current
+      .children as HTMLCollectionOf<HTMLElement>;
+    const child = children[0];
 
-    for (const key in rank3) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[0].style[`${key}`] = `${rank3[`${key}`]}`;
-    }
-
-    for (const key in rank3) {
-      //@ts-expect-error : Key style type error : Key style type error
-      projectsRef.current.children[1].style[`${key}`] = `${rank3[`${key}`]}`;
-    }
-
-    for (const key in rank2) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[2].style[`${key}`] = `${rank2[`${key}`]}`;
-    }
-
-    for (const key in rank1) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[3].style[`${key}`] = `${rank1[`${key}`]}`;
-    }
-
-    for (const key in rank3) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[4].style[`${key}`] = `${rank2[`${key}`]}`;
-    }
+    Object.assign(children[0].style, rank3);
+    Object.assign(children[1].style, rank3);
+    Object.assign(children[2].style, rank2);
+    Object.assign(children[3].style, rank1);
+    Object.assign(children[4].style, rank2);
 
     projectsRef.current.removeChild(projectsRef.current.children[0]);
     projectsRef.current.append(child);
@@ -112,32 +105,15 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     if (!projectsRef.current) return;
     setWaitanimation(true);
 
-    const child = projectsRef.current.children[4];
+    const children = projectsRef.current
+      .children as HTMLCollectionOf<HTMLElement>;
+    const child = children[4];
 
-    for (const key in rank2) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[0].style[`${key}`] = `${rank2[`${key}`]}`;
-    }
-
-    for (const key in rank1) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[1].style[`${key}`] = `${rank1[`${key}`]}`;
-    }
-
-    for (const key in rank2) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[2].style[`${key}`] = `${rank2[`${key}`]}`;
-    }
-
-    for (const key in rank3) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[3].style[`${key}`] = `${rank3[`${key}`]}`;
-    }
-
-    for (const key in rank3) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[4].style[`${key}`] = `${rank3[`${key}`]}`;
-    }
+    Object.assign(children[0].style, rank2);
+    Object.assign(children[1].style, rank1);
+    Object.assign(children[2].style, rank2);
+    Object.assign(children[3].style, rank3);
+    Object.assign(children[4].style, rank3);
 
     projectsRef.current.removeChild(projectsRef.current.children[4]);
     projectsRef.current.prepend(child);
@@ -147,152 +123,90 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
   const resetProjectsDrag = () => {
     if (!projectsRef.current) return;
-    let child = projectsRef.current.children[0] as HTMLElement;
-    child.style.transition = rank3.transition;
-    child = projectsRef.current.children[1] as HTMLElement;
-    child.style.transition = rank2.transition;
-    child = projectsRef.current.children[2] as HTMLElement;
-    child.style.transition = rank1.transition;
-    child = projectsRef.current.children[3] as HTMLElement;
-    child.style.transition = rank2.transition;
-    child = projectsRef.current.children[4] as HTMLElement;
-    child.style.transition = rank3.transition;
+    const children = projectsRef.current
+      .children as HTMLCollectionOf<HTMLElement>;
 
-    for (const key in rank3) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[0].style[`${key}`] = `${rank3[`${key}`]}`;
-    }
-
-    for (const key in rank2) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[1].style[`${key}`] = `${rank2[`${key}`]}`;
-    }
-
-    for (const key in rank1) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[2].style[`${key}`] = `${rank1[`${key}`]}`;
-    }
-
-    for (const key in rank2) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[3].style[`${key}`] = `${rank2[`${key}`]}`;
-    }
-
-    for (const key in rank3) {
-      //@ts-expect-error : Key style type error
-      projectsRef.current.children[4].style[`${key}`] = `${rank3[`${key}`]}`;
-    }
+    Object.assign(children[0].style, rank3);
+    Object.assign(children[1].style, rank2);
+    Object.assign(children[2].style, rank1);
+    Object.assign(children[3].style, rank2);
+    Object.assign(children[4].style, rank3);
   };
 
   const touchStartHandle = (event: React.TouchEvent) => {
     if (!projectsRef.current) return;
     setTouchStart(event.targetTouches[0].clientY);
-    let child = projectsRef.current.children[0] as HTMLElement;
-    child.style.transition = "unset";
-    child = projectsRef.current.children[1] as HTMLElement;
-    child.style.transition = "unset";
-    child = projectsRef.current.children[2] as HTMLElement;
-    child.style.transition = "unset";
-    child = projectsRef.current.children[3] as HTMLElement;
-    child.style.transition = "unset";
-    child = projectsRef.current.children[4] as HTMLElement;
-    child.style.transition = "unset";
+
+    const children = projectsRef.current
+      .children as HTMLCollectionOf<HTMLElement>;
+
+    children[0].style.transition = "unset";
+    children[1].style.transition = "unset";
+    children[2].style.transition = "unset";
+    children[3].style.transition = "unset";
+    children[4].style.transition = "unset";
   };
 
   const touchMoveHandle = (event: React.TouchEvent) => {
     if (!projectsRef.current) return;
-    let child: HTMLElement;
+    const children = projectsRef.current
+      .children as HTMLCollectionOf<HTMLElement>;
+
     const position = event.targetTouches[0].clientY;
     const distance = position - touchStart;
     const max = windowHeight / 2;
     let percent;
 
     if (distance < 0) {
-      percent = (distance * -1) / max;
+      percent = Math.abs(distance) / max;
       if (percent > 1) percent = 1;
 
-      child = projectsRef.current.children[4] as HTMLElement;
-      child.style.transform = `scale(${0.5 * percent})`;
-      child = projectsRef.current.children[4] as HTMLElement;
-      child.style.maxHeight = `${r2MaxHeight * percent}px`;
-      child = projectsRef.current.children[4] as HTMLElement;
-      child.style.opacity = `${0.2 * percent}`;
-      child = projectsRef.current.children[4] as HTMLElement;
-      child.style.padding = `${30 * percent}px`;
+      children[4].style.transform = `scale(${0.5 * percent})`;
+      children[4].style.maxHeight = `${r2MaxHeight * percent}px`;
+      children[4].style.opacity = `${0.2 * percent}`;
+      children[4].style.padding = `${30 * percent}px`;
 
-      child = projectsRef.current.children[4] as HTMLElement;
-      child.style.transform = `scale(${0.5 + 0.5 * percent})`;
-      child = projectsRef.current.children[4] as HTMLElement;
-      child.style.opacity = `${0.2 + 0.8 * percent}`;
-      child = projectsRef.current.children[4] as HTMLElement;
-      child.style.maxHeight = `${r2MaxHeight + (600 - r2MaxHeight) * percent}px`;
-      child = projectsRef.current.children[4] as HTMLElement;
-      child.style.margin = `${r1Margin * percent}px 0`;
-      child = projectsRef.current.children[1] as HTMLElement;
-      if (percent > 0.5) child.style.zIndex = "2";
+      children[3].style.transform = `scale(${0.5 + 0.5 * percent})`;
+      children[3].style.opacity = `${0.2 + 0.8 * percent}`;
+      children[3].style.maxHeight = `${r2MaxHeight + (600 - r2MaxHeight) * percent}px`;
+      children[3].style.margin = `${r1Margin * percent}px 0`;
+      if (percent > 0.5) children[3].style.zIndex = "2";
 
-      child = projectsRef.current.children[2] as HTMLElement;
-      child.style.transform = `scale(${1 - 0.5 * percent})`;
-      child = projectsRef.current.children[2] as HTMLElement;
-      child.style.opacity = `${1 - 0.8 * percent}`;
-      child = projectsRef.current.children[2] as HTMLElement;
-      child.style.maxHeight = `${600}px`;
-      child = projectsRef.current.children[2] as HTMLElement;
-      child.style.margin = `${r1Margin - r1Margin * percent}px 0`;
-      child = projectsRef.current.children[2] as HTMLElement;
-      if (percent > 0.5) child.style.zIndex = "1";
+      children[2].style.transform = `scale(${1 - 0.5 * percent})`;
+      children[2].style.opacity = `${1 - 0.8 * percent}`;
+      children[2].style.maxHeight = `${600}px`;
+      children[2].style.margin = `${r1Margin - r1Margin * percent}px 0`;
+      if (percent > 0.5) children[2].style.zIndex = "1";
 
-      child = projectsRef.current.children[1] as HTMLElement;
-      child.style.transform = `scale(${0.5 - 0.5 * percent})`;
-      child = projectsRef.current.children[1] as HTMLElement;
-      child.style.opacity = `${0.2 - 0.2 * percent}`;
-      child = projectsRef.current.children[1] as HTMLElement;
-      child.style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
-      child = projectsRef.current.children[1] as HTMLElement;
-      child.style.padding = `${30 - 30 * percent}px`;
+      children[1].style.transform = `scale(${0.5 - 0.5 * percent})`;
+      children[1].style.opacity = `${0.2 - 0.2 * percent}`;
+      children[1].style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
+      children[1].style.padding = `${30 - 30 * percent}px`;
     } else {
       percent = distance / max;
       if (percent > 1) percent = 1;
 
-      child = projectsRef.current.children[0] as HTMLElement;
-      child.style.transform = `scale(${0.5 * percent})`;
-      child = projectsRef.current.children[0] as HTMLElement;
-      child.style.maxHeight = `${r2MaxHeight * percent}px`;
-      child = projectsRef.current.children[0] as HTMLElement;
-      child.style.opacity = `${0.2 * percent}`;
-      child = projectsRef.current.children[0] as HTMLElement;
-      child.style.padding = `${30 * percent}px`;
+      children[0].style.transform = `scale(${0.5 * percent})`;
+      children[0].style.maxHeight = `${r2MaxHeight * percent}px`;
+      children[0].style.opacity = `${0.2 * percent}`;
+      children[0].style.padding = `${30 * percent}px`;
 
-      child = projectsRef.current.children[1] as HTMLElement;
-      child.style.transform = `scale(${0.5 + 0.5 * percent})`;
-      child = projectsRef.current.children[1] as HTMLElement;
-      child.style.opacity = `${0.2 + 0.8 * percent}`;
-      child = projectsRef.current.children[1] as HTMLElement;
-      child.style.maxHeight = `${r2MaxHeight + (600 - r2MaxHeight) * percent}px`;
-      child = projectsRef.current.children[1] as HTMLElement;
-      child.style.margin = `${r1Margin * percent}px 0`;
-      child = projectsRef.current.children[1] as HTMLElement;
-      if (percent > 0.6) child.style.zIndex = "2";
+      children[1].style.transform = `scale(${0.5 + 0.5 * percent})`;
+      children[1].style.opacity = `${0.2 + 0.8 * percent}`;
+      children[1].style.maxHeight = `${r2MaxHeight + (600 - r2MaxHeight) * percent}px`;
+      children[1].style.margin = `${r1Margin * percent}px 0`;
+      if (percent > 0.6) children[1].style.zIndex = "2";
 
-      child = projectsRef.current.children[2] as HTMLElement;
-      child.style.transform = `scale(${1 - 0.5 * percent})`;
-      child = projectsRef.current.children[2] as HTMLElement;
-      child.style.opacity = `${1 - 0.8 * percent}`;
-      child = projectsRef.current.children[2] as HTMLElement;
-      child.style.maxHeight = `${600}px`;
-      child = projectsRef.current.children[2] as HTMLElement;
-      child.style.margin = `${r1Margin - r1Margin * percent}px 0`;
-      child = projectsRef.current.children[2] as HTMLElement;
-      if (percent > 0.6) child.style.zIndex = "1";
+      children[2].style.transform = `scale(${1 - 0.5 * percent})`;
+      children[2].style.opacity = `${1 - 0.8 * percent}`;
+      children[2].style.maxHeight = `${600}px`;
+      children[2].style.margin = `${r1Margin - r1Margin * percent}px 0`;
+      if (percent > 0.6) children[2].style.zIndex = "1";
 
-      child = projectsRef.current.children[3] as HTMLElement;
-      child.style.transform = `scale(${0.5 - 0.5 * percent})`;
-      child = projectsRef.current.children[3] as HTMLElement;
-      child.style.opacity = `${0.2 - 0.2 * percent}`;
-      child = projectsRef.current.children[3] as HTMLElement;
-      child.style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
-      child = projectsRef.current.children[3] as HTMLElement;
-      child.style.padding = `${30 - 30 * percent}px`;
+      children[3].style.transform = `scale(${0.5 - 0.5 * percent})`;
+      children[3].style.opacity = `${0.2 - 0.2 * percent}`;
+      children[3].style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
+      children[3].style.padding = `${30 - 30 * percent}px`;
     }
   };
 
@@ -300,17 +214,14 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     if (!projectsRef.current) return;
     const touchEnd = event.changedTouches[0].clientY;
 
-    let child: HTMLElement;
-    child = projectsRef.current.children[0] as HTMLElement;
-    child.style.transition = rank3.transition;
-    child = projectsRef.current.children[1] as HTMLElement;
-    child.style.transition = rank2.transition;
-    child = projectsRef.current.children[2] as HTMLElement;
-    child.style.transition = rank1.transition;
-    child = projectsRef.current.children[3] as HTMLElement;
-    child.style.transition = rank2.transition;
-    child = projectsRef.current.children[4] as HTMLElement;
-    child.style.transition = rank3.transition;
+    const children = projectsRef.current
+      .children as HTMLCollectionOf<HTMLElement>;
+
+    children[0].style.transition = rank3.transition;
+    children[1].style.transition = rank2.transition;
+    children[2].style.transition = rank1.transition;
+    children[3].style.transition = rank2.transition;
+    children[4].style.transition = rank3.transition;
 
     if (touchEnd - touchStart < -20) nextProject();
     if (touchEnd - touchStart > 20) prevProject();
