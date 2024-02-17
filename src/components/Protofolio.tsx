@@ -10,7 +10,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
   const [display, setDisplay] = useState<Project[]>();
   const [waitAnimation, setWaitanimation] = useState(false);
-  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchStart, setTouchStart] = useState(0);
 
   const r1Margin = windowWidth < 769 ? (windowWidth < 426 ? -220 : -150) : -90;
   const r2MaxHeight = windowWidth < 769 ? (windowWidth < 426 ? 360 : 600) : 220;
@@ -86,7 +86,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
     const children = projectsRef.current
       .children as HTMLCollectionOf<HTMLElement>;
-    const child = children[0];
+    const firstChild = children[0];
 
     Object.assign(children[0].style, rank3);
     Object.assign(children[1].style, rank3);
@@ -95,7 +95,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     Object.assign(children[4].style, rank2);
 
     projectsRef.current.removeChild(projectsRef.current.children[0]);
-    projectsRef.current.append(child);
+    projectsRef.current.append(firstChild);
 
     setTimeout(() => setWaitanimation(false), 900);
   };
@@ -107,7 +107,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
     const children = projectsRef.current
       .children as HTMLCollectionOf<HTMLElement>;
-    const child = children[4];
+    const lastChild = children[4];
 
     Object.assign(children[0].style, rank2);
     Object.assign(children[1].style, rank1);
@@ -116,7 +116,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     Object.assign(children[4].style, rank3);
 
     projectsRef.current.removeChild(projectsRef.current.children[4]);
-    projectsRef.current.prepend(child);
+    projectsRef.current.prepend(lastChild);
 
     setTimeout(() => setWaitanimation(false), 900);
   };
