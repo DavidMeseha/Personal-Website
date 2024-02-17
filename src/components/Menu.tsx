@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import UseNavState from "../hooks/useNavState";
 import { Close, EndSlash, Logo, StartEnd } from "./Icons";
 import style from "../styles/Menu.module.scss";
-import { NavOptions } from "@/constants/navBarOptions";
+import navBarOptions, { NavOptions } from "@/constants/navBarOptions";
 
 const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
   const router = useRouter();
@@ -38,67 +38,31 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
       </div>
       <div>
         <ul className={style.list}>
-          <li
-            onClick={() => selectSection("intro")}
-            className={
-              selected === "intro" ? style.selectedListItem : style.listItem
-            }
-          >
-            <div className={style.startIcon}>
-              <StartEnd />
-            </div>
-            <div style={{ padding: "0 15px", height: 28 }}>Intro.</div>
-            <div className={style.endIcon}>
-              <EndSlash />
-            </div>
-          </li>
-
-          <li
-            onClick={() => selectSection("skills")}
-            className={
-              selected === "skills" ? style.selectedListItem : style.listItem
-            }
-          >
-            <div className={style.startIcon}>
-              <StartEnd />
-            </div>
-            <div style={{ padding: "0 15px", height: 28 }}>Skills</div>
-            <div className={style.endIcon}>
-              <EndSlash />
-            </div>
-          </li>
-
-          <li
-            onClick={() => selectSection("portfolio")}
-            className={
-              selected === "portfolio" ? style.selectedListItem : style.listItem
-            }
-          >
-            <div className={style.startIcon}>
-              <StartEnd />
-            </div>
-            <div style={{ padding: "0 15px", height: 28 }}>Portfolio</div>
-            <div className={style.endIcon}>
-              <EndSlash />
-            </div>
-          </li>
-
-          <li
-            onClick={() => selectSection("interested")}
-            className={
-              selected === "interested"
-                ? style.selectedListItem
-                : style.listItem
-            }
-          >
-            <div className={style.startIcon}>
-              <StartEnd />
-            </div>
-            <div style={{ padding: "0 15px", height: 28 }}>Interested ?</div>
-            <div className={style.endIcon}>
-              <EndSlash />
-            </div>
-          </li>
+          {navBarOptions.map((option, index) => (
+            <li
+              key={index}
+              onClick={() => selectSection(option)}
+              className={
+                selected === option ? style.selectedListItem : style.listItem
+              }
+            >
+              <div className={style.startIcon}>
+                <StartEnd />
+              </div>
+              <div
+                style={{
+                  padding: "0 15px",
+                  height: 28,
+                  textTransform: "capitalize",
+                }}
+              >
+                {option}
+              </div>
+              <div className={style.endIcon}>
+                <EndSlash />
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
