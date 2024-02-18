@@ -2,6 +2,7 @@ import style from "@/styles/Protofolio.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { useWindowHeight, useWindowWidth } from "@react-hook/window-size";
 import { Project } from "@/constants/portfolio";
+import ProjectCard from "./ProjectCard";
 
 const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -62,21 +63,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   };
 
   useEffect(() => {
-    const displayArraySetting = () => {
-      const projectsCount = projects.length;
-      const temp = [];
-      let index = 0;
-
-      for (let times = 0; times < 5; times++, index++) {
-        if (times % projectsCount === 0 && times !== 0)
-          index = projectsCount - 2;
-        temp.push(projects[index]);
-      }
-
-      setDisplay(temp);
-    };
-
-    displayArraySetting();
+    setDisplay([...projects]);
   }, []);
 
   const nextProject = () => {
@@ -97,7 +84,9 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     projectsRef.current.removeChild(projectsRef.current.children[0]);
     projectsRef.current.append(firstChild);
 
-    setTimeout(() => setWaitanimation(false), 900);
+    setTimeout(() => {
+      setWaitanimation(false);
+    }, 900);
   };
 
   const prevProject = () => {
@@ -107,7 +96,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
     const children = projectsRef.current
       .children as HTMLCollectionOf<HTMLElement>;
-    const lastChild = children[4];
+    const lastChild = projectsRef.current.lastChild as HTMLElement;
 
     Object.assign(children[0].style, rank2);
     Object.assign(children[1].style, rank1);
@@ -246,47 +235,13 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
         >
           {display?.map((project, i) => {
             return (
-              <div
+              <ProjectCard
                 key={i}
-                className={style.project}
-                style={i === 0 || i === 4 ? rank3 : i === 2 ? rank1 : rank2}
-              >
-                <h1 className={style.heading}>{project.title}</h1>
-                <div className={style.description}>
-                  <div>
-                    <h2 className={style.supHeading}>Technologies</h2>
-                    <p>{project.technologies}</p>
-                  </div>
-                  <div>
-                    <h2 className={style.supHeading}>Features</h2>
-                    <p>{project.features}</p>
-                  </div>
-                </div>
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <div style={{ margin: "20px 0 0 0" }}>
-                    <span>
-                      <a
-                        href={`${project.link}`}
-                        target="_blank"
-                      >
-                        Visit website ?
-                      </a>
-                    </span>
-                  </div>
-                  <div style={{ margin: "20px 0 0 0" }}>
-                    <span>
-                      <a
-                        href={`${project.code}`}
-                        target="_blank"
-                      >
-                        View Source ?
-                      </a>
-                    </span>
-                  </div>
-                </div>
-              </div>
+                project={project}
+                inlineStyle={
+                  i === 0 || i >= 4 ? rank3 : i === 2 ? rank1 : rank2
+                }
+              />
             );
           })}
         </div>

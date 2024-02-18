@@ -13,7 +13,7 @@ export default [
       "A Login full-stack Next.js with react.js, typescript and MongoDB as database using JWT",
     features:
       "Login/Logout user auth, Regester New User, profile page access, and secure routing",
-    link: "https://med-app-steel.vercel.app/",
+    link: "https://med-app-steel.vercel.app",
     code: "https://github.com/DavidMeseha/med-app",
   },
 
@@ -23,7 +23,7 @@ export default [
       "A simple HTML Css Js and Bootstrap showing best practice css with bootstrap",
     features:
       "A Landing page with multible sections, cards, navs and resposive designe",
-    link: "https://fruitkha-landing-page.vercel.app/",
+    link: "https://fruitkha-landing-page.vercel.app",
     code: "https://github.com/DavidMeseha/fruitkha-landing-page",
   },
 
@@ -33,7 +33,7 @@ export default [
       "A Calendar to make and modify appointments and work time for employees with react.js and next.j routing.",
     features:
       "The calendar have the ability to modify appointments with dragging in add to CURD form options.",
-    link: "https://timeline-calander-system.vercel.app/",
+    link: "https://timeline-calander-system.vercel.app",
     code: "https://github.com/DavidMeseha/employee_timeline_system",
   },
 
@@ -41,7 +41,7 @@ export default [
     title: "Laptop Shop",
     technologies: "A Next.js, React.js and mongodb project, getting",
     features: "Showing eCommerce sorting, filtering and searching features",
-    link: "https://shop-jade-rho.vercel.app/",
+    link: "https://shop-jade-rho.vercel.app",
     code: "https://github.com/DavidMeseha/shop",
   },
 
@@ -52,5 +52,14 @@ export default [
       'A Ceate Surrvey system with various questions types "Multi Choice, Checkboxs, text, rate, order/rank',
     link: "https://campagin-and-survey.vercel.app/create-campaign/survey",
     code: "https://github.com/DavidMeseha/Campagin-and-survey",
+  },
+
+  {
+    title: "Weather App (Vue js)",
+    technologies: "Vue.js project, with Bootstrap5 styling and a Ready API",
+    features:
+      "Globe weathe navigation and selecting countries and cities to view there reacent weather",
+    link: "https://weather-fetch-app.vercel.app",
+    code: "https://github.com/DavidMeseha/Weather-Fetch-App",
   },
 ];
