@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={style.container}>
       <a
         target="_blank"
-        href="https://github.com/DavidMeseha"
+        href="https://github.com/DavidMeseha/Personal-Website"
         className={style.icons}
       >
         <Git />

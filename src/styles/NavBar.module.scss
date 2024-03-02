@@ -11,7 +11,7 @@
   z-index: 5;
   user-select: none;
 
-  @media only screen and (max-width: 426px) {
+  @media only screen and (max-width: 450px) {
     padding: 15px;
   }
 }
@@ -21,7 +21,7 @@
   height: 27px;
   cursor: pointer;
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 968px) {
     cursor: default;
   }
 }
@@ -31,7 +31,7 @@
   height: 30;
   cursor: pointer;
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 968px) {
     cursor: default;
   }
 }
@@ -40,16 +40,15 @@
   overflow: hidden;
   height: 30px;
   transition: all 0.8s cubic-bezier(0.61, 0.06, 0.44, 0.95) 0s;
-  width: 460px;
 
   .navList {
     display: flex;
     padding: 0 40px;
     gap: 30px;
-    width: 460px;
+    width: 620px;
   }
 
-  @media only screen and (max-width: 769px) {
+  @media (max-width: 968px) {
     display: none;
   }
 }
@@ -98,7 +97,7 @@
   font-weight: 600;
   text-transform: capitalize;
 
-  @media only screen and (max-width: 769px) {
+  @media (max-width: 968px) {
     display: block;
   }
 }
@@ -125,7 +124,7 @@
 
   transition: all 0.8s cubic-bezier(1, 0.1, 0, 0.97);
 
-  @media only screen and (min-width: 851px) {
+  @media (min-width: 968px) {
     display: none;
   }
 }
@@ -150,7 +149,7 @@
   animation-duration: 3.2s;
   animation-iteration-count: infinite;
 
-  @media only screen and (max-width: 850px) {
+  @media (max-width: 850px) {
     animation: none;
   }
 }
@@ -172,7 +171,7 @@
   float: right;
   font-size: x-small;
 
-  @media screen and (max-width: 426px) {
+  @media (max-width: 450px) {
     padding: 20px;
   }
 }

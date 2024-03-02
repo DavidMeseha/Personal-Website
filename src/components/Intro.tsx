@@ -1,4 +1,3 @@
-import React from "react";
 import style from "../styles/Intro.module.scss";
 import Background from "./BackGround";
 

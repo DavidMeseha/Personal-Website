@@ -1,0 +1,25 @@
+@import "./__variables";
+
+.container{
+  overflow: auto;
+  padding: 3rem 5rem 70px 5rem;
+  margin-top: 80px;
+  max-height: calc(100dvh - 200px);
+  .projectGrid{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3,1fr);
+
+    @media (max-width: 768px){
+      grid-template-columns: repeat(2,1fr);
+    }
+  
+    @media (max-width: 570px){
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+
+  @media (max-width: 570px) {
+    padding:3rem 2rem 70px 2rem ;
+  }
+}
