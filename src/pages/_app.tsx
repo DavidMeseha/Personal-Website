@@ -2,16 +2,14 @@ import "../styles/globals.scss";
 import { NavStateProvider } from "../context/NavStateProvider";
 import ErrorBoundary from "../components/ErrorBoundry";
 import { AppProps } from "next/app";
-import { PopupsProvider } from "../context/PopupsContext";
 
+//TODO: Change to CSS instead of SCSS
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ErrorBoundary>
-      <PopupsProvider>
-        <NavStateProvider>
-          <Component {...pageProps} />
-        </NavStateProvider>
-      </PopupsProvider>
+      <NavStateProvider>
+        <Component {...pageProps} />
+      </NavStateProvider>
     </ErrorBoundary>
   );
 }

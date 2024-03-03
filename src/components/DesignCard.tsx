@@ -1,15 +1,25 @@
 import Image from "next/image";
 import style from "../styles/GraphicCard.module.scss";
 import { GraphicProject } from "@/constants/GraphicPortfolio";
+import UsePopups from "@/hooks/usePopups";
 
 export default function DesignCard(props: { project: GraphicProject }) {
+  const { setGraphicProject } = UsePopups();
+
+  function cardClickHandle() {
+    setGraphicProject({ show: true, img: props.project.contentImg });
+  }
+
   return (
-    <div className={style.container}>
+    <div
+      onClick={cardClickHandle}
+      className={style.container}
+    >
       <div className={style.imageContainer}>
         <Image
           src={props.project.img}
           alt="1p"
-          sizes="500px"
+          sizes="1000px"
           fill
         />
         <div className={style.vHover}>
