@@ -31,7 +31,7 @@ export default function Popup() {
         >
           <Close />
         </div>
-        {(!imgLoaded) && <Loading />}
+        {!imgLoaded && <Loading />}
         {true && (
           <>
             <Image
