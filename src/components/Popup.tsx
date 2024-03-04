@@ -25,21 +25,22 @@ export default function Popup() {
   return (
     <div className={style["popup-container"]}>
       <div className={style["popup-content"]}>
+        <div
+          onClick={closeClickHandle}
+          className={style.close}
+        >
+          <Close />
+        </div>
         {(!imgLoaded || !showContent) && <Loading />}
         {showContent && (
           <>
-            <div
-              onClick={closeClickHandle}
-              className={style.close}
-            >
-              <Close />
-            </div>
             <Image
               className={`${imgLoaded ? style["show"] : style["hide"]}`}
               onLoad={() => setImgLoaded(true)}
               src={graphicProject.img}
               alt="David Magdy Meseha"
               sizes="1000px"
+              loading="eager"
               fill
             />
           </>

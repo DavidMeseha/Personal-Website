@@ -54,31 +54,31 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 12rem;
+  margin-top: 15rem;
 
   .start{
-    width:100px;
+    width:40px;
     animation-name: toLeft;
-    animation-duration: 1000ms;
+    animation-duration: 400ms;
     animation-iteration-count: infinite;
   }
   
   .end{
     svg{transform: rotate(180deg);}
-    width: 100px;
+    width: 40px;
     animation-name: toRight;
-    animation-duration: 1000ms;
+    animation-duration: 400ms;
     animation-iteration-count: infinite;
   }
   
   .mid{
-    width: 30px;
-    height: 140px;
+    width: 10px;
+    height: 60px;
     transform: skewX(20deg);
     background: var(--secondry-color);
-    margin: 0 40px;
+    margin: 0px 15px;
     animation-name: skew;
-    animation-duration: 1000ms;
+    animation-duration: 400ms;
     animation-iteration-count: infinite;
   }
 }
