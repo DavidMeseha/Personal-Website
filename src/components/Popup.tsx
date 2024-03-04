@@ -3,17 +3,17 @@ import Image from "next/image";
 import UsePopups from "@/hooks/usePopups";
 import { Close } from "./Icons";
 import { useEffect, useState } from "react";
-import { preloadImage } from "@/utils/PreloadImage";
+// import { preloadImage } from "@/utils/PreloadImage";
 
 export default function Popup() {
   const { graphicProject, setGraphicProject } = UsePopups();
   const [showContent, setShowContent] = useState(false);
 
-  preloadImage(graphicProject.img);
+  // preloadImage(graphicProject.img);
 
   const timeoutId = setTimeout(() => {
     setShowContent(true);
-  }, 1200);
+  }, 1000);
 
   useEffect(() => {
     return clearTimeout(timeoutId);
@@ -38,6 +38,7 @@ export default function Popup() {
               src={graphicProject.img}
               alt="1p"
               sizes="500px"
+              priority
               fill
             />
           </>
