@@ -39,7 +39,7 @@ export default function Popup() {
               onLoad={() => setImgLoaded(true)}
               src={graphicProject.img}
               alt="David Magdy Meseha"
-              sizes="1000px"
+              sizes="500px"
               loading="eager"
               fill
             />
