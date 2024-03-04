@@ -1,19 +1,18 @@
 import style from "@/styles/popup.module.scss";
-import Image from "next/image";
 import UsePopups from "@/hooks/usePopups";
 import { Close } from "./Icons";
 import { useEffect, useState } from "react";
-import { preloadImage } from "@/utils/PreloadImage";
+import Image from "next/image";
+import Loading from "./Loading";
 
 export default function Popup() {
   const { graphicProject, setGraphicProject } = UsePopups();
   const [showContent, setShowContent] = useState(false);
-
-  preloadImage(graphicProject.img);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const timeoutId = setTimeout(() => {
     setShowContent(true);
-  }, 1000);
+  }, 400);
 
   useEffect(() => {
     return clearTimeout(timeoutId);
@@ -26,6 +25,7 @@ export default function Popup() {
   return (
     <div className={style["popup-container"]}>
       <div className={style["popup-content"]}>
+        {(!imgLoaded || !showContent) && <Loading />}
         {showContent && (
           <>
             <div
@@ -35,11 +35,11 @@ export default function Popup() {
               <Close />
             </div>
             <Image
+              className={`${imgLoaded ? style["show"] : style["hide"]}`}
+              onLoad={() => setImgLoaded(true)}
               src={graphicProject.img}
-              alt="1p"
-              sizes="500px"
-              loading="eager"
-              priority
+              alt="David Magdy Meseha"
+              sizes="1000px"
               fill
             />
           </>

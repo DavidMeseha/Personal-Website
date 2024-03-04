@@ -12,7 +12,7 @@ export const graphicProjects: GraphicProject[] = [
   },
   {
     title: "Social Media Art Work Vol 1 - Be-Online Agency",
-    img: "/photos/3-head.png",
+    img: "/photos/3-head.webp",
     contentImg: "/photos/3.webp",
   },
   {

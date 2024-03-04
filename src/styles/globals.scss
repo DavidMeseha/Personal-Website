@@ -50,6 +50,39 @@ li {
   padding: 0;
 }
 
+.loading-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12rem;
+
+  .start{
+    width:100px;
+    animation-name: toLeft;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+  }
+  
+  .end{
+    svg{transform: rotate(180deg);}
+    width: 100px;
+    animation-name: toRight;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+  }
+  
+  .mid{
+    width: 30px;
+    height: 140px;
+    transform: skewX(20deg);
+    background: var(--secondry-color);
+    margin: 0 40px;
+    animation-name: skew;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+  }
+}
+
 .contacts {
   position: fixed;
   top: 35px;
@@ -102,4 +135,22 @@ li {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: $secondry-color;
+}
+
+@keyframes toRight {
+  0%{transform: translateX(0);}
+  50%{transform: translateX(20px);}
+  100%{transform: translateX(0);}
+}
+
+@keyframes toLeft {
+  0%{transform: translateX(0);}
+  50%{transform: translateX(-20px);}
+  100%{transform: translateX(0);}
+}
+
+@keyframes skew {
+  0%{transform: skewX(20deg);}
+  50%{transform: skewX(-20deg);}
+  100%{transform: skewX(20deg);}
 }

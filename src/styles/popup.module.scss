@@ -12,19 +12,26 @@
 
 .popup-content{
   position: relative;
-  background-color: $secondry-color;
+  background-color: $text;
   width: 80%;
   max-width: 800px;
   height: 90vh;
   overflow: auto;
   animation-name: show-popup;
-  animation-duration: 1000ms;
+  animation-duration: 800ms;
 
   img{
     object-fit: cover;
     height: auto !important;
-    animation-duration: 200ms;
-    animation-name: show-content;
+    transition: opacity 300ms;
+  }
+
+  .show{
+    opacity: 1;
+  }
+
+  .hide{
+    opacity: 0;
   }
 
   .close{
