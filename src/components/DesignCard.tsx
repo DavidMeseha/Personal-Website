@@ -20,6 +20,8 @@ export default function DesignCard(props: { project: GraphicProject }) {
           src={props.project.img}
           alt="1p"
           sizes="1000px"
+          loading="eager"
+          priority
           fill
         />
         <div className={style.vHover}>
