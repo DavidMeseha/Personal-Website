@@ -38,6 +38,7 @@ export default function Popup() {
               src={graphicProject.img}
               alt="1p"
               sizes="500px"
+              loading="eager"
               priority
               fill
             />
