@@ -7,22 +7,22 @@ export interface GraphicProject {
 export const graphicProjects: GraphicProject[] = [
   {
     title: "Social media - African Queen",
-    img: "/photos/1-head.webp",
-    contentImg: "/photos/1.webp",
+    img: "/photos/4head.jpg",
+    contentImg: "/photos/4main.jpg",
   },
   {
     title: "Social Media Art Work Vol 1 - Be-Online Agency",
-    img: "/photos/3-head.webp",
-    contentImg: "/photos/3.webp",
+    img: "/photos/2head.jpg",
+    contentImg: "/photos/2main.jpg",
   },
   {
     title: "Chicken Art - Social Media - Hot Chicken",
-    img: "/photos/2-head.webp",
-    contentImg: "/photos/2.webp",
+    img: "/photos/1head.jpg",
+    contentImg: "/photos/1main.jpg",
   },
   {
     title: "Social Media Art Work Vol 2 - Be-Online Agency",
-    img: "/photos/4-head.webp",
-    contentImg: "/photos/4.webp",
+    img: "/photos/3head.jpg",
+    contentImg: "/photos/3main.jpg",
   },
 ];
