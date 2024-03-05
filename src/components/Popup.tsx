@@ -11,11 +11,12 @@ export default function Popup() {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
-  timeoutIdRef.current = setTimeout(() => {
-    setShowContent(true);
-  }, 400);
 
   useEffect(() => {
+    timeoutIdRef.current = setTimeout(() => {
+      setShowContent(true);
+    }, 400);
+
     return () => {
       if (timeoutIdRef.current) {
         clearTimeout(timeoutIdRef.current);
