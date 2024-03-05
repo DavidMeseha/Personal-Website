@@ -2,16 +2,16 @@ import PopupsManager from "@/layouts/PopupsManager";
 import { useState, createContext, Dispatch } from "react";
 
 interface PopupsProps {
-  graphicProject: { show: boolean; img: string };
+  graphicProject: { show: boolean; img: string[] };
   setGraphicProject: Dispatch<
-    React.SetStateAction<{ show: boolean; img: string }>
+    React.SetStateAction<{ show: boolean; img: string[] }>
   >;
 }
 
 const PopupsContext = createContext<PopupsProps>({
-  graphicProject: { show: false, img: "" },
+  graphicProject: { show: false, img: [] },
   setGraphicProject: (
-    isShow: React.SetStateAction<{ show: boolean; img: string }>
+    isShow: React.SetStateAction<{ show: boolean; img: string[] }>
   ) => {
     isShow;
   },
@@ -22,7 +22,7 @@ export const PopupsProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [graphicProject, setGraphicProject] = useState({
     show: false,
-    img: "",
+    img: [""],
   });
 
   return (

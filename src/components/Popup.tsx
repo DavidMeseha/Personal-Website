@@ -15,7 +15,7 @@ export default function Popup() {
   useEffect(() => {
     timeoutIdRef.current = setTimeout(() => {
       setShowContent(true);
-    }, 400);
+    }, 600);
 
     return () => {
       if (timeoutIdRef.current) {
@@ -26,7 +26,7 @@ export default function Popup() {
   }, [graphicProject.show]);
 
   function closeClickHandle() {
-    setGraphicProject({ show: false, img: "" });
+    setGraphicProject({ show: false, img: [] });
   }
 
   return (
@@ -39,19 +39,23 @@ export default function Popup() {
           <Close />
         </div>
         {(!imgLoaded || !showContent) && <Loading />}
-        {showContent && (
-          <>
-            <Image
-              className={`${imgLoaded ? style["show"] : style["hide"]}`}
-              onLoad={() => setImgLoaded(true)}
-              src={graphicProject.img}
-              alt="David Magdy Meseha"
-              sizes="(max-width: 1400px) 100vw, 1400px"
-              loading="eager"
-              fill
-            />
-          </>
-        )}
+        <div className={style["img-container"]}>
+          {showContent &&
+            graphicProject.img.map((img, index) => (
+              <div style={{ position: "relative" }}>
+                <Image
+                  key={index}
+                  className={`${imgLoaded ? style["show"] : style["hide"]}`}
+                  onLoad={() => setImgLoaded(true)}
+                  src={img}
+                  alt="David Magdy Meseha"
+                  sizes="(max-width: 1400px) 100vw, 1400px"
+                  loading="eager"
+                  fill
+                />
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );

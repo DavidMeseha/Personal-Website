@@ -20,10 +20,18 @@
   animation-name: show-popup;
   animation-duration: 800ms;
 
+  .img-container{
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
   img{
     object-fit: cover;
     height: auto !important;
     transition: opacity 300ms;
+    position: relative !important;
+    display: block;
   }
 
   .show{
