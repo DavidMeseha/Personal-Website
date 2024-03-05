@@ -7,7 +7,7 @@ export default function PopupsManager(props: { children: React.ReactNode }) {
 
   return (
     <>
-      {graphicProject.show && false && <Popup />}
+      {graphicProject.show && <Popup />}
       {props.children}
     </>
   );
