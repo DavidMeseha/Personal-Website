@@ -1,7 +1,7 @@
 import style from "@/styles/popup.module.scss";
 import UsePopups from "@/hooks/usePopups";
 import { Close } from "./Icons";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Loading from "./Loading";
 
@@ -10,13 +10,19 @@ export default function Popup() {
   const [showContent, setShowContent] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
 
-  const timeoutId = setTimeout(() => {
+  const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
+  timeoutIdRef.current = setTimeout(() => {
     setShowContent(true);
   }, 400);
 
   useEffect(() => {
-    return clearTimeout(timeoutId);
-  }, []);
+    return () => {
+      if (timeoutIdRef.current) {
+        clearTimeout(timeoutIdRef.current);
+        timeoutIdRef.current = null;
+      }
+    };
+  }, [graphicProject.show]);
 
   function closeClickHandle() {
     setGraphicProject({ show: false, img: "" });

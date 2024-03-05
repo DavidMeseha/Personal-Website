@@ -74,7 +74,7 @@ li {
   .mid{
     width: 10px;
     height: 60px;
-    transform: skewX(20deg);
+    transform: skewX(15deg);
     background: var(--secondry-color);
     margin: 0px 15px;
     animation-name: skew;
@@ -139,18 +139,18 @@ li {
 
 @keyframes toRight {
   0%{transform: translateX(0);}
-  50%{transform: translateX(20px);}
+  50%{transform: translateX(15px);}
   100%{transform: translateX(0);}
 }
 
 @keyframes toLeft {
   0%{transform: translateX(0);}
-  50%{transform: translateX(-20px);}
+  50%{transform: translateX(-15px);}
   100%{transform: translateX(0);}
 }
 
 @keyframes skew {
-  0%{transform: skewX(20deg);}
-  50%{transform: skewX(-20deg);}
-  100%{transform: skewX(20deg);}
+  0%{transform: skewX(15deg);}
+  50%{transform: skewX(-15deg);}
+  100%{transform: skewX(15deg);}
 }

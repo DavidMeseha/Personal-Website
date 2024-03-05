@@ -4,6 +4,7 @@ import ErrorBoundary from "../components/ErrorBoundry";
 import { AppProps } from "next/app";
 
 //TODO: Change to CSS instead of SCSS
+//TODO: Use Pure React(Vite) (Remove Next.js)
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ErrorBoundary>
