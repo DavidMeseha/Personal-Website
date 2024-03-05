@@ -19,7 +19,7 @@ export default function DesignCard(props: { project: GraphicProject }) {
         <Image
           src={props.project.img}
           alt="1p"
-          sizes="400px"
+          sizes="(max-width: 400px) 100vw, 400px"
           loading="eager"
           fill
         />
