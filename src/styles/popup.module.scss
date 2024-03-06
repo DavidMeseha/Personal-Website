@@ -1,6 +1,6 @@
 @import "./__variables";
 
-.popup-container{
+.popup-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,7 @@
   z-index: 999;
 }
 
-.popup-content{
+.popup-content {
   position: relative;
   background-color: $text;
   width: 80%;
@@ -20,13 +20,13 @@
   animation-name: show-popup;
   animation-duration: 800ms;
 
-  .img-container{
+  .img-container {
     position: absolute;
     top: 0;
     width: 100%;
   }
 
-  img{
+  img {
     object-fit: cover;
     height: auto !important;
     transition: opacity 300ms;
@@ -34,15 +34,15 @@
     display: block;
   }
 
-  .show{
+  .show {
     opacity: 1;
   }
 
-  .hide{
+  .hide {
     opacity: 0;
   }
 
-  .close{
+  .close {
     cursor: pointer;
     position: sticky;
     z-index: 2;
@@ -59,13 +59,29 @@
 }
 
 @keyframes show-popup {
-  0%{ height: 5px; width: 0}
-  50%{ height: 5px; width: 80%;}
-  60%{ height: 5px; width: 80%;}
-  100%{ height: 90vh; width: 80%;}
+  0% {
+    height: 5px;
+    width: 0;
+  }
+  50% {
+    height: 5px;
+    width: 80%;
+  }
+  60% {
+    height: 5px;
+    width: 80%;
+  }
+  100% {
+    height: 90vh;
+    width: 80%;
+  }
 }
 
 @keyframes show-content {
-  from{opacity: 0;}
-  to{opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
