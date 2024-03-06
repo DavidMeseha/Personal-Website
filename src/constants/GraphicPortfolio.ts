@@ -8,7 +8,7 @@ export const graphicProjects: GraphicProject[] = [
   {
     title: "Social media - African Queen",
     img: "/photos/4head.jpg",
-    contentImg: ["/photos/4main-a.jpg", "/photos/4main-b.jpg"],
+    contentImg: ["/photos/4main-a.webp", "/photos/4main-b.webp"],
   },
   {
     title: "Social Media Art Work Vol 1 - Be-Online Agency",
@@ -25,9 +25,9 @@ export const graphicProjects: GraphicProject[] = [
     title: "Chicken Art - Social Media - Hot Chicken",
     img: "/photos/3head.jpg",
     contentImg: [
-      "/photos/3main-a.jpg",
-      "/photos/3main-b.jpg",
-      "/photos/3main-c.jpg",
+      "/photos/3main-a.webp",
+      "/photos/3main-b.webp",
+      "/photos/3main-c.webp",
     ],
   },
   {
