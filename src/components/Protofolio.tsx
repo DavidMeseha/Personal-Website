@@ -12,6 +12,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   const [display, setDisplay] = useState<Project[]>();
   const [waitAnimation, setWaitanimation] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
+  const [projectIndex, setProjectIndex] = useState(2);
 
   const r1Margin = windowWidth < 769 ? (windowWidth < 426 ? -220 : -150) : -90;
   const r2MaxHeight = windowWidth < 769 ? (windowWidth < 426 ? 360 : 600) : 220;
@@ -64,6 +65,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
   useEffect(() => {
     setDisplay([...projects]);
+    // document.addEventListener("resize", resetProjectsDrag);
   }, []);
 
   const nextProject = () => {
@@ -81,8 +83,9 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     Object.assign(children[3].style, rank1);
     Object.assign(children[4].style, rank2);
 
-    projectsRef.current.removeChild(projectsRef.current.children[0]);
+    projectsRef.current.removeChild(firstChild);
     projectsRef.current.append(firstChild);
+    setProjectIndex((prev) => (prev + 1) % 6);
 
     setTimeout(() => {
       setWaitanimation(false);
@@ -104,8 +107,9 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     Object.assign(children[3].style, rank3);
     Object.assign(children[4].style, rank3);
 
-    projectsRef.current.removeChild(projectsRef.current.children[4]);
+    projectsRef.current.removeChild(lastChild);
     projectsRef.current.prepend(lastChild);
+    setProjectIndex((prev) => (prev - 1 < 0 ? 5 : prev - 1));
 
     setTimeout(() => setWaitanimation(false), 900);
   };
@@ -129,7 +133,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     const children = projectsRef.current
       .children as HTMLCollectionOf<HTMLElement>;
 
-    // removed transition effect for instant grag reaction
+    // removed transition effect for Drag reaction
     children[0].style.transition = "unset";
     children[1].style.transition = "unset";
     children[2].style.transition = "unset";
@@ -220,37 +224,49 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   };
 
   return (
-    <div className={style.container}>
-      <div className={style.projectsRoller}>
-        <div
-          onClick={prevProject}
-          className={style.topNavClickSpace}
-        ></div>
-        <div
-          onTouchEnd={touchEndHandle}
-          onTouchStart={touchStartHandle}
-          onTouchMove={touchMoveHandle}
-          className={style.projects}
-          ref={projectsRef}
-        >
-          {display?.map((project, i) => {
-            return (
-              <ProjectCard
-                key={i}
-                project={project}
-                inlineStyle={
-                  i === 0 || i >= 4 ? rank3 : i === 2 ? rank1 : rank2
-                }
-              />
-            );
-          })}
-        </div>
-        <div
-          onClick={nextProject}
-          className={style.bottomNavClickSpace}
-        ></div>
+    <>
+      <div className={style["project-indecator"]}>
+        {display?.map((_project, i) => {
+          return (
+            <div
+              className={`${style["dots"]} ${i === projectIndex ? style["active"] : ""}`}
+              key={i}
+            ></div>
+          );
+        })}
       </div>
-    </div>
+      <div className={style.container}>
+        <div className={style.projectsRoller}>
+          <div
+            onClick={prevProject}
+            className={style.topNavClickSpace}
+          ></div>
+          <div
+            onTouchEnd={touchEndHandle}
+            onTouchStart={touchStartHandle}
+            onTouchMove={touchMoveHandle}
+            className={style.projects}
+            ref={projectsRef}
+          >
+            {display?.map((project, i) => {
+              return (
+                <ProjectCard
+                  key={i}
+                  project={project}
+                  inlineStyle={
+                    i === 0 || i >= 4 ? rank3 : i === 2 ? rank1 : rank2
+                  }
+                />
+              );
+            })}
+          </div>
+          <div
+            onClick={nextProject}
+            className={style.bottomNavClickSpace}
+          ></div>
+        </div>
+      </div>
+    </>
   );
 };
 export default Protofolio;

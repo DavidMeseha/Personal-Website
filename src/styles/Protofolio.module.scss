@@ -106,3 +106,23 @@
     display: none;
   }
 }
+
+.project-indecator{
+  position: fixed;
+  top: 45%;
+  right: 40px;
+  z-index: 99;
+}
+
+.project-indecator .dots{
+  width: 10px;
+  height: 10px;
+  margin-bottom: 10px;
+  background-color: $secondry-color;
+  transition: height 300ms, background-color 300ms;
+}
+
+.project-indecator .dots.active{
+  height: 20px;
+  background-color: $primry-color;
+}
