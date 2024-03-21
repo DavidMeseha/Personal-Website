@@ -62,4 +62,13 @@ export default [
     link: "https://weather-fetch-app.vercel.app",
     code: "https://github.com/DavidMeseha/Weather-Fetch-App",
   },
+
+  {
+    title: "Dashboard",
+    technologies: "Dashboard look with React.js and TypeScript using ReCharts",
+    features:
+      "Dashboard with data visualization in deferent forms with grid layout and clean look",
+    link: "https://dashboard-sable-pi.vercel.app/",
+    code: "https://github.com/DavidMeseha/dashboard",
+  },
 ];
