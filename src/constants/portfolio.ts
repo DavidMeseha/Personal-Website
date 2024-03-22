@@ -64,7 +64,7 @@ export default [
   },
 
   {
-    title: "Weather App (Vue js)",
+    title: "Global Weather Featch(Vue js)",
     technologies: "Vue.js project, with Bootstrap5 styling and a Ready API",
     features:
       "Globe weathe navigation and selecting countries and cities to view there reacent weather",
