@@ -18,13 +18,12 @@ export default [
   },
 
   {
-    title: "Fruitkha Landing Page",
-    technologies:
-      "A simple HTML Css Js and Bootstrap showing best practice css with bootstrap",
+    title: "Dashboard",
+    technologies: "Dashboard look with React.js and TypeScript using ReCharts",
     features:
-      "A Landing page with multible sections, cards, navs and resposive designe",
-    link: "https://fruitkha-landing-page.vercel.app",
-    code: "https://github.com/DavidMeseha/fruitkha-landing-page",
+      "Dashboard with data visualization in different forms with grid layout and clean look",
+    link: "https://dashboard-sable-pi.vercel.app/",
+    code: "https://github.com/DavidMeseha/dashboard",
   },
 
   {
@@ -38,14 +37,6 @@ export default [
   },
 
   {
-    title: "Laptop Shop",
-    technologies: "A Next.js, React.js and mongodb project, getting",
-    features: "Showing eCommerce sorting, filtering and searching features",
-    link: "https://shop-jade-rho.vercel.app",
-    code: "https://github.com/DavidMeseha/shop",
-  },
-
-  {
     title: "Survey Creating System (Client)",
     technologies: "React.js project, with tailwind styling",
     features:
@@ -55,20 +46,29 @@ export default [
   },
 
   {
+    title: "Fruitkha Landing Page",
+    technologies:
+      "A simple HTML Css Js and Bootstrap showing best practice css with bootstrap",
+    features:
+      "A Landing page with multible sections, cards, navs and resposive designe",
+    link: "https://fruitkha-landing-page.vercel.app",
+    code: "https://github.com/DavidMeseha/fruitkha-landing-page",
+  },
+
+  {
+    title: "Laptop Shop",
+    technologies: "A Next.js, React.js and mongodb project, getting",
+    features: "Showing eCommerce sorting, filtering and searching features",
+    link: "https://shop-jade-rho.vercel.app",
+    code: "https://github.com/DavidMeseha/shop",
+  },
+
+  {
     title: "Weather App (Vue js)",
     technologies: "Vue.js project, with Bootstrap5 styling and a Ready API",
     features:
       "Globe weathe navigation and selecting countries and cities to view there reacent weather",
     link: "https://weather-fetch-app.vercel.app",
     code: "https://github.com/DavidMeseha/Weather-Fetch-App",
-  },
-
-  {
-    title: "Dashboard",
-    technologies: "Dashboard look with React.js and TypeScript using ReCharts",
-    features:
-      "Dashboard with data visualization in different forms with grid layout and clean look",
-    link: "https://dashboard-sable-pi.vercel.app/",
-    code: "https://github.com/DavidMeseha/dashboard",
   },
 ];
