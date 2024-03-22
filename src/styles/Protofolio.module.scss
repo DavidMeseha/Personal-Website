@@ -7,7 +7,7 @@
   width: 80%;
   margin: auto;
 
-  @media screen and (max-width: 426px) {
+  @media (max-width: 426px) {
     width: 90%;
   }
 }
@@ -16,7 +16,7 @@
   display: block;
   position: relative;
 
-  @media screen and (max-width: 769px) {
+  @media (max-width: 769px) {
     height: 530px;
   }
 }
@@ -27,7 +27,7 @@
   justify-content: center;
   flex-direction: column;
 
-  @media screen and (max-width: 769px) {
+  @media (max-width: 769px) {
     margin-top: -60px;
   }
 }
@@ -46,7 +46,7 @@
     opacity: 0.6;
   }
 
-  @media screen and (max-width: 769px) {
+  @media (max-width: 769px) {
     flex-direction: column;
   }
 }
@@ -76,16 +76,16 @@
   .arrow {
     margin: 180px auto 0 auto;
 
-    @media screen and (max-width: 769px) {
+    @media (max-width: 769px) {
       margin: 220px auto 0 auto;
     }
 
-    @media screen and (max-width: 426px) {
+    @media (max-width: 426px) {
       margin: 180px auto 0 auto;
     }
   }
 
-  @media screen and (max-width: 426px) {
+  @media (max-width: 426px) {
     bottom: -60px;
   }
 }
@@ -97,12 +97,12 @@
   .arrow {
     margin: 120px auto 0 auto;
 
-    @media screen and (max-width: 769px) {
+    @media (max-width: 769px) {
       margin: 20px auto 0 auto;
     }
   }
 
-  @media screen and (max-width: 426px) {
+  @media (max-width: 426px) {
     display: none;
   }
 }
@@ -112,6 +112,17 @@
   top: 45%;
   right: 40px;
   z-index: 99;
+
+  @media (max-width:650px) {
+    top: unset;
+    right: unset;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 20px;
+  }
 }
 
 .project-indecator .dots{
@@ -119,10 +130,15 @@
   height: 10px;
   margin-bottom: 10px;
   background-color: $secondry-color;
-  transition: height 300ms, background-color 300ms;
+  transition: height 300ms, width 300ms, background-color 300ms;
 }
 
 .project-indecator .dots.active{
   height: 20px;
   background-color: $primry-color;
+
+  @media (max-width:650px) {
+    height: 10px;
+    width: 20px;
+  }
 }
