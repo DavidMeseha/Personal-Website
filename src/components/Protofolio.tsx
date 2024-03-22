@@ -9,7 +9,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   const windowHeight = useWindowHeight();
   const windowWidth = useWindowWidth();
 
-  const [display, setDisplay] = useState<Project[]>();
+  const [display, setDisplay] = useState<Project[]>([]);
   const [waitAnimation, setWaitanimation] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
   const [projectIndex, setProjectIndex] = useState(2);
@@ -65,7 +65,6 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
   useEffect(() => {
     setDisplay([...projects]);
-    // document.addEventListener("resize", resetProjectsDrag);
   }, []);
 
   const nextProject = () => {
@@ -85,7 +84,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
     projectsRef.current.removeChild(firstChild);
     projectsRef.current.append(firstChild);
-    setProjectIndex((prev) => (prev + 1) % 6);
+    setProjectIndex((prev) => (prev + 1) % display.length);
 
     setTimeout(() => {
       setWaitanimation(false);
@@ -109,7 +108,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
     projectsRef.current.removeChild(lastChild);
     projectsRef.current.prepend(lastChild);
-    setProjectIndex((prev) => (prev - 1 < 0 ? 5 : prev - 1));
+    setProjectIndex((prev) => (prev - 1 < 0 ? display.length - 1 : prev - 1));
 
     setTimeout(() => setWaitanimation(false), 900);
   };
@@ -226,7 +225,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   return (
     <>
       <div className={style["project-indecator"]}>
-        {display?.map((_project, i) => {
+        {display.map((_project, i) => {
           return (
             <div
               className={`${style["dots"]} ${i === projectIndex ? style["active"] : ""}`}
@@ -248,7 +247,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
             className={style.projects}
             ref={projectsRef}
           >
-            {display?.map((project, i) => {
+            {display.map((project, i) => {
               return (
                 <ProjectCard
                   key={i}
