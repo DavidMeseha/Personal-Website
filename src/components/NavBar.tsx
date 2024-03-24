@@ -3,7 +3,6 @@ import { StartEnd, EndSlash } from "../components/Icons";
 import { useState } from "react";
 import Menu from "./Menu";
 import useNavState from "../hooks/useNavState";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import navBarOptions, { NavOptions } from "@/constants/navBarOptions";
 import { Theme } from "@/constants/themes";
@@ -76,14 +75,6 @@ const NavBar: React.FC<{
       </div>
 
       <div className={style.options}>
-        <div className={style.source}>
-          <Link
-            href="https://github.com/DavidMeseha/Personal-Website"
-            target="_blank"
-          >
-            source
-          </Link>
-        </div>
         <div className={style.themeContainer}>
           {theme === "dark" ? "Dark Mood" : "Light Mood"}
           <label className={style.toggle}>

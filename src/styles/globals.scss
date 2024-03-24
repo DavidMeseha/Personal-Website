@@ -50,6 +50,39 @@ li {
   padding: 0;
 }
 
+.loading-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rem;
+
+  .start{
+    width:40px;
+    animation-name: toLeft;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
+  }
+  
+  .end{
+    svg{transform: rotate(180deg);}
+    width: 40px;
+    animation-name: toRight;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
+  }
+  
+  .mid{
+    width: 10px;
+    height: 60px;
+    transform: skewX(15deg);
+    background: var(--secondry-color);
+    margin: 0px 15px;
+    animation-name: skew;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
+  }
+}
+
 .contacts {
   position: fixed;
   top: 35px;
@@ -60,7 +93,11 @@ li {
 }
 
 .section {
+  position: absolute;
   background: $background;
+  height: 100dvh;
+  width: 100%;
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) 0s;
 }
 
 .yellow-path {
@@ -98,4 +135,22 @@ li {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: $secondry-color;
+}
+
+@keyframes toRight {
+  0%{transform: translateX(0);}
+  50%{transform: translateX(15px);}
+  100%{transform: translateX(0);}
+}
+
+@keyframes toLeft {
+  0%{transform: translateX(0);}
+  50%{transform: translateX(-15px);}
+  100%{transform: translateX(0);}
+}
+
+@keyframes skew {
+  0%{transform: skewX(15deg);}
+  50%{transform: skewX(-15deg);}
+  100%{transform: skewX(15deg);}
 }

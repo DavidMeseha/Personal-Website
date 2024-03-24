@@ -1,6 +1,7 @@
 .dark {
   --text: #fff;
   --background: #1b1b1b;
+  --transparent-background: #1b1b1b5d;
   --primry-color: #3959fd;
   --inactive: #2a41b7;
   --secondry-color: #fdfb39;
@@ -11,6 +12,7 @@
 .light {
   --text: #1b1b1b;
   --background: #fff;
+  --transparent-background:#ffffff5d;
   --primry-color: #3959fd;
   --inactive: #2a41b7;
   --secondry-color: #ff1567;
@@ -20,6 +22,7 @@
 
 $text: var(--text);
 $background: var(--background);
+$transparent-background: var(--transparent-background);
 $primry-color: var(--primry-color);
 $inactive: var(--inactive);
 $secondry-color: var(--secondry-color);

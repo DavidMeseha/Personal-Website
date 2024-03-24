@@ -4,18 +4,23 @@ import Protofolio from "../components/Protofolio";
 import Skills from "../components/Skills";
 import Interested from "../components/Interested";
 import NavBar from "../components/NavBar";
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import skills, { Skill } from "../constants/skills";
+import { graphicProjects } from "@/constants/GraphicPortfolio";
 import navBarOptions, { NavOptions } from "../constants/navBarOptions";
 import { GetStaticProps } from "next";
 import projects, { Project } from "@/constants/portfolio";
 import { Theme } from "@/constants/themes";
+import GraphicPortfolio from "@/components/GraphicPortfolio";
+
+//TODO change to pages insted  of one page
 
 export default function Home(props: {
   mySkills: Skill[];
   projects: Project[];
+  graphicProjects: string[];
 }) {
   const router = useRouter();
   const [theme, setTheme] = useState<Theme>("dark");
@@ -27,12 +32,6 @@ export default function Home(props: {
       : "intro";
 
   const sectionIndex = navBarOptions.indexOf(section);
-
-  const commonSectionStyle: CSSProperties = {
-    position: "absolute",
-    width: "100%",
-    transition: "all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) 0s",
-  };
 
   const introSection = {
     transform: `translate(${sectionIndex === 0 ? 0 : -100}vw, 0)`,
@@ -49,9 +48,14 @@ export default function Home(props: {
     zIndex: `${sectionIndex === 2 ? 3 : 0}`,
   };
 
-  const interestedSection = {
+  const graphicSection = {
     transform: `translate(${sectionIndex === 3 ? 0 : sectionIndex > 3 ? -100 : 100}vw, 0)`,
     zIndex: `${sectionIndex === 3 ? 3 : 0}`,
+  };
+
+  const interestedSection = {
+    transform: `translate(${sectionIndex === 4 ? 0 : sectionIndex > 4 ? -100 : 100}vw, 0)`,
+    zIndex: `${sectionIndex === 4 ? 3 : 0}`,
   };
 
   return (
@@ -79,25 +83,31 @@ export default function Home(props: {
         <main style={{ height: "100dvh", position: "relative" }}>
           <div
             className="section"
-            style={{ ...commonSectionStyle, ...introSection }}
+            style={{ ...introSection }}
           >
             <Intro theme={theme} />
           </div>
           <div
             className="section"
-            style={{ ...commonSectionStyle, ...skillsSection }}
+            style={{ ...skillsSection }}
           >
             <Skills skills={props.mySkills} />
           </div>
           <div
             className="section"
-            style={{ ...commonSectionStyle, ...protofolioSection }}
+            style={{ ...protofolioSection }}
           >
             <Protofolio projects={props.projects} />
           </div>
           <div
             className="section"
-            style={{ ...commonSectionStyle, ...interestedSection }}
+            style={{ ...graphicSection }}
+          >
+            <GraphicPortfolio projects={graphicProjects} />
+          </div>
+          <div
+            className="section"
+            style={{ ...interestedSection }}
           >
             <Interested />
           </div>
@@ -113,9 +123,11 @@ export const getStaticProps = (() => {
     props: {
       mySkills: skills,
       projects: projects,
+      graphicProjects: graphicProjects,
     },
   };
 }) satisfies GetStaticProps<{
   mySkills: Skill[];
   projects: Project[];
+  graphicProjects: string[];
 }>;

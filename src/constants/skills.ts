@@ -14,23 +14,23 @@ export default [
     skillSet: [
       {
         skill: "HTML/CSS/JS",
-        level: 90,
+        level: 95,
       },
       {
         skill: "Sass/Scss",
-        level: 89,
+        level: 80,
       },
       {
         skill: "React.js",
-        level: 84,
+        level: 98,
       },
       {
         skill: "Next.js 13",
         level: 92,
       },
       {
-        skill: "SEO",
-        level: 90,
+        skill: "Vue.js",
+        level: 72,
       },
       {
         skill: "UI/UX",
@@ -43,19 +43,15 @@ export default [
     skillSet: [
       {
         skill: "TypeScript",
-        level: 70,
+        level: 80,
       },
       {
         skill: "Tailwind CSS",
         level: 98,
       },
       {
-        skill: "Framer Motion",
-        level: 80,
-      },
-      {
         skill: "Cypress(e2e)",
-        level: 85,
+        level: 62,
       },
     ],
   },
@@ -64,15 +60,15 @@ export default [
     skillSet: [
       {
         skill: "Node.js",
-        level: 80,
+        level: 66,
       },
       {
         skill: "Auth",
-        level: 80,
+        level: 90,
       },
       {
         skill: "MongoDB",
-        level: 86,
+        level: 80,
       },
     ],
   },
@@ -85,15 +81,11 @@ export default [
       },
       {
         skill: "Clean Coding",
-        level: 82,
+        level: 90,
       },
       {
         skill: "Mathematics",
         level: 90,
-      },
-      {
-        skill: "Algorithms",
-        level: 70,
       },
       {
         skill: "Data structure",

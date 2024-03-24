@@ -1,14 +1,16 @@
 export type NavOptions =
   | "intro"
   | "skills"
-  | "portfolio"
+  | "dev-portfolio"
   | "interested"
+  | "graphic-portfolio"
   | string;
 
 const navBarOptions: NavOptions[] = [
   "intro",
   "skills",
-  "portfolio",
+  "dev-portfolio",
+  "graphic-portfolio",
   "interested",
 ];
 

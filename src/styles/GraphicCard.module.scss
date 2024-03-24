@@ -1,0 +1,85 @@
+@import "./__variables";
+
+.img{
+  width: 100%;
+}
+
+.container{
+  cursor: pointer;
+  &:hover{
+    .img{
+      transform: translate(9px, -10px);
+    }
+
+    .vHover{
+      width: 10px;
+    }
+
+    .hHover{
+      height: 10px;
+    }
+
+    .info{
+      color: var(--secondry-color);
+      text-decoration: underline;
+    }
+  }
+}
+
+.imageContainer{
+  position: relative;
+  
+  .img{
+    display: block;
+    object-fit: cover;
+    border: 2px solid $secondry-color;
+  }
+
+  .img,.hHover, .vHover{
+    transition: all 190ms;
+  }
+  // height: 100px;
+  // width: 100px;
+}
+
+.hHover, .vHover{
+  overflow: hidden;
+  position: absolute;
+  
+  div{
+    position: absolute;
+    background-color: $secondry-color;
+    bottom: 0;
+  }
+}
+
+.vHover{
+  width: 0;
+  top: -10px;
+  bottom: 0;
+
+  div{
+    top: 6px;
+    width: 10px;
+    transform: skewY(-50deg);
+  }
+}
+
+.hHover{
+  height: 0;
+  right: -12px;
+  left: 0;
+  bottom: 0;
+
+  div{
+    right: 5px;
+    left: 0;
+    height: 10px;
+    transform: skewX(-50deg);
+  }
+}
+
+.info{
+  margin-top: 1rem;
+  transition: all 300ms;
+}
