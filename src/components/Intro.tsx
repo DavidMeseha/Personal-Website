@@ -5,7 +5,7 @@ import Background from "./BackGround";
 const Intro: React.FC<{ theme: string }> = ({ theme }) => {
   return (
     <div className={style.container}>
-      <div style={{ position: "absolute", height: "100vh", zIndex: -2 }}>
+      <div style={{ position: "absolute", height: "100dvh", zIndex: -2 }}>
         <Background theme={theme} />
       </div>
       <div style={{ width: "80%" }}>

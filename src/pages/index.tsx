@@ -76,7 +76,7 @@ export default function Home(props: {
           setTheme={setTheme}
           theme={theme}
         />
-        <main style={{ height: "100vh", position: "relative" }}>
+        <main style={{ height: "100dvh", position: "relative" }}>
           <div
             className="section"
             style={{ ...commonSectionStyle, ...introSection }}

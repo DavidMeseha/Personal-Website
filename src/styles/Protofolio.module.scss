@@ -3,7 +3,7 @@
 .container {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
   width: 80%;
   margin: auto;
 
@@ -22,7 +22,7 @@
 }
 
 .projects {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   flex-direction: column;

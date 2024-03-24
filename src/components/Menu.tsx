@@ -19,8 +19,8 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
   return (
     <div
       style={{
-        width: "100vw",
-        height: "100vh",
+        width: "100dvw",
+        height: "100dvh",
         fontWeight: 600,
         fontSize: "1.3rem",
       }}
