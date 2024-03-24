@@ -12,15 +12,15 @@
     max-width: 1700px;
     margin: auto;
 
-    @media (max-width: 1400px){
+    @media (max-width: 1440px){
       grid-template-columns: repeat(3,1fr);
     }
 
-    @media (max-width: 768px){
+    @media (max-width: 1300px){
       grid-template-columns: repeat(2,1fr);
     }
   
-    @media (max-width: 570px){
+    @media (max-width: 768px){
       grid-template-columns: repeat(1,1fr);
     }
   }

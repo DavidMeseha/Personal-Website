@@ -14,15 +14,13 @@ import { GetStaticProps } from "next";
 import projects, { Project } from "@/constants/portfolio";
 import { Theme } from "@/constants/themes";
 import GraphicPortfolio from "@/components/GraphicPortfolio";
-import { GraphicProject } from "../constants/GraphicPortfolio";
-import { PopupsProvider } from "../context/PopupsContext";
 
 //TODO change to pages insted  of one page
 
 export default function Home(props: {
   mySkills: Skill[];
   projects: Project[];
-  graphicProjects: GraphicProject[];
+  graphicProjects: string[];
 }) {
   const router = useRouter();
   const [theme, setTheme] = useState<Theme>("dark");
@@ -78,45 +76,43 @@ export default function Home(props: {
         />
       </Head>
       <div className={theme}>
-        <PopupsProvider>
-          <NavBar
-            setTheme={setTheme}
-            theme={theme}
-          />
-          <main style={{ height: "100vh", position: "relative" }}>
-            <div
-              className="section"
-              style={{ ...introSection }}
-            >
-              <Intro theme={theme} />
-            </div>
-            <div
-              className="section"
-              style={{ ...skillsSection }}
-            >
-              <Skills skills={props.mySkills} />
-            </div>
-            <div
-              className="section"
-              style={{ ...protofolioSection }}
-            >
-              <Protofolio projects={props.projects} />
-            </div>
-            <div
-              className="section"
-              style={{ ...graphicSection }}
-            >
-              <GraphicPortfolio projects={graphicProjects} />
-            </div>
-            <div
-              className="section"
-              style={{ ...interestedSection }}
-            >
-              <Interested />
-            </div>
-          </main>
-          <Footer />
-        </PopupsProvider>
+        <NavBar
+          setTheme={setTheme}
+          theme={theme}
+        />
+        <main style={{ height: "100vh", position: "relative" }}>
+          <div
+            className="section"
+            style={{ ...introSection }}
+          >
+            <Intro theme={theme} />
+          </div>
+          <div
+            className="section"
+            style={{ ...skillsSection }}
+          >
+            <Skills skills={props.mySkills} />
+          </div>
+          <div
+            className="section"
+            style={{ ...protofolioSection }}
+          >
+            <Protofolio projects={props.projects} />
+          </div>
+          <div
+            className="section"
+            style={{ ...graphicSection }}
+          >
+            <GraphicPortfolio projects={graphicProjects} />
+          </div>
+          <div
+            className="section"
+            style={{ ...interestedSection }}
+          >
+            <Interested />
+          </div>
+        </main>
+        <Footer />
       </div>
     </>
   );
@@ -133,5 +129,5 @@ export const getStaticProps = (() => {
 }) satisfies GetStaticProps<{
   mySkills: Skill[];
   projects: Project[];
-  graphicProjects: GraphicProject[];
+  graphicProjects: string[];
 }>;

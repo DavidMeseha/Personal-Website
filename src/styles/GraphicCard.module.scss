@@ -1,9 +1,13 @@
 @import "./__variables";
 
+.img{
+  width: 100%;
+}
+
 .container{
   cursor: pointer;
   &:hover{
-    img{
+    .img{
       transform: translate(9px, -10px);
     }
 
@@ -26,13 +30,13 @@
   position: relative;
   aspect-ratio: 5/4;
   
-  img{
+  .img{
     display: block;
     object-fit: cover;
     border: 2px solid $secondry-color;
   }
 
-  img,.hHover, .vHover{
+  .img,.hHover, .vHover{
     transition: all 190ms;
   }
   // height: 100px;
@@ -66,7 +70,7 @@
   height: 0;
   right: -12px;
   left: 0;
-  bottom: -2px;
+  bottom: 0;
 
   div{
     right: 5px;
