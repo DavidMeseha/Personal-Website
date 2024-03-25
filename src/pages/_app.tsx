@@ -23,10 +23,18 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta
+          name="description"
+          content="The Front-End developer David Magdy personal profile and portfolio"
+        />
+        <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         />
-        <title>{`David | ${router.pathname.replace("/", "")}`}</title>{" "}
+        <link
+          rel="icon"
+          href="/logo.svg"
+        />
+        <title>{`David | ${router.pathname.replace("/", "") || "Intro"}`}</title>{" "}
       </Head>
       {theme && (
         <div className={theme}>

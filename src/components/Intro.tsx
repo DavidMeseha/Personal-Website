@@ -1,11 +1,14 @@
+import { Theme } from "@/constants/themes";
 import style from "../styles/Intro.module.scss";
 import Background from "./BackGround";
 
-const Intro: React.FC<{ theme: string }> = ({ theme }) => {
+const Intro = () => {
+  // console.log(localStorage.getItem("theme"));
+
   return (
     <div className={style.container}>
       <div style={{ position: "absolute", height: "100dvh", zIndex: -2 }}>
-        <Background theme={theme} />
+        <Background theme={localStorage.getItem("theme") as Theme} />
       </div>
       <div style={{ width: "80%" }}>
         <div className={style.hello}>
