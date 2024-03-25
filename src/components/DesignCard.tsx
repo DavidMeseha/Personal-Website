@@ -7,7 +7,7 @@ export default function DesignCard(props: { projectURL: string }) {
         <iframe
           className={style.img}
           src={props.projectURL}
-          height="316"
+          height="250"
           width="404"
           allow="clipboard-write"
         ></iframe>

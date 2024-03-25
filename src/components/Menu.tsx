@@ -1,18 +1,13 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import UseNavState from "../hooks/useNavState";
 import { Close, EndSlash, Logo, StartEnd } from "./Icons";
 import style from "../styles/Menu.module.scss";
-import navBarOptions, { NavOptions } from "@/constants/navBarOptions";
+import navBarOptions from "@/constants/navBarOptions";
 
 const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
   const router = useRouter();
-  const { selectSection } = UseNavState();
 
-  const selected: NavOptions =
-    typeof router.query["section"] == "string"
-      ? router.query["section"]
-      : "intro";
+  const selected = router.pathname;
 
   useEffect(() => closeMenu(), [selected]);
 
@@ -41,9 +36,8 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
           {navBarOptions.map((option, index) => (
             <li
               key={index}
-              onClick={() => selectSection(option)}
               className={
-                selected === option ? style.selectedListItem : style.listItem
+                selected === option.to ? style.selectedListItem : style.listItem
               }
             >
               <div className={style.startIcon}>
@@ -56,7 +50,7 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
                   textTransform: "capitalize",
                 }}
               >
-                {option}
+                {option.name}
               </div>
               <div className={style.endIcon}>
                 <EndSlash />

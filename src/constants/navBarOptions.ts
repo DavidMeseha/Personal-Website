@@ -1,17 +1,14 @@
-export type NavOptions =
-  | "intro"
-  | "skills"
-  | "dev-portfolio"
-  | "interested"
-  | "graphic-portfolio"
-  | string;
+export type NavOption = {
+  name: string;
+  to: string;
+};
 
-const navBarOptions: NavOptions[] = [
-  "intro",
-  "skills",
-  "dev-portfolio",
-  "graphic-portfolio",
-  "interested",
+const navBarOptions: NavOption[] = [
+  { name: "intro", to: "/" },
+  { name: "skills", to: "/skills" },
+  { name: "dev-portfolio", to: "/dev-portfolio" },
+  { name: "graphic-portfolio", to: "/graphic-portfolio" },
+  { name: "interested", to: "interested" },
 ];
 
 export default navBarOptions;

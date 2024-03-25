@@ -2,26 +2,23 @@ import style from "../styles/NavBar.module.scss";
 import { StartEnd, EndSlash } from "../components/Icons";
 import { useState } from "react";
 import Menu from "./Menu";
-import useNavState from "../hooks/useNavState";
 import { useRouter } from "next/router";
-import navBarOptions, { NavOptions } from "@/constants/navBarOptions";
+import navBarOptions from "@/constants/navBarOptions";
 import { Theme } from "@/constants/themes";
+import Link from "next/link";
 
 const NavBar: React.FC<{
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
   theme: Theme;
 }> = ({ setTheme, theme }) => {
   const router = useRouter();
-  const selected: NavOptions =
-    typeof router.query["section"] == "string"
-      ? router.query["section"]
-      : "intro";
-
-  const { selectSection, nextSection, previousSection } = useNavState();
+  const selected = router.pathname;
   const [menuState, setMenuState] = useState(false);
 
   function toggleTheme() {
-    setTheme((prevstate) => (prevstate === "dark" ? "light" : "dark"));
+    const changeTheme: Theme = theme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", changeTheme);
+    setTheme(changeTheme);
   }
 
   return (
@@ -34,10 +31,7 @@ const NavBar: React.FC<{
       </div>
 
       <div className={style.container}>
-        <div
-          onClick={() => previousSection()}
-          className={style.startIcon}
-        >
+        <div className={style.startIcon}>
           <StartEnd />
         </div>
 
@@ -53,23 +47,23 @@ const NavBar: React.FC<{
             {navBarOptions.map((option, index) => {
               return (
                 <li
-                  key={option + index}
-                  onClick={() => selectSection(option)}
+                  key={option.name + index}
                   className={
-                    selected === option ? style.selectedItem : style.item
+                    selected === `${option.to}`
+                      ? style.selectedItem
+                      : style.item
                   }
                 >
-                  <div className={style.navItem}>{option}</div>
-                  <div className={style.underline}></div>
+                  <Link href={`/${option.to}`}>
+                    <div className={style.navItem}>{option.name}</div>
+                    <div className={style.underline}></div>
+                  </Link>
                 </li>
               );
             })}
           </ul>
         </div>
-        <div
-          onClick={() => nextSection()}
-          className={style.endIcon}
-        >
+        <div className={style.endIcon}>
           <EndSlash />
         </div>
       </div>

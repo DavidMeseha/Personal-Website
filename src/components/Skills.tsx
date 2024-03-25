@@ -9,13 +9,15 @@ const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
   const router = useRouter();
   const windowWidth = useWindowWidth();
   const projectNav = useRef<HTMLDivElement>(null);
-  const selected = router.query["section"] as string;
+  const selected = router.pathname;
 
   const [index, setIndex] = useState(0);
   const [draged, setDraged] = useState(false);
 
-  const [mainContainer, setMainContainer] = useState<Skill | null>(null);
-  const [secondContainer, setSecondContainer] = useState<Skill | null>(null);
+  const [mainContainer, setMainContainer] = useState<Skill | null>(skills[0]);
+  const [secondContainer, setSecondContainer] = useState<Skill | null>(
+    skills[1]
+  );
 
   const [nextState, setNextState] = useState(true);
   const [previousState, setPreviousState] = useState(false);
@@ -32,18 +34,6 @@ const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
       setMainContainer(skills[0]);
       setSecondContainer(skills[1]);
     };
-
-    if (selected !== "Skills" && selected === "Intro.") {
-      setTimeout(() => {
-        setMainContainer(null);
-        setSecondContainer(null);
-      }, 300);
-    } else {
-      setTimeout(() => {
-        setMainContainer(skills[index]);
-        setSecondContainer(skills[index + 1]);
-      }, 300);
-    }
 
     window.addEventListener("resize", changeIndex);
     return () => window.removeEventListener("resize", changeIndex);
