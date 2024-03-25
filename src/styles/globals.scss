@@ -16,6 +16,12 @@ a {
   color: inherit;
 }
 
+iframe{
+  display: block;
+  border: unset;
+  border-radius: 0;
+}
+
 .dark,
 .light {
   background-color: $background;
@@ -47,13 +53,20 @@ li {
 }
 
 .loading-container{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  inset: 0;
+}
+
+.icon-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15rem;
 
   .start{
-    width:40px;
+    width:30px;
     animation-name: toLeft;
     animation-duration: 400ms;
     animation-iteration-count: infinite;
@@ -61,18 +74,18 @@ li {
   
   .end{
     svg{transform: rotate(180deg);}
-    width: 40px;
+    width: 30px;
     animation-name: toRight;
     animation-duration: 400ms;
     animation-iteration-count: infinite;
   }
   
   .mid{
-    width: 10px;
-    height: 60px;
+    width: 7px;
+    height: 40px;
     transform: skewX(15deg);
     background: var(--secondry-color);
-    margin: 0px 15px;
+    margin: 0px 10px;
     animation-name: skew;
     animation-duration: 400ms;
     animation-iteration-count: infinite;
@@ -135,18 +148,18 @@ li {
 
 @keyframes toRight {
   0%{transform: translateX(0);}
-  50%{transform: translateX(15px);}
+  50%{transform: translateX(10px);}
   100%{transform: translateX(0);}
 }
 
 @keyframes toLeft {
   0%{transform: translateX(0);}
-  50%{transform: translateX(-15px);}
+  50%{transform: translateX(-10px);}
   100%{transform: translateX(0);}
 }
 
 @keyframes skew {
-  0%{transform: skewX(15deg);}
-  50%{transform: skewX(-15deg);}
-  100%{transform: skewX(15deg);}
+  0%{transform: skewX(10deg);}
+  50%{transform: skewX(-10deg);}
+  100%{transform: skewX(10deg);}
 }

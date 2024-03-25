@@ -1,16 +1,31 @@
+import { useState } from "react";
 import style from "../styles/GraphicCard.module.scss";
+import Loading from "./Loading";
 
 export default function DesignCard(props: { projectURL: string }) {
+  const [loaded, setLoaded] = useState<boolean>(false);
+
+  function onLoadHandle() {
+    setLoaded(true);
+  }
+
   return (
     <div className={style.container}>
       <div className={style.imageContainer}>
-        <iframe
+        <div
           className={style.img}
-          src={props.projectURL}
-          height="250"
-          width="404"
-          allow="clipboard-write"
-        ></iframe>
+          style={{ width: "100%" }}
+        >
+          {!loaded && <Loading />}
+          <iframe
+            style={{ opacity: loaded ? 1 : 0 }}
+            src={props.projectURL}
+            height="250"
+            width="100%"
+            allow="clipboard-write"
+            onLoad={onLoadHandle}
+          ></iframe>
+        </div>
         <div className={style.vHover}>
           <div></div>
         </div>

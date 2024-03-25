@@ -8,7 +8,7 @@ const navBarOptions: NavOption[] = [
   { name: "skills", to: "/skills" },
   { name: "dev-portfolio", to: "/dev-portfolio" },
   { name: "graphic-portfolio", to: "/graphic-portfolio" },
-  { name: "interested", to: "interested" },
+  { name: "interested", to: "/interested" },
 ];
 
 export default navBarOptions;

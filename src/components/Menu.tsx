@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Close, EndSlash, Logo, StartEnd } from "./Icons";
 import style from "../styles/Menu.module.scss";
 import navBarOptions from "@/constants/navBarOptions";
+import Link from "next/link";
 
 const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
   const router = useRouter();
@@ -43,15 +44,17 @@ const Menu: React.FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
               <div className={style.startIcon}>
                 <StartEnd />
               </div>
-              <div
-                style={{
-                  padding: "0 15px",
-                  height: 28,
-                  textTransform: "capitalize",
-                }}
-              >
-                {option.name}
-              </div>
+              <Link href={option.to}>
+                <div
+                  style={{
+                    padding: "0 15px",
+                    height: 28,
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {option.name}
+                </div>
+              </Link>
               <div className={style.endIcon}>
                 <EndSlash />
               </div>

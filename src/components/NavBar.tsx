@@ -25,7 +25,7 @@ const NavBar: React.FC<{
     <>
       <div
         className={`${style.mobileMenu} ${menuState ? style.open : style.close}`}
-        style={{ zIndex: 10 }}
+        style={{ zIndex: 99 }}
       >
         <Menu closeMenu={() => setMenuState(false)} />
       </div>
@@ -39,7 +39,11 @@ const NavBar: React.FC<{
           onClick={() => setMenuState(true)}
           className={`${menuState ? style.mobileSelectedActive : style.mobileSelected}`}
         >
-          {selected}
+          {
+            navBarOptions.find((option) => {
+              return option.to === selected;
+            })?.name
+          }
         </div>
 
         <div className={style.listContainer}>

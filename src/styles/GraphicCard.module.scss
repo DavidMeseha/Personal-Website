@@ -2,10 +2,14 @@
 
 .img{
   width: 100%;
+
+  iframe{
+    transition: opacity 300ms;
+    background-color: black;
+  }
 }
 
 .container{
-  cursor: pointer;
   &:hover{
     .img{
       transform: translate(9px, -10px);
