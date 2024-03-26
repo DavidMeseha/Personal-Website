@@ -4,10 +4,10 @@ import style from "../styles/SkillSetContainer.module.scss";
 import DecodeText from "./AnimateText";
 import { SkillSet } from "@/constants/skills";
 
-const SkillSetContainer: React.FC<{ skillSet: SkillSet[]; title: string }> = ({
-  skillSet,
-  title,
-}) => {
+const SkillSetContainer: React.FC<{
+  skillSet: SkillSet[] | undefined;
+  title: string;
+}> = ({ skillSet, title }) => {
   const [skillSetAvg, setSkillSetAvg] = useState<number>(0);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const SkillSetContainer: React.FC<{ skillSet: SkillSet[]; title: string }> = ({
         </div>
       </div>
       <div className={style.body}>
-        {skillSet.map((skill, i) => {
+        {skillSet?.map((skill, i) => {
           return (
             <div
               key={i}
