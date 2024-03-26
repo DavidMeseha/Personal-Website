@@ -4,7 +4,7 @@ import style from "../styles/SkillSetContainer.module.scss";
 import DecodeText from "./AnimateText";
 import { SkillSet } from "@/constants/skills";
 
-const SkillSetContainer: React.FC<{ skillSet?: SkillSet[]; title: string }> = ({
+const SkillSetContainer: React.FC<{ skillSet: SkillSet[]; title: string }> = ({
   skillSet,
   title,
 }) => {
@@ -15,8 +15,8 @@ const SkillSetContainer: React.FC<{ skillSet?: SkillSet[]; title: string }> = ({
 
     const getAvg = () => {
       let total = 0;
-      for (let it = 0; it < skillSet.length; it++) {
-        total += skillSet[it].level;
+      for (const skill of skillSet) {
+        total += skill.level;
       }
 
       return total / skillSet.length;
@@ -43,7 +43,7 @@ const SkillSetContainer: React.FC<{ skillSet?: SkillSet[]; title: string }> = ({
         </div>
       </div>
       <div className={style.body}>
-        {skillSet?.map((skill, i) => {
+        {skillSet.map((skill, i) => {
           return (
             <div
               key={i}

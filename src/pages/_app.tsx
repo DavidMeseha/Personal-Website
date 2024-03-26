@@ -9,6 +9,7 @@ import NavBar from "@/components/NavBar";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
+import Insights from "@/components/Insights";
 
 //TODO: Change to CSS instead of SCSS
 export default function App({ Component, pageProps }: AppProps) {
@@ -49,6 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <AnimatePresence mode="popLayout">
             <ErrorBoundary>
               <Component {...pageProps} />
+              <Insights />
             </ErrorBoundary>
           </AnimatePresence>
         </div>
