@@ -1,3 +1,5 @@
+"client";
+
 import "../styles/globals.scss";
 import ErrorBoundary from "../components/ErrorBoundry";
 import { AppProps } from "next/app";
@@ -6,6 +8,7 @@ import { Theme } from "@/constants/themes";
 import NavBar from "@/components/NavBar";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { AnimatePresence } from "framer-motion";
 
 //TODO: Change to CSS instead of SCSS
 //TODO: Use Pure React(Vite) (Remove Next.js)
@@ -42,9 +45,11 @@ export default function App({ Component, pageProps }: AppProps) {
             setTheme={setTheme as Dispatch<React.SetStateAction<Theme>>}
             theme={theme}
           />
-          <ErrorBoundary>
-            <Component {...pageProps} />
-          </ErrorBoundary>
+          <AnimatePresence mode="popLayout">
+            <ErrorBoundary>
+              <Component {...pageProps} />
+            </ErrorBoundary>
+          </AnimatePresence>
         </div>
       )}
     </>

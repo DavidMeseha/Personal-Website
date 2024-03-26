@@ -1,12 +1,15 @@
 import Protofolio from "@/components/Protofolio";
 import { Project } from "@/constants/portfolio";
 import projects from "@/constants/portfolio";
+import PageAnimationLayout from "@/layouts/PageAnimationLayout";
 import { GetStaticProps } from "next";
 
 export default function devPortfolio({ projects }: { projects: Project[] }) {
   return (
     <div className="section">
-      <Protofolio projects={projects} />
+      <PageAnimationLayout>
+        <Protofolio projects={projects} />
+      </PageAnimationLayout>
     </div>
   );
 }

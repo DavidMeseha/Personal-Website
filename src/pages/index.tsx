@@ -1,11 +1,14 @@
 import Intro from "../components/Intro";
 import Footer from "../components/Footer";
+import PageAnimationLayout from "../layouts/PageAnimationLayout";
 
 export default function Home() {
   return (
     <>
       <div className="section">
-        <Intro />
+        <PageAnimationLayout>
+          <Intro />
+        </PageAnimationLayout>
       </div>
       <Footer />
     </>

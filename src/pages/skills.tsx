@@ -5,6 +5,7 @@ import { useWindowWidth } from "@react-hook/window-size";
 import style from "@/styles/Skills.module.scss";
 import SkillSetContainer from "@/components/SkillSetContainer";
 import { useRouter } from "next/router";
+import PageAnimationLayout from "@/layouts/PageAnimationLayout";
 
 export default function DavidSkills({ skills }: { skills: Skill[] }) {
   const router = useRouter();
@@ -115,51 +116,53 @@ export default function DavidSkills({ skills }: { skills: Skill[] }) {
 
   return (
     <div className="section">
-      <div className={style.warper}>
-        <div className={style.container}>
-          <div className={style.skillSet}>
-            <SkillSetContainer
-              skillSet={mainContainer?.skillSet}
-              title={mainContainer?.title ?? ""}
-            />
-          </div>
-          {secondContainer && secondContainer?.skillSet?.length > 0 && (
-            <div className={`${style.skillSet} ${style.secondrySkillSet}`}>
+      <PageAnimationLayout>
+        <div className={style.warper}>
+          <div className={style.container}>
+            <div className={style.skillSet}>
               <SkillSetContainer
-                skillSet={secondContainer?.skillSet}
-                title={secondContainer?.title ?? ""}
+                skillSet={mainContainer?.skillSet}
+                title={mainContainer?.title ?? ""}
               />
             </div>
-          )}
-        </div>
-        <div style={{ width: "100%" }}>
-          <div className={style.track}></div>
-          <div
-            onTouchStart={touchStartHandle}
-            onTouchEnd={touchEndHandle}
-            onTouchMove={touchMoveHandle}
-            className={style.skillNavButton}
-            style={{ transform: `translate(0px, 0px)` }}
-            ref={skillNav}
-          >
-            <div
-              onClick={() => previousSkillSet()}
-              className={
-                previousState ? style.arrowLeft : style.arrowLeftInactive
-              }
-            ></div>
-            <div
-              onClick={() => nextSkillSet()}
-              className={
-                nextState ? style.arrowRight : style.arrowRightInactive
-              }
-            ></div>
+            {secondContainer && secondContainer?.skillSet?.length > 0 && (
+              <div className={`${style.skillSet} ${style.secondrySkillSet}`}>
+                <SkillSetContainer
+                  skillSet={secondContainer?.skillSet}
+                  title={secondContainer?.title ?? ""}
+                />
+              </div>
+            )}
           </div>
-          <div className={draged ? style.displayNone : style.dragHint}>
-            {"Drag Me  >"}
+          <div style={{ width: "100%" }}>
+            <div className={style.track}></div>
+            <div
+              onTouchStart={touchStartHandle}
+              onTouchEnd={touchEndHandle}
+              onTouchMove={touchMoveHandle}
+              className={style.skillNavButton}
+              style={{ transform: `translate(0px, 0px)` }}
+              ref={skillNav}
+            >
+              <div
+                onClick={() => previousSkillSet()}
+                className={
+                  previousState ? style.arrowLeft : style.arrowLeftInactive
+                }
+              ></div>
+              <div
+                onClick={() => nextSkillSet()}
+                className={
+                  nextState ? style.arrowRight : style.arrowRightInactive
+                }
+              ></div>
+            </div>
+            <div className={draged ? style.displayNone : style.dragHint}>
+              {"Drag Me  >"}
+            </div>
           </div>
         </div>
-      </div>
+      </PageAnimationLayout>
     </div>
   );
 }
