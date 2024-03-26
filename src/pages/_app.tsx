@@ -11,14 +11,15 @@ import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 
 //TODO: Change to CSS instead of SCSS
-//TODO: Use Pure React(Vite) (Remove Next.js)
 export default function App({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState<Theme | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-    if (!localStorage.getItem("theme"))
+    if (!localStorage.getItem("theme")) {
+      setTheme("dark");
       return localStorage.setItem("theme", "dark");
+    }
     setTheme(localStorage.getItem("theme") as Theme);
   }, []);
 
@@ -37,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
           rel="icon"
           href="/logo.svg"
         />
-        <title>{`David | ${router.pathname.replace("/", "") || "Intro"}`}</title>{" "}
+        <title>{`David Magdy | ${router.pathname.replace("/", "") || "Intro"}`}</title>{" "}
       </Head>
       {theme && (
         <div className={theme}>

@@ -16,6 +16,11 @@ a {
   color: inherit;
 }
 
+a[target="_blank"]{
+  text-decoration: underline;
+  color: $primry-color;
+}
+
 iframe{
   display: block;
   border: unset;

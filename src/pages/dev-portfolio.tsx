@@ -1,4 +1,4 @@
-import Protofolio from "@/components/Protofolio";
+import DevProtofolio from "@/components/DevProtofolio";
 import { Project } from "@/constants/portfolio";
 import projects from "@/constants/portfolio";
 import PageAnimationLayout from "@/layouts/PageAnimationLayout";
@@ -8,7 +8,7 @@ export default function devPortfolio({ projects }: { projects: Project[] }) {
   return (
     <div className="section">
       <PageAnimationLayout>
-        <Protofolio projects={projects} />
+        <DevProtofolio projects={projects} />
       </PageAnimationLayout>
     </div>
   );

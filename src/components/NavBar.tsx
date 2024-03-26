@@ -53,12 +53,10 @@ const NavBar: React.FC<{
                 <li
                   key={option.name + index}
                   className={
-                    selected === `${option.to}`
-                      ? style.selectedItem
-                      : style.item
+                    selected === option.to ? style.selectedItem : style.item
                   }
                 >
-                  <Link href={`/${option.to}`}>
+                  <Link href={option.to}>
                     <div className={style.navItem}>{option.name}</div>
                     <div className={style.underline}></div>
                   </Link>

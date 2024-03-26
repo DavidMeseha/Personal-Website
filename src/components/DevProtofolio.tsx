@@ -2,7 +2,7 @@ import style from "@/styles/Protofolio.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { useWindowHeight, useWindowWidth } from "@react-hook/window-size";
 import { Project } from "@/constants/portfolio";
-import ProjectCard from "./ProjectCard";
+import DevProjectCard from "./DevProjectCard";
 
 const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -249,7 +249,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
           >
             {display.map((project, i) => {
               return (
-                <ProjectCard
+                <DevProjectCard
                   key={i}
                   project={project}
                   inlineStyle={
