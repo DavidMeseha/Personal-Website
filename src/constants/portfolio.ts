@@ -8,22 +8,30 @@ export interface Project {
 
 export default [
   {
-    title: "Auth and User Management",
-    technologies:
-      "A Login full-stack Next.js with react.js, typescript and MongoDB as database using JWT",
-    features:
-      "Login/Logout user auth, Regester New User, profile page access, and secure routing",
-    link: "https://med-app-steel.vercel.app",
-    code: "https://github.com/DavidMeseha/med-app",
-  },
-
-  {
     title: "Dashboard",
     technologies: "Dashboard look with React.js and TypeScript using ReCharts",
     features:
       "Dashboard with data visualization in different forms with grid layout and clean look",
     link: "https://dashboard-sable-pi.vercel.app/",
     code: "https://github.com/DavidMeseha/dashboard",
+  },
+
+  {
+    title: "Auth and User Management",
+    technologies:
+      "A Login full-stack Next.js, typescript, JWT, axios, Tanstack Query and MongoDB",
+    features: "Regester/Login/Logout, user auth, Secure Routs and user Role",
+    link: "https://med-app-steel.vercel.app",
+    code: "https://github.com/DavidMeseha/med-app",
+  },
+
+  {
+    title: "My Personal Website",
+    technologies:
+      "Next.js page router, React.js, Framer Motion, Typescript and code quality tools like ESlint and Prettier",
+    features: "A showcase website for my skill, projects as a playground",
+    link: "https://personal-website-nine-zeta-97.vercel.app/",
+    code: "https://github.com/DavidMeseha/Personal-Website",
   },
 
   {

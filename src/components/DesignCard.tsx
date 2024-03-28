@@ -24,6 +24,7 @@ export default function DesignCard(props: { projectURL: string }) {
             width="100%"
             allow="clipboard-write"
             onLoad={onLoadHandle}
+            title="David Magdy Project"
           ></iframe>
         </div>
         <div className={style.vHover}>

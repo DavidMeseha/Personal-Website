@@ -73,10 +73,14 @@ const NavBar: React.FC<{
       <div className={style.options}>
         <div className={style.themeContainer}>
           {theme === "dark" ? "Dark Mood" : "Light Mood"}
-          <label className={style.toggle}>
+          <label
+            htmlFor="theme"
+            className={style.toggle}
+          >
             <input
               onChange={toggleTheme}
               type="checkbox"
+              id="theme"
             />
             <span className={style.slider}></span>
           </label>
