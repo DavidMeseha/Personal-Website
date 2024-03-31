@@ -17,18 +17,19 @@ export default [
   },
 
   {
-    title: "Auth and User Management",
+    title: "Auth and User Role Demo",
     technologies:
       "A Login full-stack Next.js, typescript, JWT, axios, Tanstack Query and MongoDB",
-    features: "Regester/Login/Logout, user auth, Secure Routs and user Role",
+    features:
+      "Regester/Login/Logout, user auth, Secure Routs, user Role and Internationalization",
     link: "https://med-app-steel.vercel.app",
     code: "https://github.com/DavidMeseha/med-app",
   },
 
   {
-    title: "My Personal Website",
+    title: "Personal Website",
     technologies:
-      "Next.js page router, React.js, Framer Motion, Typescript and code quality tools like ESlint and Prettier",
+      "Next.js page router, React.js, Framer Motion, Basic CI/CD, Typescript and code quality tools like ESlint and Prettier",
     features: "A showcase website for my skill, projects as a playground",
     link: "https://personal-website-nine-zeta-97.vercel.app/",
     code: "https://github.com/DavidMeseha/Personal-Website",
