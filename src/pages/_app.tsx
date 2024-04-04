@@ -39,7 +39,11 @@ export default function App({ Component, pageProps }: AppProps) {
           rel="icon"
           href="/logo.svg"
         />
-        <title>{`David Magdy | ${router.pathname.replace("/", "") || "Intro"}`}</title>{" "}
+        <title>{`David Magdy | ${router.pathname.replace("/", "") || "Intro"}`}</title>
+        <meta
+          property="og:image"
+          content="/capture.png"
+        ></meta>
       </Head>
       {theme && (
         <div className={theme}>
