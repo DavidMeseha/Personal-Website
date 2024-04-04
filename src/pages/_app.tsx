@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>{`David Magdy | ${router.pathname.replace("/", "") || "Intro"}`}</title>
         <meta
           property="og:image"
-          content="../asset/Capture.PNG"
+          content="https://vercel.com/davidmeseha/personal-website/Capture.PNG"
         ></meta>
       </Head>
       {theme && (
