@@ -1,5 +1,4 @@
 import Intro from "../components/Intro";
-import Footer from "../components/Footer";
 import PageAnimationLayout from "../layouts/PageAnimationLayout";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
           <Intro />
         </PageAnimationLayout>
       </div>
-      <Footer />
     </>
   );
 }
