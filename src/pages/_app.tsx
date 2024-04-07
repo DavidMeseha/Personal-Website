@@ -8,6 +8,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import Insights from "@/components/Insights";
+import Footer from "@/components/Footer";
 
 //TODO: Change to CSS instead of SCSS
 export default function App({ Component, pageProps }: AppProps) {
@@ -51,6 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <Insights />
             </ErrorBoundary>
           </AnimatePresence>
+          <Footer />
         </div>
       )}
     </>
