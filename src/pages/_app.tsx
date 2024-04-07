@@ -1,5 +1,3 @@
-"client";
-
 import "../styles/globals.scss";
 import ErrorBoundary from "../components/ErrorBoundry";
 import { AppProps } from "next/app";
@@ -40,10 +38,6 @@ export default function App({ Component, pageProps }: AppProps) {
           href="/logo.svg"
         />
         <title>{`David Magdy | ${router.pathname.replace("/", "") || "Intro"}`}</title>
-        <meta
-          property="og:image"
-          content="https://vercel.com/davidmeseha/personal-website/Capture.PNG"
-        ></meta>
       </Head>
       {theme && (
         <div className={theme}>

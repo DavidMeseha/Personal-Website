@@ -1,6 +1,6 @@
 import Link from "next/link";
 import style from "../styles/Footer.module.scss";
-import { Git, LinkedIn } from "./Icons";
+import { Git, LinkedIn, Upwork } from "./Icons";
 
 const Footer = () => {
   return (
@@ -20,6 +20,14 @@ const Footer = () => {
         className={style.icons}
       >
         <LinkedIn />
+      </Link>
+      <Link
+        aria-label="Visit My Upwork Account"
+        target="_blank"
+        href="https://www.upwork.com/freelancers/davidmeseha"
+        className={style.icons}
+      >
+        <Upwork />
       </Link>
     </div>
   );
