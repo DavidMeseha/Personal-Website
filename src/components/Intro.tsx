@@ -3,8 +3,6 @@ import style from "../styles/Intro.module.scss";
 import Background from "./BackGround";
 
 const Intro = () => {
-  // console.log(localStorage.getItem("theme"));
-
   return (
     <div className={style.container}>
       <div style={{ position: "absolute", height: "100dvh", zIndex: -2 }}>
@@ -20,8 +18,8 @@ const Intro = () => {
         </div>
         <div>
           <p className={style.description}>
-            Implementing the <span>Front end</span> using the{" "}
-            <span> latest and meta Technologies</span>
+            <span>Front-end Developer </span> using React.js and Next.js who
+            enjoys systems development and Problem-solving.
           </p>
         </div>
       </div>

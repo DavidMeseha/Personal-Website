@@ -29,6 +29,13 @@ export default function Interested() {
     });
   };
   return (
+    //     -Creating MVPs.
+    // -Refactoring and updating old code.
+    // -JavaScript developer.
+    // -Create full responsive and pixel perfect web apps with CSS or Bootstap or TailwindCSS.
+    // -Using Next.js with React to increase performance and optimize search engines with SSR options.
+    // -Implementing complex features and React.js Components.
+    // -Using Version control tool (git).
     <div className="section">
       <PageAnimationLayout>
         <div onMouseMove={mouseMoveHandle}>
@@ -48,17 +55,19 @@ export default function Interested() {
               <div className={style.details}>
                 <h2>Here is how I can help.</h2>
                 <ul className={style.list}>
+                  <li>Creating Fullstack MVP.</li>
                   <li>
-                    Create a fullstack website with custom backend, front end
-                    and database(MongoDB & SQl).
+                    Create custom or complex features and pages for react.js and
+                    next.js apps.
                   </li>
                   <li>
-                    Create custom features and pages for your react.js and
-                    next.js app.
-                  </li>
-                  <li>
-                    Implementing UI/UX dsigns with high quality
+                    Implementing UI/UX dsigns with high quality, performance and
                     screen-resposive.
+                  </li>
+                  <li>Refactoring and updating old code.</li>
+                  <li>
+                    Using Next.js with React to increase performance and
+                    optimize search engines with SSR options.
                   </li>
                 </ul>
               </div>
