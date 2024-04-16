@@ -120,6 +120,7 @@ const Background: React.FC<{ theme: string }> = ({ theme }) => {
   return (
     <>
       <canvas
+        style={{ width: "100%" }}
         ref={canvasRef}
         width={size.width}
         height={size.height}
