@@ -5,7 +5,7 @@ import Background from "./BackGround";
 const Intro = () => {
   return (
     <div className={style.container}>
-      <div style={{ position: "absolute", height: "100dvh", zIndex: -2 }}>
+      <div style={{ position: "absolute", zIndex: -2 }}>
         <Background theme={localStorage.getItem("theme") as Theme} />
       </div>
       <div style={{ width: "80%" }}>

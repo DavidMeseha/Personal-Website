@@ -2,9 +2,10 @@
 
 .container{
   overflow: auto;
-  padding: 3rem 5rem 70px 5rem;
+  padding: 3rem 5rem 5rem 5rem;
   margin-top: 80px;
   max-height: calc(100dvh - 200px);
+  
   .projectGrid{
     display: grid;
     gap: 2rem;

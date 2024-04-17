@@ -118,14 +118,12 @@ const Background: React.FC<{ theme: string }> = ({ theme }) => {
   }, [canvasRef.current, theme]);
 
   return (
-    <>
-      <canvas
-        style={{ width: "100%" }}
-        ref={canvasRef}
-        width={size.width}
-        height={size.height}
-      ></canvas>
-    </>
+    <canvas
+      style={{ width: "100vw", height: "100vh" }}
+      ref={canvasRef}
+      width={size.width}
+      height={size.height}
+    ></canvas>
   );
 };
 
