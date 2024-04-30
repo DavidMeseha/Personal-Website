@@ -3,12 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import { useWindowHeight, useWindowWidth } from "@react-hook/window-size";
 import { Project } from "@/constants/portfolio";
 import DevProjectCard from "./DevProjectCard";
+import Loading from "./Loading";
 
 const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
   const projectsRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const windowHeight = useWindowHeight();
   const windowWidth = useWindowWidth();
 
+  const [render, reRender] = useState<boolean>(true);
   const [display, setDisplay] = useState<Project[]>([]);
   const [waitAnimation, setWaitanimation] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
@@ -65,6 +68,15 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
   useEffect(() => {
     setDisplay([...projects]);
+
+    function reRenderProjects() {
+      reRender(false);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => reRender(true), 1000);
+    }
+
+    window.addEventListener("resize", reRenderProjects);
+    return () => window.removeEventListener("resize", reRenderProjects);
   }, []);
 
   const nextProject = () => {
@@ -224,47 +236,53 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
   return (
     <>
-      <div className={style["project-indecator"]}>
-        {display.map((_project, i) => {
-          return (
-            <div
-              className={`${style["dots"]} ${i === projectIndex ? style["active"] : ""}`}
-              key={i}
-            ></div>
-          );
-        })}
-      </div>
-      <div className={style.container}>
-        <div className={style.projectsRoller}>
-          <div
-            onClick={prevProject}
-            className={style.topNavClickSpace}
-          ></div>
-          <div
-            onTouchEnd={touchEndHandle}
-            onTouchStart={touchStartHandle}
-            onTouchMove={touchMoveHandle}
-            className={style.projects}
-            ref={projectsRef}
-          >
-            {display.map((project, i) => {
+      {render ? (
+        <>
+          <div className={style["project-indecator"]}>
+            {display.map((_project, i) => {
               return (
-                <DevProjectCard
+                <div
+                  className={`${style["dots"]} ${i === projectIndex ? style["active"] : ""}`}
                   key={i}
-                  project={project}
-                  inlineStyle={
-                    i === 0 || i >= 4 ? rank3 : i === 2 ? rank1 : rank2
-                  }
-                />
+                ></div>
               );
             })}
           </div>
-          <div
-            onClick={nextProject}
-            className={style.bottomNavClickSpace}
-          ></div>
-        </div>
-      </div>
+          <div className={style.container}>
+            <div className={style.projectsRoller}>
+              <div
+                onClick={prevProject}
+                className={style.topNavClickSpace}
+              ></div>
+              <div
+                onTouchEnd={touchEndHandle}
+                onTouchStart={touchStartHandle}
+                onTouchMove={touchMoveHandle}
+                className={style.projects}
+                ref={projectsRef}
+              >
+                {display.map((project, i) => {
+                  return (
+                    <DevProjectCard
+                      key={i}
+                      project={project}
+                      inlineStyle={
+                        i === 0 || i >= 4 ? rank3 : i === 2 ? rank1 : rank2
+                      }
+                    />
+                  );
+                })}
+              </div>
+              <div
+                onClick={nextProject}
+                className={style.bottomNavClickSpace}
+              ></div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };
