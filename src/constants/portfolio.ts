@@ -27,9 +27,27 @@ export default [
   },
 
   {
-    title: "Personal Website",
+    title: "Live Updated Todo",
+    technologies: "Next.js 15, React.js, Supabase",
+    features:
+      "Live updated listening to changes in supdabase with CURD Options with optimistic updates and auth",
+    code: "https://github.com/DavidMeseha/noteit",
+    link: "https://noteit-psi.vercel.app/todos",
+  },
+
+  {
+    title: "Fullstack Ecommerce (MERN)",
     technologies:
-      "Next.js page router, React.js, Framer Motion, Basic CI/CD, Typescript and code quality tools like ESlint and Prettier",
+      "Next.js 14, React.js, Node.js, Mongodb, headless architecture",
+    features:
+      "JWT Auth, Cart, Save, Like, User Profile, vendors, infinit loading, languages(AR,EN)",
+    link: "https://all-in-one-my-shop-front.vercel.app",
+    code: "https://github.com/DavidMeseha/allInOne-myShop-Front",
+  },
+
+  {
+    title: "Personal Website",
+    technologies: "Next.js page router, React.js, Framer Motion, Basic CI/CD",
     features: "A showcase website for my skill, projects as a playground",
     link: "https://personal-website-nine-zeta-97.vercel.app/",
     code: "https://github.com/DavidMeseha/Personal-Website",
@@ -38,9 +56,9 @@ export default [
   {
     title: "Interactive Service Calender (Client)",
     technologies:
-      "A Calendar to make and modify appointments and work time for employees with react.js.",
+      "react.js with js from scratch and no packages used only tailwind css",
     features:
-      "The calendar have the ability to modify appointments with hold and drag and CURD options.",
+      "An interactive calendr with the ability to modify appointments with hold and drag and drop",
     link: "https://timeline-calander-system.vercel.app",
     code: "https://github.com/DavidMeseha/employee_timeline_system",
   },
@@ -66,7 +84,7 @@ export default [
 
   {
     title: "Laptop Shop",
-    technologies: "A Next.js, React.js and mongodb project, getting",
+    technologies: "A Next.js, React.js and mongodb project",
     features: "Showing eCommerce sorting, filtering and searching features",
     link: "https://shop-jade-rho.vercel.app",
     code: "https://github.com/DavidMeseha/shop",
@@ -74,7 +92,7 @@ export default [
 
   {
     title: "Global Weather Fetch(Vue js)",
-    technologies: "Vue.js project, with Bootstrap5 styling and a Ready API",
+    technologies: "Vue.js project, with Bootstrap5 styling",
     features:
       "Globe weathe navigation and selecting countries and cities to view there reacent weather",
     link: "https://weather-fetch-app.vercel.app",

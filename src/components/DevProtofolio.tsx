@@ -72,7 +72,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     function reRenderProjects() {
       reRender(false);
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      timeoutRef.current = setTimeout(() => reRender(true), 1000);
+      timeoutRef.current = setTimeout(() => reRender(true), 400);
     }
 
     window.addEventListener("resize", reRenderProjects);
