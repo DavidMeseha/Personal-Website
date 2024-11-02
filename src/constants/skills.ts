@@ -30,7 +30,7 @@ export default [
       },
       {
         skill: "Vue.js",
-        level: 60,
+        level: 55,
       },
       {
         skill: "UI/UX",

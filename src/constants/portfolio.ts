@@ -74,10 +74,9 @@ export default [
 
   {
     title: "Fruitkha Landing Page",
-    technologies:
-      "A simple HTML Css Js and Bootstrap showing best practice css with bootstrap",
+    technologies: "A simple HTML Css showing best practice css with bootstrap",
     features:
-      "A Landing page with multible sections, cards, navs and resposive designe",
+      "A Landing page with multible sections, cards and resposive designe",
     link: "https://fruitkha-landing-page.vercel.app",
     code: "https://github.com/DavidMeseha/fruitkha-landing-page",
   },
@@ -88,14 +87,5 @@ export default [
     features: "Showing eCommerce sorting, filtering and searching features",
     link: "https://shop-jade-rho.vercel.app",
     code: "https://github.com/DavidMeseha/shop",
-  },
-
-  {
-    title: "Global Weather Fetch(Vue js)",
-    technologies: "Vue.js project, with Bootstrap5 styling",
-    features:
-      "Globe weathe navigation and selecting countries and cities to view there reacent weather",
-    link: "https://weather-fetch-app.vercel.app",
-    code: "https://github.com/DavidMeseha/Weather-Fetch-App",
   },
 ];
