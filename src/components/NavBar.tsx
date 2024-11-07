@@ -77,6 +77,9 @@ const NavBar: React.FC<{
             htmlFor="theme"
             className={style.toggle}
           >
+            <span style={{ opacity: 0 }}>
+              {theme === "dark" ? "Dark Mood" : "Light Mood"}
+            </span>
             <input
               onChange={toggleTheme}
               type="checkbox"
