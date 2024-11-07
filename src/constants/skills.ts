@@ -92,6 +92,14 @@ export default [
         level: 95,
       },
       {
+        skill: "OOP",
+        level: 80,
+      },
+      {
+        skill: "Functional",
+        level: 90,
+      },
+      {
         skill: "Mathematics",
         level: 80,
       },

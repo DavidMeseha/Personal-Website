@@ -234,8 +234,13 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
       resetProjectsDrag();
   };
 
+  const scrollHandle = (event: React.WheelEvent<HTMLDivElement>) => {
+    if (event.deltaY > 0) return nextProject();
+    else prevProject();
+  };
+
   return (
-    <>
+    <div onWheel={scrollHandle}>
       {render ? (
         <>
           <div className={style["project-indecator"]}>
@@ -283,7 +288,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
       ) : (
         <Loading />
       )}
-    </>
+    </div>
   );
 };
 export default Protofolio;
