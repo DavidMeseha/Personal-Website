@@ -27,22 +27,22 @@ export default [
   },
 
   {
+    title: "Fullstack Ecommerce (MERN)",
+    technologies:
+      "Next.js 14, React.js, Node.js, Mongodb, headless architecture, Jest(React Testing Lib)",
+    features:
+      "JWT Auth, Cart, Save, Like, User Profile, vendors, infinit loading, languages(AR,EN), dynamic products seo, unit tests",
+    link: "https://all-in-one-my-shop-front.vercel.app",
+    code: "https://github.com/DavidMeseha/allInOne-myShop-Front",
+  },
+
+  {
     title: "Live Updated Todo",
     technologies: "Next.js 15, React.js, Supabase",
     features:
       "Live updated listening to changes in supdabase with CURD Options with optimistic updates and auth",
     code: "https://github.com/DavidMeseha/noteit",
     link: "https://noteit-psi.vercel.app/todos",
-  },
-
-  {
-    title: "Fullstack Ecommerce (MERN)",
-    technologies:
-      "Next.js 14, React.js, Node.js, Mongodb, headless architecture",
-    features:
-      "JWT Auth, Cart, Save, Like, User Profile, vendors, infinit loading, languages(AR,EN)",
-    link: "https://all-in-one-my-shop-front.vercel.app",
-    code: "https://github.com/DavidMeseha/allInOne-myShop-Front",
   },
 
   {
