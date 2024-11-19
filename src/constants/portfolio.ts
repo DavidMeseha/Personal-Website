@@ -32,7 +32,7 @@ export default [
       "Next.js 14, React.js, Node.js, Mongodb, headless architecture, Jest(React Testing Lib)",
     features:
       "JWT Auth, Cart, Save, Like, User Profile, vendors, infinit loading, languages(AR,EN), dynamic products seo, unit tests",
-    link: "https://all-in-one-my-shop-front.vercel.app",
+    link: "https://techshop-commerce.vercel.app",
     code: "https://github.com/DavidMeseha/allInOne-myShop-Front",
   },
 
