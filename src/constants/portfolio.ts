@@ -18,7 +18,8 @@ export default [
 
   {
     title: "CV job applications dashboard",
-    technologies: "Next.js-14, React.js-18, Matrial UI, tailwindcss-3, server actions as an endpoint",
+    technologies:
+      "Next.js-14, React.js-18, Matrial UI, tailwindcss-3, server actions as an endpoint",
     features:
       "A fully responsive dashboard with sorting and filttering data with alot of informations",
     code: "https://github.com/DavidMeseha/tech_assessment",
