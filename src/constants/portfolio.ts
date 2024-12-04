@@ -17,13 +17,12 @@ export default [
   },
 
   {
-    title: "Auth and User Role Demo",
-    technologies:
-      "A Login full-stack Next.js, typescript, JWT, axios, Tanstack Query and MongoDB",
+    title: "CV job applications dashboard",
+    technologies: "Next.js-14, React.js-18, Matrial UI, tailwindcss-3, server actions as an endpoint",
     features:
-      "Regester/Login/Logout, user auth, Secure Routs, user Role and Internationalization",
-    link: "https://med-app-steel.vercel.app",
-    code: "https://github.com/DavidMeseha/med-app",
+      "A fully responsive dashboard with sorting and filttering data with alot of informations",
+    code: "https://github.com/DavidMeseha/tech_assessment",
+    link: "https://tech-assessment-ten.vercel.app/",
   },
 
   {
@@ -46,14 +45,6 @@ export default [
   },
 
   {
-    title: "Personal Website",
-    technologies: "Next.js page router, React.js, Framer Motion, Basic CI/CD",
-    features: "A showcase website for my skill, projects as a playground",
-    link: "https://personal-website-nine-zeta-97.vercel.app/",
-    code: "https://github.com/DavidMeseha/Personal-Website",
-  },
-
-  {
     title: "Interactive Service Calender (Client)",
     technologies:
       "react.js with js from scratch and no packages used only tailwind css",
@@ -73,19 +64,29 @@ export default [
   },
 
   {
+    title: "Laptop Shop",
+    technologies: "A Next.js, React.js and mongodb project",
+    features: "Showing eCommerce sorting, filtering and searching features",
+    link: "https://shop-jade-rho.vercel.app",
+    code: "https://github.com/DavidMeseha/shop",
+  },
+
+  {
+    title: "Auth and User Role Demo",
+    technologies:
+      "A Login full-stack Next.js, typescript, JWT, axios, Tanstack Query and MongoDB",
+    features:
+      "Regester/Login/Logout, user auth, Secure Routs, user Role and Internationalization",
+    link: "https://med-app-steel.vercel.app",
+    code: "https://github.com/DavidMeseha/med-app",
+  },
+
+  {
     title: "Fruitkha Landing Page",
     technologies: "A simple HTML Css showing best practice css with bootstrap",
     features:
       "A Landing page with multible sections, cards and resposive designe",
     link: "https://fruitkha-landing-page.vercel.app",
     code: "https://github.com/DavidMeseha/fruitkha-landing-page",
-  },
-
-  {
-    title: "Laptop Shop",
-    technologies: "A Next.js, React.js and mongodb project",
-    features: "Showing eCommerce sorting, filtering and searching features",
-    link: "https://shop-jade-rho.vercel.app",
-    code: "https://github.com/DavidMeseha/shop",
   },
 ];
