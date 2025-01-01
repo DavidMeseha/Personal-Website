@@ -4,9 +4,11 @@ export interface Project {
   features: string;
   link: string;
   code: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
-export default [
+export const projects: Project[] = [
   {
     title: "Dashboard",
     technologies: "Dashboard look with React.js and TypeScript using ReCharts",
@@ -14,6 +16,8 @@ export default [
       "Dashboard with data visualization in different forms with grid layout and clean look",
     link: "https://dashboard-sable-pi.vercel.app/",
     code: "https://github.com/DavidMeseha/dashboard",
+    createdAt: "03/01/2023",
+    updatedAt: "03/01/2023",
   },
 
   {
@@ -24,6 +28,8 @@ export default [
       "A fully responsive dashboard with sorting and filttering data with alot of informations",
     code: "https://github.com/DavidMeseha/tech_assessment",
     link: "https://tech-assessment-ten.vercel.app/",
+    createdAt: "11/01/2024",
+    updatedAt: "11/01/2024",
   },
 
   {
@@ -34,6 +40,8 @@ export default [
       "JWT Auth, Cart, Save, Like, User Profile, vendors, infinit loading, languages(AR,EN), dynamic products seo, unit tests",
     link: "https://techshop-commerce.vercel.app",
     code: "https://github.com/DavidMeseha/allInOne-myShop-Front",
+    createdAt: "07/01/2024",
+    updatedAt: "12/01/2024",
   },
 
   {
@@ -43,6 +51,8 @@ export default [
       "Live updated listening to changes in supdabase with CURD Options with optimistic updates and auth",
     code: "https://github.com/DavidMeseha/noteit",
     link: "https://noteit-psi.vercel.app/todos",
+    createdAt: "10/01/2024",
+    updatedAt: "10/01/2024",
   },
 
   {
@@ -53,6 +63,8 @@ export default [
       "An interactive calendr with the ability to modify appointments with hold and drag and drop",
     link: "https://timeline-calander-system.vercel.app",
     code: "https://github.com/DavidMeseha/employee_timeline_system",
+    createdAt: "04/01/2023",
+    updatedAt: "05/01/2023",
   },
 
   {
@@ -62,6 +74,8 @@ export default [
       'A Ceate Surrvey system with various questions types "Multi Choice, Checkboxs, text, rate, order/rank"',
     link: "https://campagin-and-survey.vercel.app/create-campaign/survey",
     code: "https://github.com/DavidMeseha/Campagin-and-survey",
+    createdAt: "07/01/2023",
+    updatedAt: "08/01/2023",
   },
 
   {
@@ -70,6 +84,8 @@ export default [
     features: "Showing eCommerce sorting, filtering and searching features",
     link: "https://shop-jade-rho.vercel.app",
     code: "https://github.com/DavidMeseha/shop",
+    createdAt: "03/01/2023",
+    updatedAt: "07/01/2023",
   },
 
   {
@@ -80,6 +96,8 @@ export default [
       "Regester/Login/Logout, user auth, Secure Routs, user Role and Internationalization",
     link: "https://med-app-steel.vercel.app",
     code: "https://github.com/DavidMeseha/med-app",
+    createdAt: "10/01/2023",
+    updatedAt: "04/01/2024",
   },
 
   {
@@ -89,5 +107,7 @@ export default [
       "A Landing page with multible sections, cards and resposive designe",
     link: "https://fruitkha-landing-page.vercel.app",
     code: "https://github.com/DavidMeseha/fruitkha-landing-page",
+    createdAt: "02/01/2024",
+    updatedAt: "02/01/2024",
   },
 ];

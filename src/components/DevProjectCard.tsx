@@ -10,7 +10,28 @@ const ProjectCard: React.FC<{
       className={style.project}
       style={inlineStyle}
     >
-      <h1 className={style.heading}>{project.title}</h1>
+      <div
+        className=""
+        style={{ display: "flex", justifyContent: "space-between" }}
+      >
+        <h1 className={style.heading}>{project.title}</h1>
+        <div style={{ fontSize: 12 }}>
+          <div style={{ marginBottom: 4 }}>
+            Created :{" "}
+            {new Date(project.createdAt).toLocaleDateString("en", {
+              month: "long",
+              year: "numeric",
+            })}
+          </div>
+          <div>
+            Last Update :{" "}
+            {new Date(project.updatedAt).toLocaleDateString("en", {
+              month: "long",
+              year: "numeric",
+            })}
+          </div>
+        </div>
+      </div>
       <div className={style.description}>
         <div>
           <h2 className={style.supHeading}>Technologies</h2>

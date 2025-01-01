@@ -1,6 +1,6 @@
 import DevProtofolio from "@/components/DevProtofolio";
 import { Project } from "@/constants/portfolio";
-import projects from "@/constants/portfolio";
+import { projects } from "@/constants/portfolio";
 import PageAnimationLayout from "@/layouts/PageAnimationLayout";
 import { GetStaticProps } from "next";
 import Head from "next/head";
