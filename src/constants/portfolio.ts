@@ -33,6 +33,17 @@ export const projects: Project[] = [
   },
 
   {
+    title: "3D Realtime updated",
+    technologies: "React.js, Three.js, React Three Fiber, Socket.io, Node.js",
+    features:
+      "A simple environment you have a character to navigate inside it and you can see other visitors/players",
+    code: "https://github.com/DavidMeseha/game-v1",
+    link: "https://game-v1-five.vercel.app/",
+    createdAt: "01/01/2025",
+    updatedAt: "01/01/2025",
+  },
+
+  {
     title: "Fullstack Ecommerce (MERN)",
     technologies:
       "Next.js 14, React.js, Node.js, Mongodb, headless architecture, Jest(React Testing Lib)",
