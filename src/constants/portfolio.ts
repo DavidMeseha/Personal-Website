@@ -33,7 +33,7 @@ export const projects: Project[] = [
   },
 
   {
-    title: "3D Realtime updated",
+    title: "3D Realtime(Web Socket)",
     technologies: "React.js, Three.js, React Three Fiber, Socket.io, Node.js",
     features:
       "A simple environment you have a character to navigate inside it and you can see other visitors/players",
