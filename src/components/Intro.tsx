@@ -23,9 +23,9 @@ const Intro = () => {
             <span>Front-end Developer </span> dedicated to building robust and
             intuitive web systems. With expertise in HTML, CSS, and JavaScript,
             creating responsive user interfaces that enhance user experience.
-            <br />continuously seek to improve my
-            skills to deliver high-quality, efficient solutions that meet
-            complex project requirements.
+            <br />
+            continuously seek to improve my skills to deliver high-quality,
+            efficient solutions that meet complex project requirements.
           </p>
         </div>
       </div>
