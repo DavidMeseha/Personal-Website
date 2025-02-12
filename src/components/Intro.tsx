@@ -13,13 +13,19 @@ const Intro = () => {
           <h1>HELLO,</h1>
         </div>
         <div className={style.me}>
-          <h2>I'M</h2>
-          <h2 className={style.value}>DAVID MAGDY</h2>
+          <h2>
+            <span>I'M</span>
+            <span className={style.value}>DAVID MAGDY</span>
+          </h2>
         </div>
         <div>
           <p className={style.description}>
-            <span>Front-end Developer </span> using React.js and Next.js who
-            enjoys systems development and Problem-solving.
+            <span>Front-end Developer </span> dedicated to building robust and
+            intuitive web systems. With expertise in HTML, CSS, and JavaScript,
+            creating responsive user interfaces that enhance user experience.
+            <br />continuously seek to improve my
+            skills to deliver high-quality, efficient solutions that meet
+            complex project requirements.
           </p>
         </div>
       </div>

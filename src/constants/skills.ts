@@ -22,19 +22,23 @@ export default [
       },
       {
         skill: "React.js",
-        level: 98,
+        level: 100,
       },
       {
         skill: "Next.js 14-15",
-        level: 94,
+        level: 95,
       },
       {
-        skill: "Vue.js",
+        skill: "Vue/Angular",
         level: 55,
       },
       {
         skill: "UI/UX",
-        level: 80,
+        level: 85,
+      },
+      {
+        skill: "SEO",
+        level: 90,
       },
     ],
   },
@@ -43,7 +47,7 @@ export default [
     skillSet: [
       {
         skill: "TypeScript",
-        level: 95,
+        level: 97,
       },
       {
         skill: "Tailwind CSS",
@@ -51,11 +55,15 @@ export default [
       },
       {
         skill: "Cypress(e2e)",
-        level: 60,
+        level: 89,
       },
       {
         skill: "React Testing Library",
-        level: 80,
+        level: 90,
+      },
+      {
+        skill: "THREE.js/R3F/3D",
+        level: 85,
       },
     ],
   },
@@ -64,44 +72,56 @@ export default [
     skillSet: [
       {
         skill: "Node.js",
-        level: 75,
-      },
-      {
-        skill: "Auth",
-        level: 90,
-      },
-      {
-        skill: "MongoDB",
         level: 85,
       },
       {
-        skill: "SupaBase",
-        level: 75,
+        skill: "Auth",
+        level: 95,
       },
       {
-        skill: "MVC",
+        skill: "MongoDB",
+        level: 90,
+      },
+      {
+        skill: "SupaBase",
+        level: 60,
+      },
+      {
+        skill: "SQL/Postgres",
+        level: 65,
+      },
+      {
+        skill: "Socket.io",
         level: 80,
+      },
+      {
+        skill: "GoLang",
+        level: 55,
       },
     ],
   },
   {
-    title: "Programming",
+    title: "Environment",
     skillSet: [
       {
-        skill: "Problem Solving",
+        skill: "Git",
         level: 95,
       },
       {
-        skill: "OOP",
-        level: 80,
+        skill: "VSCode/Cursor",
+        level: 95,
       },
       {
-        skill: "Functional",
+        skill: "Figma/Adobe",
+        level: 85,
+      },
+      {
+        skill: "Agile/Scrum",
+        level: 70,
+      },
+      {
+        skill: "AI Utilization",
         level: 90,
-      },
-      {
-        skill: "Mathematics",
-        level: 80,
       },
     ],
   },

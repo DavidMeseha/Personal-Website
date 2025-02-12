@@ -70,6 +70,14 @@
   z-index: 1;
 }
 
+.dates{
+  font-size: 12px;
+
+  @media (max-width: 769px) {
+   display: none;
+  }
+}
+
 .bottomNavClickSpace {
   bottom: 0;
   cursor: url("../../public/arrow-down.svg"), auto;
