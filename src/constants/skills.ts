@@ -29,10 +29,6 @@ export default [
         level: 95,
       },
       {
-        skill: "Vue/Angular",
-        level: 55,
-      },
-      {
         skill: "UI/UX",
         level: 85,
       },
@@ -93,10 +89,6 @@ export default [
       {
         skill: "Socket.io",
         level: 80,
-      },
-      {
-        skill: "GoLang",
-        level: 55,
       },
     ],
   },
