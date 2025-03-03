@@ -1,5 +1,5 @@
 import style from "@/styles/Protofolio.module.scss";
-import { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useWindowHeight, useWindowWidth } from "@react-hook/window-size";
 import { Project } from "@/constants/portfolio";
 import DevProjectCard from "./DevProjectCard";
@@ -88,7 +88,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     return () => window.removeEventListener("resize", reRenderProjects);
   }, []);
 
-  const nextProject = useCallback(() => {
+  const nextProject = () => {
     if (!projectsRef.current || waitAnimation) return;
     setWaitanimation(true);
 
@@ -109,9 +109,9 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     setTimeout(() => {
       setWaitanimation(false);
     }, 900);
-  }, [display.length, rank1, rank2, rank3, waitAnimation]);
+  };
 
-  const prevProject = useCallback(() => {
+  const prevProject = () => {
     if (waitAnimation || !projectsRef.current) return;
     setWaitanimation(true);
 
@@ -130,9 +130,9 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     setProjectIndex((prev) => (prev - 1 < 0 ? display.length - 1 : prev - 1));
 
     setTimeout(() => setWaitanimation(false), 900);
-  }, [display.length, rank1, rank2, rank3, waitAnimation]);
+  };
 
-  const resetProjectsDrag = useCallback(() => {
+  const resetProjectsDrag = () => {
     if (!projectsRef.current) return;
     const children = projectsRef.current
       .children as HTMLCollectionOf<HTMLElement>;
@@ -142,9 +142,9 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     Object.assign(children[2].style, rank1);
     Object.assign(children[3].style, rank2);
     Object.assign(children[4].style, rank3);
-  }, [rank1, rank2, rank3]);
+  };
 
-  const touchStartHandle = useCallback((event: React.TouchEvent) => {
+  const touchStartHandle = (event: React.TouchEvent) => {
     if (!projectsRef.current) return;
     setTouchStart(event.targetTouches[0].clientY);
 
@@ -157,9 +157,9 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
     children[2].style.transition = "unset";
     children[3].style.transition = "unset";
     children[4].style.transition = "unset";
-  }, []);
+  };
 
-  const touchMoveHandle = useCallback((event: React.TouchEvent) => {
+  const touchMoveHandle = (event: React.TouchEvent) => {
     if (!projectsRef.current) return;
     const children = projectsRef.current
       .children as HTMLCollectionOf<HTMLElement>;
@@ -220,45 +220,31 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
       children[3].style.maxHeight = `${r2MaxHeight - r2MaxHeight * percent}px`;
       children[3].style.padding = `${30 - 30 * percent}px`;
     }
-  }, []);
+  };
 
-  const touchEndHandle = useCallback(
-    (event: React.TouchEvent) => {
-      if (!projectsRef.current) return;
-      const touchEnd = event.changedTouches[0].clientY;
+  const touchEndHandle = (event: React.TouchEvent) => {
+    if (!projectsRef.current) return;
+    const touchEnd = event.changedTouches[0].clientY;
 
-      const children = projectsRef.current
-        .children as HTMLCollectionOf<HTMLElement>;
+    const children = projectsRef.current
+      .children as HTMLCollectionOf<HTMLElement>;
 
-      children[0].style.transition = rank3.transition;
-      children[1].style.transition = rank2.transition;
-      children[2].style.transition = rank1.transition;
-      children[3].style.transition = rank2.transition;
-      children[4].style.transition = rank3.transition;
+    children[0].style.transition = rank3.transition;
+    children[1].style.transition = rank2.transition;
+    children[2].style.transition = rank1.transition;
+    children[3].style.transition = rank2.transition;
+    children[4].style.transition = rank3.transition;
 
-      if (touchEnd - touchStart < -20) nextProject();
-      if (touchEnd - touchStart > 20) prevProject();
-      if (!(touchEnd - touchStart > 20) || !(touchEnd - touchStart < -20))
-        resetProjectsDrag();
-    },
-    [
-      nextProject,
-      prevProject,
-      rank1,
-      rank2,
-      rank3,
-      resetProjectsDrag,
-      touchStart,
-    ]
-  );
+    if (touchEnd - touchStart < -20) nextProject();
+    if (touchEnd - touchStart > 20) prevProject();
+    if (!(touchEnd - touchStart > 20) || !(touchEnd - touchStart < -20))
+      resetProjectsDrag();
+  };
 
-  const scrollHandle = useCallback(
-    (event: React.WheelEvent<HTMLDivElement>) => {
-      if (event.deltaY > 0) return nextProject();
-      else prevProject();
-    },
-    [nextProject, prevProject]
-  );
+  const scrollHandle = (event: React.WheelEvent<HTMLDivElement>) => {
+    if (event.deltaY > 0) return nextProject();
+    else prevProject();
+  };
 
   return (
     <div onWheel={scrollHandle}>
