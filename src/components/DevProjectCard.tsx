@@ -55,12 +55,18 @@ const ProjectCard: React.FC<{
         </div>
         <div style={{ margin: "20px 0 0 0" }}>
           <span>
-            <a
-              href={`${project.code}`}
-              target="_blank"
-            >
-              View Source ?
-            </a>
+            {project.code ? (
+              <a
+                href={`${project.code}`}
+                target="_blank"
+              >
+                View Source ?
+              </a>
+            ) : (
+              <span style={{ color: "gray", textDecoration: "underline" }}>
+                Confidential
+              </span>
+            )}
           </span>
         </div>
       </div>

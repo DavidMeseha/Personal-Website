@@ -3,14 +3,14 @@ export interface Project {
   technologies: string;
   features: string;
   link: string;
-  code: string;
+  code: string | false;
   createdAt: string;
   updatedAt: string;
 }
 
 export const projects: Project[] = [
   {
-    title: "Dashboard",
+    title: "Charts",
     technologies: "Dashboard look with React.js and TypeScript using ReCharts",
     features:
       "Dashboard with data visualization in different forms with grid layout and clean look",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     features:
       "An interactive calendr with the ability to modify appointments with hold and drag and drop",
     link: "https://timeline-calander-system.vercel.app",
-    code: "https://github.com/DavidMeseha/employee_timeline_system",
+    code: false,
     createdAt: "04/01/2023",
     updatedAt: "05/01/2023",
   },
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     features:
       'A Ceate Surrvey system with various questions types "Multi Choice, Checkboxs, text, rate, order/rank"',
     link: "https://campagin-and-survey.vercel.app/create-campaign/survey",
-    code: "https://github.com/DavidMeseha/Campagin-and-survey",
+    code: false,
     createdAt: "07/01/2023",
     updatedAt: "08/01/2023",
   },
