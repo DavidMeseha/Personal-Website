@@ -84,9 +84,16 @@
   display: inline-block;
   cursor: pointer;
   padding: 15px 20px;
-  margin: 5px 0 0 0;
+  margin: 5px 10px 0px 0;
   color: #fdfb39;
   background-color: $primry-color;
+  min-width: 100px;
+  text-align: center;
+  
+  span{
+    color: #fdfb39;
+    text-decoration: none;
+  }
 
   &:hover {
     .copy {

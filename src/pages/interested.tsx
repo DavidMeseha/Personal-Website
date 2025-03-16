@@ -75,7 +75,7 @@ export default function Interested() {
                 <p style={{ fontSize: "0.8rem" }}>
                   Ready to discuss your project
                 </p>
-                <div
+                <button
                   onClick={copyHandle}
                   onMouseLeave={() =>
                     setTimeout(() => {
@@ -91,7 +91,20 @@ export default function Interested() {
                       <Copy />
                     </div>
                   </div>
-                </div>
+                </button>
+                <a
+                  href="/cv.pdf"
+                  target="_blank"
+                  onMouseLeave={() =>
+                    setTimeout(() => {
+                      setCopyState(false);
+                    }, 350)
+                  }
+                  className={style.button}
+                >
+                  <span>CV</span>
+                  <div className={style.copy}>Download</div>
+                </a>
               </div>
             </div>
           </div>
