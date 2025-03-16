@@ -67,7 +67,7 @@ export default function Interested() {
                   <li>Refactoring and updating old code.</li>
                   <li>
                     Using Next.js with React to increase performance and
-                    optimize search engines with SSR options.
+                    optimize for search engines with SSR options.
                   </li>
                 </ul>
               </div>
