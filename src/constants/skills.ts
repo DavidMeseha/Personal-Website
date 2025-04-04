@@ -21,12 +21,12 @@ export default [
         level: 80,
       },
       {
-        skill: "React.js",
+        skill: "React/next",
         level: 100,
       },
       {
-        skill: "Next.js 14-15",
-        level: 95,
+        skill: "vue/nuxt",
+        level: 75,
       },
       {
         skill: "UI/UX",
@@ -34,7 +34,7 @@ export default [
       },
       {
         skill: "SEO",
-        level: 90,
+        level: 95,
       },
     ],
   },
@@ -68,7 +68,7 @@ export default [
     skillSet: [
       {
         skill: "Node.js",
-        level: 85,
+        level: 90,
       },
       {
         skill: "Auth",
@@ -81,10 +81,6 @@ export default [
       {
         skill: "SupaBase",
         level: 60,
-      },
-      {
-        skill: "SQL/Postgres",
-        level: 65,
       },
       {
         skill: "Socket.io",

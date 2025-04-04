@@ -56,17 +56,6 @@ export const projects: Project[] = [
   },
 
   {
-    title: "Live Updated Todo",
-    technologies: "Next.js 15, React.js, Supabase",
-    features:
-      "Live updated listening to changes in supdabase with CURD Options with optimistic updates and auth",
-    code: "https://github.com/DavidMeseha/noteit",
-    link: "https://noteit-psi.vercel.app/todos",
-    createdAt: "10/01/2024",
-    updatedAt: "10/01/2024",
-  },
-
-  {
     title: "Interactive Service Calender (Client)",
     technologies:
       "react.js with js from scratch and no packages used only tailwind css",
@@ -90,7 +79,7 @@ export const projects: Project[] = [
   },
 
   {
-    title: "Laptop Shop",
+    title: "Laptop Client-side filtering",
     technologies: "A Next.js, React.js and mongodb project",
     features: "Showing eCommerce sorting, filtering and searching features",
     link: "https://shop-jade-rho.vercel.app",
@@ -100,15 +89,14 @@ export const projects: Project[] = [
   },
 
   {
-    title: "Auth and User Role Demo",
-    technologies:
-      "A Login full-stack Next.js, typescript, JWT, axios, Tanstack Query and MongoDB",
+    title: "Auth simple Ask App",
+    technologies: "full-stack Next.js, typescript, JWT, MongoDB, Next-auth",
     features:
-      "Regester/Login/Logout, user auth, Secure Routs, user Role and Internationalization",
-    link: "https://med-app-steel.vercel.app",
-    code: "https://github.com/DavidMeseha/med-app",
-    createdAt: "10/01/2023",
-    updatedAt: "04/01/2024",
+      "Regester/Login/Logout, user auth, Secure Routs, user Role(/admin is confedential)",
+    link: "https://ask-psychology-swart.vercel.app",
+    code: "https://github.com/DavidMeseha/ask-psychology",
+    createdAt: "01/04/2025",
+    updatedAt: "04/04/2025",
   },
 
   {
