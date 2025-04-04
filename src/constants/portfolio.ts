@@ -90,10 +90,10 @@ export const projects: Project[] = [
 
   {
     title: "Auth simple Ask App",
-    technologies: "full-stack Next.js, typescript, JWT, MongoDB, Next-auth",
+    technologies: "full-stack Next.js, typescript, MongoDB, Next-auth",
     features:
       "Regester/Login/Logout, user auth, Secure Routs, user Role(/admin is confedential)",
-    link: "https://ask-psychology-swart.vercel.app",
+    link: "https://ask-psychology.vercel.app",
     code: "https://github.com/DavidMeseha/ask-psychology",
     createdAt: "01/04/2025",
     updatedAt: "04/04/2025",
