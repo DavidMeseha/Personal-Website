@@ -2,8 +2,10 @@
 
 .img{
   width: 100%;
+  overflow: clip;
 
   iframe{
+    width: calc(100% + 15px);
     transition: opacity 300ms;
     background-color: black;
   }
