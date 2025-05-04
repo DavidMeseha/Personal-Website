@@ -21,7 +21,8 @@ Visit the live website: [https://personal-website-nine-zeta-97.vercel.app/](http
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 14
+- **Framework:** Next.js 14 (Pages Router)
+- **State Management:** React Context API
 - **Language:** TypeScript
 - **Styling:** SCSS Modules
 - **Canvas:** HTML5 Canvas API
