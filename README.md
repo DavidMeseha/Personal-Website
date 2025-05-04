@@ -11,7 +11,7 @@ Visit the live website: [https://personal-website-nine-zeta-97.vercel.app/](http
 - Responsive design that works on all devices
 - Dark/Light theme toggle
 - Interactive project showcase with touch/swipe support
-- Smooth page transitions using Framer Motion
+- Smooth page transitions
 - Dynamic text animations
 - Interactive background canvas with hexagon pattern
 - Development portfolio with project cards
@@ -24,9 +24,7 @@ Visit the live website: [https://personal-website-nine-zeta-97.vercel.app/](http
 - **Framework:** Next.js 14
 - **Language:** TypeScript
 - **Styling:** SCSS Modules
-- **Animation:** Framer Motion
 - **Canvas:** HTML5 Canvas API
-- **Performance:** Vercel Speed Insights
 - **Linting:** ESLint
 - **Code Formatting:** Prettier
 
@@ -89,10 +87,6 @@ The project uses various configuration files:
 - `tsconfig.json` - TypeScript configuration
 - `.eslintrc.json` - ESLint rules
 - `.prettierrc` - Prettier formatting rules
-
-## 📄 License
-
-MIT License - feel free to use this project as a template for your own portfolio!
 
 ## 👋 Contact
 
