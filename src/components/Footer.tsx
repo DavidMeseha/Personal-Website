@@ -8,7 +8,7 @@ const Footer = () => {
       <Link
         aria-label="Visit My Github account"
         target="_blank"
-        href="https://github.com/DavidMeseha/Personal-Website"
+        href="https://github.com/DavidMeseha"
         className={style.icons}
       >
         <Git />
