@@ -29,18 +29,7 @@ export const projects: Project[] = [
     code: "https://github.com/DavidMeseha/tech_assessment",
     link: "https://tech-assessment-ten.vercel.app/",
     createdAt: "11/01/2024",
-    updatedAt: "11/01/2024",
-  },
-
-  {
-    title: "3D Realtime(Web Socket)",
-    technologies: "React.js, Three.js, React Three Fiber, Socket.io, Node.js",
-    features:
-      "A simple environment you have a character to navigate inside it and you can see other visitors/players",
-    code: "https://github.com/DavidMeseha/game-v1",
-    link: "https://game-v1-five.vercel.app/",
-    createdAt: "01/01/2025",
-    updatedAt: "01/01/2025",
+    updatedAt: "5/01/2024",
   },
 
   {
@@ -52,7 +41,18 @@ export const projects: Project[] = [
     link: "https://techshop-commerce.vercel.app",
     code: "https://github.com/DavidMeseha/allInOne-myShop-Front",
     createdAt: "07/01/2024",
-    updatedAt: "12/01/2024",
+    updatedAt: "5/01/2025",
+  },
+
+  {
+    title: "3D Realtime(Web Socket)",
+    technologies: "React.js, Three.js, React Three Fiber, Socket.io, Node.js",
+    features:
+      "A simple environment you have a character to navigate inside it and you can see other visitors/players",
+    code: "https://github.com/DavidMeseha/game-v1",
+    link: "https://game-v1-five.vercel.app/",
+    createdAt: "01/01/2025",
+    updatedAt: "01/01/2025",
   },
 
   {
