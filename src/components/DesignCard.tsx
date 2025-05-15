@@ -14,7 +14,7 @@ export default function DesignCard(props: { projectURL: string }) {
       <div className={style.imageContainer}>
         <div
           className={style.img}
-          style={{ width: "100%" }}
+          style={{ width: "100%", height: 235 }}
         >
           {!loaded && <Loading />}
           <iframe
