@@ -44,6 +44,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
       opacity: 1,
       padding: "30px",
       transition: "all 0.9s",
+      filter: "none",
     }),
     [windowWidth]
   );
@@ -58,6 +59,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
       padding: "30px",
       zIndex: 0,
       transition: "all 1s",
+      filter: "blur(5px)",
     }),
     [windowWidth, r2MaxHeight]
   );
@@ -71,6 +73,7 @@ const Protofolio: React.FC<{ projects: Project[] }> = ({ projects }) => {
       maxHeight: "0",
       padding: "0",
       transition: "all 0.6s",
+      filter: "blur(5px)",
     }),
     []
   );
