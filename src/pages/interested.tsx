@@ -93,7 +93,7 @@ export default function Interested() {
                   </div>
                 </button>
                 <a
-                  href="/cv.pdf"
+                  href="/cv-v2.pdf"
                   target="_blank"
                   onMouseLeave={() =>
                     setTimeout(() => {
