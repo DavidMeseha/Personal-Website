@@ -15,7 +15,7 @@ const ProjectCard: React.FC<{
         style={{ display: "flex", justifyContent: "space-between" }}
       >
         <h1 className={style.heading}>{project.title}</h1>
-        <div className={style.dates}>
+        {/* <div className={style.dates}>
           <div style={{ marginBottom: 4 }}>
             Created :{" "}
             {new Date(project.createdAt).toLocaleDateString("en", {
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<{
               year: "numeric",
             })}
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={style.description}>
         <div>
